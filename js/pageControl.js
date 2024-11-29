@@ -128,3 +128,27 @@ sections.forEach((sect, i) => {
 });
 
 // =====
+const boxs = document.querySelector('.sect4-2 .boxs'); // 스크롤 가능한 박스
+const section = document.querySelector('.sect4-2'); // 현재 섹션
+const nextSection = section.nextElementSibling; // 다음 섹션
+const prevSection = section.previousElementSibling; // 이전 섹션
+
+boxs.addEventListener('scroll', (e) => {
+  const scrollTop = boxs.scrollTop; // 현재 스크롤 위치
+  const scrollHeight = boxs.scrollHeight; // 스크롤 가능한 전체 높이
+  const clientHeight = boxs.clientHeight; // 보여지는 영역의 높이
+  
+  // 맨 아래로 스크롤 시
+  if (scrollTop + clientHeight >= scrollHeight) {
+    if (nextSection) {
+      nextSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+  // 맨 위로 스크롤 시
+  if (scrollTop <= 0) {
+    if (prevSection) {
+      prevSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+});

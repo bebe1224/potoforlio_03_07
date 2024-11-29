@@ -595,6 +595,8 @@ header {
 }
 
 .sect2 {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
   //   margin-top: 100px;
   .inner {
     position: relative;
@@ -797,6 +799,8 @@ header {
   }
 }
 .sect2-2 {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
   position: relative;
   overflow: hidden;
 
@@ -1063,6 +1067,32 @@ header {
     }
   }
 }
+.sect3-2 {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  .inner {
+    @include fcc;
+    position: relative;
+    border: 1px solid #000;
+    .box {
+      position: relative;
+      width: 800px;
+      height: 100px;
+      background-color: #646464;
+      .slide {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #3dd1e7;
+        transition: 0.6s ease-in-out;
+      }
+      button {
+        position: absolute;
+        right: 0px;
+      }
+    }
+  }
+}
 
 .sect4 {
   background: url(./img/sect4img/cloud0.png) no-repeat center/cover;
@@ -1195,7 +1225,6 @@ header {
     }
   }
 }
-
 .sect4-1 {
   // transform: scaleY(-1);
   background: url(./img/sect4img/cloud0.png) no-repeat center/cover;
@@ -1205,11 +1234,7 @@ header {
     position: relative;
     @include fcc;
     gap: 24px;
-    .button-49 {
-      position: absolute;
-      left: 72%;
-      top: 5%;
-    }
+
     .video-frame {
       position: relative;
       width: 1200px;
@@ -1227,13 +1252,22 @@ header {
         font-size: 21px;
         font-weight: bold;
       }
+
       iframe {
         // pointer-events: none; // 이게 있어야 아이프레임 문제해결 벗 상호작용안돼!
+        // touch-action: none;
         position: absolute;
         z-index: 1;
       }
     }
+    .button-49 {
+      position: absolute;
+      right: 16%;
+      top: 5%;
+      z-index: 2;
+    }
     .list-box {
+      position: relative;
       overflow: auto;
       box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
         rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
@@ -1282,7 +1316,6 @@ header {
   background-position: bottom;
   background-attachment: fixed;
   .inner {
-    border: 1px solid #000;
     @include fcc;
     padding: 150px 0px;
     // overflow-y: scroll; /* 스크롤 기능 유지 */
@@ -1337,6 +1370,28 @@ header {
             color: #7e7e7e;
           }
         }
+        &:nth-child(2) {
+          flex-direction: row-reverse;
+          .p-w {
+            @include fcsc;
+            gap: 32px;
+            line-height: 40px;
+            margin-left: 140px;
+            .p1 {
+              font-size: 40px;
+              font-weight: bold;
+            }
+            .p2 {
+              font-size: 32px;
+              font-weight: bold;
+              color: #7e7e7e;
+            }
+            .p3 {
+              font-size: 24px;
+              color: #7e7e7e;
+            }
+          }
+        }
       }
     }
   }
@@ -1384,7 +1439,6 @@ header {
     }
   }
 }
-
 @media (max-width: 768px) and (min-width: 0px) {
   .sect1 {
     .inner {
@@ -1423,7 +1477,7 @@ header {
   }
 }
 
-// ===== sect2,sect3  반응형
+// ===== sect2,sect2-1,sect2-2 반응형
 @media (max-width: 1530px) and (min-width: 845px) {
   .sect {
     .inner {
@@ -1453,7 +1507,7 @@ header {
     }
   }
 
-  .sect3 {
+  .sect2-1 {
     .inner {
       position: relative;
       display: flex;
@@ -1658,7 +1712,6 @@ header {
     }
   }
 }
-
 @media (max-width: 845px) and (min-width: 0px) {
   .sect {
     .inner {
@@ -1688,7 +1741,7 @@ header {
     }
   }
 
-  .sect3 {
+  .sect2-1 {
     overflow: auto;
     -webkit-overflow-scrolling: touch;
 
@@ -1871,10 +1924,8 @@ header {
     }
   }
 }
-
-// ===== sect4 반응형
 @media (max-width: 1560px) and (min-width: 901px) {
-  .sect4 {
+  .sect2-2 {
     position: relative;
     overflow: hidden;
 
@@ -1933,9 +1984,8 @@ header {
     }
   }
 }
-
 @media (max-width: 901px) and (min-width: 0px) {
-  .sect4 {
+  .sect2-2 {
     position: relative;
     overflow: hidden;
 
@@ -1997,12 +2047,10 @@ header {
     }
   }
 }
-// ===== sect5 반응형
-@media (max-width: 1787px) and (min-width: 1030px) {
-  .sect5 {
-    background: url(./img/sect5img/cloud0.png) no-repeat center/cover;
-    background-attachment: fixed;
 
+// ===== sect4 반응형
+@media (max-width: 1787px) and (min-width: 1030px) {
+  .sect4 {
     .inner {
       display: flex;
       .left {
@@ -2102,10 +2150,7 @@ header {
   }
 }
 @media (max-width: 1030px) and (min-width: 536px) {
-  .sect5 {
-    background: url(./img/sect5img/cloud0.png) no-repeat center/cover;
-    background-attachment: fixed;
-
+  .sect4 {
     .inner {
       display: flex;
       .left {
@@ -2204,10 +2249,7 @@ header {
   }
 }
 @media (max-width: 536px) and (min-width: 0px) {
-  .sect5 {
-    background: url(./img/sect5img/cloud0.png) no-repeat center/cover;
-    background-attachment: fixed;
-
+  .sect4 {
     .inner {
       display: flex;
       .left {
@@ -2278,8 +2320,81 @@ header {
     }
   }
 }
-// ===== sect5-1 반응형
+// ===== sect4-1 반응형
 
+@media (max-width: 1279px) and (min-width: 769px) {
+  .sect4-1 {
+    .inner {
+      position: relative;
+      @include fccc;
+      gap: 24px;
+
+      .video-frame {
+        position: relative;
+        width: 800px;
+        height: 450px;
+        .button-85 {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-size: 21px;
+          font-weight: bold;
+        }
+
+        iframe {
+          position: absolute;
+          z-index: 1;
+        }
+      }
+      .button-49 {
+        position: absolute;
+        left: 5%;
+        top: 62%;
+      }
+      .list-box {
+        display: flex;
+        justify-content: start;
+        width: 800px;
+        height: 225px;
+        background-color: rgba(255, 255, 255, 0.5);
+        .video-list {
+          flex-direction: row;
+          gap: 16px;
+          padding: 40px 40px 40px 40px;
+
+          li {
+            width: 410px;
+            display: flex;
+            gap: 16px;
+            cursor: pointer;
+
+            .p-w {
+              @include fcsc;
+              gap: 8px;
+
+              p {
+                font-weight: bold;
+
+                &:nth-child(2) {
+                  font-size: 18px;
+                }
+
+                &:nth-child(3) {
+                  color: #606060;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 768px) and (min-width: 481px) {
+}
+@media (max-width: 480px) and (min-width: 0px) {
+}
 // ===== sect6 반응형
 @media (max-width: 1523px) and (min-width: 1160px) {
   .sect6 {

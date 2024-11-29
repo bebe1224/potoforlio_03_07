@@ -590,6 +590,16 @@
                 </div>
             </div>
     </section>
+    <section class=" sect sect3-2">
+        <div class="inner">
+            <div class="box">
+                <button class="move">이동</button>
+                <div class="slide">
+                    <button class="slide-btn">사이트이동 -></button>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- videoEditing -->
     <section class="sect sect4">
         <div class="inner">
@@ -669,7 +679,6 @@
     </section>
     <section class="sect sect4-1">
         <div class="inner">
-            <button class="button-49" role="button">리스트 목록</button>
             <div class="video-frame">
                 <button class="button-85" role="button">
                     My Video
@@ -678,8 +687,10 @@
                     loading="lazy">
 
                 </iframe>
-
             </div>
+            <button class="button-49" role="button">
+                리스트 목록
+            </button>
             <div class="list-box">
                 <ul class="video-list">
                     <li data-video="https://www.youtube.com/embed/UDGqMo5qdYo?si=xgq9-3DYMfs9N9U9">
@@ -796,65 +807,48 @@
                     </div>
                 </div>
                 <div class="box">
-                    <img src="./img/sect4-2img/사무라이2.png" alt="대표 이미지">
+                    <div class="swiper sect4-2Swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="i-w">
+                                    <img src="./img/sect4-2img/사무라이2.png" alt="사무라이2">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="i-w">
+                                    <img src="./img/sect4-2img/히지카타.gif" alt="히지카타">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="i-w">
+                                    <img src="./img/sect4-2img/은혼 카세트.gif" alt="은혼 카세트">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+
                     <div class="p-w">
-                        <p></p>
-                        <p></p>
-                        <p></p>
+                        <p class="p1">모든것은 <span class="pink_line">시작이 반!</span></p>
+                        <p class="p2">-사무라이 하트-</p>
+                        <p class="p3">
+                            "모든 것의 시작은 여기서부터였습니다. <br>
+                            유튜브에서 처음 애니뮤비(AMV)를 접하고,<br>
+                            그 멋진 영상을 보고 나도 이렇게 멋진 걸<br>
+                            만들어보고 싶다는 생각이 들었습니다.<br>
+                            특별히 누구에게 배운 것도 없고,<br>
+                            독학으로 시작했기에 과정 속
+                            어려움도 <br>많았지만, 그때의 열정만큼은
+                            누구에게도<br> 뒤지지 않는다고
+                            자신할 수 있습니다.<br>
+                            지금 돌아보면, 그때의 열정이 있었기에<br>
+                            여기까지 올 수 있었던 것 같습니다."</p>
                     </div>
                 </div>
-                <div class="box">
-                    <img src="" alt="대표 이미지">
-                    <div class="p-w">
-                        <p></p>
-                        <p></p>
-                        <p></p>
-                    </div>
-                </div>
-                <div class="box">
-                    <img src="" alt="대표 이미지">
-                    <div class="p-w">
-                        <p></p>
-                        <p></p>
-                        <p></p>
-                    </div>
-                </div>
-                <div class="box">
-                    <img src="" alt="대표 이미지">
-                    <div class="p-w">
-                        <p></p>
-                        <p></p>
-                        <p></p>
-                    </div>
-                </div>
-                <div class="box">
-                    <img src="" alt="대표 이미지">
-                    <div class="p-w">
-                        <p></p>
-                        <p></p>
-                        <p></p>
-                    </div>
-                </div>
-                <div class="box">
-                    <img src="" alt="대표 이미지">
-                    <div class="p-w">
-                        <p></p>
-                        <p></p>
-                        <p></p>
-                    </div>
-                </div>
-                <div class="box">
-                    <img src="" alt="대표 이미지">
-                    <div class="p-w">
-                        <p></p>
-                        <p></p>
-                        <p></p>
-                    </div>
-                </div>
+
             </div>
         </div>
     </section>
-
     <!-- web -->
     <section class="sect sect5">
         <div class="inner">
@@ -873,6 +867,7 @@
     <script src="https://www.youtube.com/iframe_api"></script>
     <script src="./js/codepen.js"></script>
     <script src="./js/common.js"></script>
+    <script src="./js/events.js"></script>
     <script src="./js/gsap.js"></script>
     <script src="./js/iframe.js"></script>
     <script src="./js/pageControl.js"></script>
