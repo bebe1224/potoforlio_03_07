@@ -133,22 +133,33 @@ const section = document.querySelector('.sect4-2'); // 현재 섹션
 const nextSection = section.nextElementSibling; // 다음 섹션
 const prevSection = section.previousElementSibling; // 이전 섹션
 
+let isScrolling; // 스크롤 중인지 확인하는 변수
+
+// 스크롤 이벤트 처리
 boxs.addEventListener('scroll', (e) => {
   const scrollTop = boxs.scrollTop; // 현재 스크롤 위치
   const scrollHeight = boxs.scrollHeight; // 스크롤 가능한 전체 높이
   const clientHeight = boxs.clientHeight; // 보여지는 영역의 높이
   
-  // 맨 아래로 스크롤 시
-  if (scrollTop + clientHeight >= scrollHeight) {
-    if (nextSection) {
-      nextSection.scrollIntoView({ behavior: 'smooth' });
-    }
+  // 스크롤이 멈추었을 때, 일정 시간이 지난 후 처리
+  if (isScrolling) {
+    clearTimeout(isScrolling);
   }
 
-  // 맨 위로 스크롤 시
-  if (scrollTop <= 0) {
-    if (prevSection) {
-      prevSection.scrollIntoView({ behavior: 'smooth' });
+  // 스크롤이 멈춘 뒤 300ms 후에 섹션 이동
+  isScrolling = setTimeout(() => {
+    // 맨 아래로 스크롤 시
+    if (scrollTop + clientHeight >= scrollHeight) {
+      if (nextSection) {
+        nextSection.scrollIntoView({ behavior: 'smooth' });
+      }
     }
-  }
+
+    // 맨 위로 스크롤 시
+    if (scrollTop <= 0) {
+      if (prevSection) {
+        prevSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, 300); // 300ms 대기 후 섹션 이동
 });
