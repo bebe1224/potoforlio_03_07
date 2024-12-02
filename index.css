@@ -56,7 +56,6 @@ body::-webkit-scrollbar-thumb,
   /* 스크롤바 손잡이 색상 */
   border-radius: 4px;
   /* 둥근 모서리 */
-  -webkit-transition: background 0.3s ease;
   transition: background 0.3s ease;
 }
 
@@ -91,16 +90,14 @@ body::-webkit-scrollbar-track,
   padding: 0.75rem 1.65rem;
   position: relative;
   text-align: center;
-  -webkit-text-decoration: none #000000 solid;
-          text-decoration: none #000000 solid;
+  text-decoration: none #000000 solid;
   text-decoration-thickness: auto;
   width: 100%;
   max-width: 460px;
   position: relative;
   cursor: pointer;
   transform: rotate(-2deg);
-  -moz-user-select: none;
-       user-select: none;
+  user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
 }
@@ -144,8 +141,7 @@ body::-webkit-scrollbar-track,
   box-shadow: 6px 0px 0px #00ffb7;
   outline: transparent;
   position: relative;
-  -moz-user-select: none;
-       user-select: none;
+  user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
 }
@@ -166,8 +162,7 @@ body::-webkit-scrollbar-track,
   bottom: 0;
   background: linear-gradient(45deg, transparent 3%, #00ffb7 3%, #00ffb7 5%, #000000 5%);
   text-shadow: -3px -3px 0px #f8f005, 3px 3px 0px #00e6f6;
-  -webkit-clip-path: var(--slice-0);
-          clip-path: var(--slice-0);
+  clip-path: var(--slice-0);
 }
 
 .button-49:hover:after {
@@ -177,58 +172,47 @@ body::-webkit-scrollbar-track,
 
 @keyframes glitch {
   0% {
-    -webkit-clip-path: var(--slice-1);
-            clip-path: var(--slice-1);
+    clip-path: var(--slice-1);
     transform: translate(-20px, -10px);
   }
   10% {
-    -webkit-clip-path: var(--slice-3);
-            clip-path: var(--slice-3);
+    clip-path: var(--slice-3);
     transform: translate(10px, 10px);
   }
   20% {
-    -webkit-clip-path: var(--slice-1);
-            clip-path: var(--slice-1);
+    clip-path: var(--slice-1);
     transform: translate(-10px, 10px);
   }
   30% {
-    -webkit-clip-path: var(--slice-3);
-            clip-path: var(--slice-3);
+    clip-path: var(--slice-3);
     transform: translate(0px, 5px);
   }
   40% {
-    -webkit-clip-path: var(--slice-2);
-            clip-path: var(--slice-2);
+    clip-path: var(--slice-2);
     transform: translate(-5px, 0px);
   }
   50% {
-    -webkit-clip-path: var(--slice-3);
-            clip-path: var(--slice-3);
+    clip-path: var(--slice-3);
     transform: translate(5px, 0px);
   }
   60% {
-    -webkit-clip-path: var(--slice-4);
-            clip-path: var(--slice-4);
+    clip-path: var(--slice-4);
     transform: translate(5px, 10px);
   }
   70% {
-    -webkit-clip-path: var(--slice-2);
-            clip-path: var(--slice-2);
+    clip-path: var(--slice-2);
     transform: translate(-10px, 10px);
   }
   80% {
-    -webkit-clip-path: var(--slice-5);
-            clip-path: var(--slice-5);
+    clip-path: var(--slice-5);
     transform: translate(20px, -10px);
   }
   90% {
-    -webkit-clip-path: var(--slice-1);
-            clip-path: var(--slice-1);
+    clip-path: var(--slice-1);
     transform: translate(-10px, 0px);
   }
   100% {
-    -webkit-clip-path: var(--slice-1);
-            clip-path: var(--slice-1);
+    clip-path: var(--slice-1);
     transform: translate(0);
   }
 }
@@ -243,7 +227,6 @@ body::-webkit-scrollbar-track,
     line-height: 88px;
   }
 }
-/* CSS */
 .button-55 {
   align-self: center;
   background-color: #fff;
@@ -270,8 +253,7 @@ body::-webkit-scrollbar-track,
   border-bottom-right-radius: 225px 15px;
   border-top-left-radius: 255px 15px;
   border-top-right-radius: 15px 225px;
-  -moz-user-select: none;
-       user-select: none;
+  user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
 }
@@ -295,8 +277,7 @@ body::-webkit-scrollbar-track,
   position: relative;
   z-index: 0;
   border-radius: 10px;
-  -moz-user-select: none;
-       user-select: none;
+  user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
 }
@@ -347,14 +328,14 @@ body::-webkit-scrollbar-track,
   align-items: center;
   font-family: "Caveat-bold", sans-serif;
   font-size: 80px;
-  width: 316px;
-  height: 316px;
-  border: 2px solid #ffffff;
-  border-radius: 15px;
+  width: 300px;
+  height: 300px;
+  border: 3px solid #ffffff;
+  border-radius: 999px;
 }
 .sect3-1-box1 p {
   color: #fff;
-  transform: rotate(-5deg);
+  transform: rotate(5deg);
 }
 
 .sect3-1-box2 {
@@ -362,15 +343,16 @@ body::-webkit-scrollbar-track,
   justify-content: center;
   align-items: center;
   width: 316px;
-  height: 95px;
+  height: 99%;
   border-radius: 15px;
-  background-color: #fafafa;
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
 .sect3-1-box3 {
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
   display: flex;
   width: 823px;
-  height: 95px;
+  height: 90px;
   border-radius: 15px;
   background-color: rgba(119, 119, 119, 0.5);
 }
@@ -381,7 +363,7 @@ body::-webkit-scrollbar-track,
   align-items: center;
   gap: 40px;
   width: 505px;
-  height: 95px;
+  height: 90px;
   font-size: 18px;
   color: #fff;
 }
@@ -536,9 +518,6 @@ header .inner ul {
   width: 300px;
 }
 
-.sect2-1 {
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-}
 .sect2-1 .inner {
   display: flex;
 }
@@ -726,14 +705,10 @@ header .inner ul {
   transform: rotate(26deg);
 }
 
-.sect3 {
+.sect3 .star-field {
+  position: absolute;
   background-color: rgb(0, 0, 0);
   background-image: radial-gradient(circle at top right, rgba(121, 68, 154, 0.13), transparent), radial-gradient(circle at 20% 80%, rgba(41, 196, 255, 0.13), transparent);
-}
-.sect3 canvas {
-  position: absolute;
-  width: 100%;
-  height: 100%;
 }
 .sect3 .inner {
   display: flex;
@@ -830,17 +805,19 @@ header .inner ul {
 
 .sect3-1 {
   transform: scaleY(-1);
+}
+.sect3-1 .star-field {
+  position: absolute;
+  clip-path: polygon(100% 100%, 0% 100%, 0% 42.22%, 2% 42.03%, 4% 41.48%, 6% 40.59%, 8% 39.38%, 10% 37.91%, 12% 36.22%, 14% 34.36%, 16% 32.42%, 18% 30.46%, 20% 28.54%, 22% 26.73%, 24% 25.11%, 26% 23.71%, 28% 22.61%, 30% 21.83%, 32% 21.4%, 34% 21.34%, 36% 21.64%, 38% 22.31%, 40% 23.31%, 42% 24.61%, 44% 26.17%, 46% 27.92%, 48% 29.81%, 50% 31.77%, 52% 33.72%, 54% 35.61%, 56% 37.36%, 58% 38.92%, 60% 40.22%, 62% 41.22%, 64% 41.89%, 66% 42.19%, 68% 42.13%, 70% 41.7%, 72% 40.92%, 74% 39.82%, 76% 38.43%, 78% 36.8%, 80% 34.99%, 82% 33.08%, 84% 31.11%, 86% 29.17%, 88% 27.32%, 90% 25.62%, 92% 24.15%, 94% 22.94%, 96% 22.05%, 98% 21.5%, 100% 21.32%);
   background-color: rgb(0, 0, 0);
   background-image: radial-gradient(circle at top right, rgba(121, 68, 154, 0.13), transparent), radial-gradient(circle at 20% 80%, rgba(41, 196, 255, 0.13), transparent);
 }
-.sect3-1 canvas {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
 .sect3-1 .inner {
+  display: flex;
+  flex-direction: column;
   transform: scaleY(-1);
   padding: 80px 0px;
+  gap: 32px;
 }
 .sect3-1 .inner .up {
   display: flex;
@@ -873,6 +850,10 @@ header .inner ul {
   flex-direction: column;
   gap: 16px;
 }
+.sect3-1 .inner .up .box-wrap .sect3-1-box3 {
+  display: flex;
+  flex-direction: row-reverse;
+}
 .sect3-1 .inner .up .size4 {
   width: 200px;
 }
@@ -881,25 +862,61 @@ header .inner ul {
   justify-content: space-between;
   align-items: center;
   height: 60%;
-  margin-top: 32px;
 }
 .sect3-1 .inner .down .box-wrap {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
+.sect3-1 .inner .down .box-wrap .sect3-1-box3 {
+  display: flex;
+  flex-direction: row-reverse;
+}
 
-.sect3-2 {
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-}
 .sect3-2 .inner {
-  display: grid;
-  grid-template-columns: repeat(5, 20%);
-  /* 5 x 20 그리드 */
-  grid-template-rows: repeat(5, 20%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.sect3-2 .inner div {
-  border: 1px solid black;
+.sect3-2 .inner .sect3-2Swiper {
+  width: 1200px;
+  height: 600px;
+}
+.sect3-2 .inner .sect3-2Swiper .swiper-wrapper .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.sect3-2 .inner .sect3-2Swiper .swiper-wrapper .swiper-slide .wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 8px;
+  position: absolute;
+  top: 60%;
+}
+.sect3-2 .inner .sect3-2Swiper .swiper-wrapper .swiper-slide .wrap ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+.sect3-2 .inner .sect3-2Swiper .swiper-wrapper .swiper-slide .p-w {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 8px;
+  position: absolute;
+  top: 70%;
+}
+.sect3-2 .inner .sect3-2Swiper .swiper-wrapper .slide1 {
+  background-image: url(./img/sect3-1img/더롱다크.gif);
 }
 
 .sect4 {

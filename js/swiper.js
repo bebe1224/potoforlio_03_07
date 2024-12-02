@@ -1,3 +1,23 @@
+
+// ==== sect3-2 swiper
+const sect3_2swiper = new Swiper(".sect3-2Swiper", {
+  // effect: "cards",
+  // effect: "cube",
+  effect: "coverflow",
+  // effect: "flip",
+  // effect: "fade",
+  // effect: "slide",
+  grabCursor: true,
+  loop: true,
+  speed: 1000,
+  slidesPerView: 3,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+});
+
+
 // ==== sect4 swiper
 const sect4swiper = new Swiper(".sect4Swiper", {
   // effect: "cards",
