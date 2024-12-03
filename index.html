@@ -38,6 +38,7 @@
     </section>
     <!-- profile and Symbol -->
     <section class="sect sect2">
+        <canvas class="star-field"></canvas>
         <div class="inner">
             <img src="./img/sect2img/Smiling crescent moon.png" alt="달" class="position1 scale1 sect1gsap1">
             <img src="./img/sect2img/flying star.png" alt="별동별" class="position2 scale2 sect1gsap2">
@@ -139,6 +140,7 @@
         </div>
     </section>
     <section class="sect sect2-2">
+        <canvas class="star-field"></canvas>
         <div class="inner">
             <div class="p-ws">
                 <p class="p1">ABOUT ME</p>
@@ -209,468 +211,89 @@
         <canvas class="star-field">
         </canvas>
         <div class="inner">
-            <div class="up">
-                <div class="sect3-1-box1">
-                    <p> work-list</p>
-                </div>
-                <img src="./img/sect3-1img/작은다이아.png" alt="작은다이아" class="common position1 size1">
-                <img src="./img/sect3-1img/큰 다이아.png" alt="큰다이아" class="common position2 size2">
-                <img src="./img/sect3-1img/콘솔로그.png" alt="콘솔로그" class="common position3 size3">
-                <img src="./img/sect3-1img/코드 컴퓨터.png" alt="코드컴퓨터" class="common position4 size4">
-
-                <div class="box-wrap">
-                    <div class="sect3-1-box3">
-                        <div class="sect3-1-box2">
-                            <img src="./img/sect3-1img/로고1.png" alt="로고1">
-                        </div>
-                        <div class="sect3-1-box4">
-                            <div class="tool">
-                                <p class="p1">
-                                    작업툴
-                                </p>
-                                <div class="i-w">
-                                    <img src="./img/sect3-1img/html.png" alt="html">
-                                    <img src="./img/sect3-1img/css3.png" alt="css3">
-                                    <img src="./img/sect3-1img/scss.png" alt="scss">
-                                    <img src="./img/sect3-1img/jq.png" alt="jq">
-                                    <img src="./img/sect3-1img/java.png" alt="java">
-                                </div>
-                            </div>
-                            <div class="date">
-                                <p class="p1">
-                                    작업기간
-                                </p>
-                                <p>6.17 ~ 6.18(1일)</p>
-                            </div>
-                            <div class="site">
-                                <a href="#">
-                                    <p class="p1">
-                                        사이트 이동
-                                    </p>
-                                    <img src="./img/sect3-1img/arrow.png" alt="애로우">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="sect3-1-box3">
-                        <div class="sect3-1-box2">
-                            <img src="./img/sect3-1img/로고2.png" alt="로고2">
-                        </div>
-                        <div class="sect3-1-box4">
-                            <div class="tool">
-                                <p class="p1">
-                                    작업툴
-                                </p>
-                                <div class="i-w">
-                                    <img src="./img/sect3-1img/html.png" alt="html">
-                                    <img src="./img/sect3-1img/css3.png" alt="css3">
-                                    <img src="./img/sect3-1img/scss.png" alt="scss">
-                                    <img src="./img/sect3-1img/jq.png" alt="jq">
-                                    <img src="./img/sect3-1img/java.png" alt="java">
-                                </div>
-                            </div>
-                            <div class="date">
-                                <p class="p1">
-                                    작업기간
-                                </p>
-                                <p>6.17 ~ 6.18(1일)</p>
-                            </div>
-                            <div class="site">
-                                <a href="#">
-                                    <p class="p1">
-                                        사이트 이동
-                                    </p>
-                                    <img src="./img/sect3-1img/arrow.png" alt="애로우">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="sect3-1-box3">
-                        <div class="sect3-1-box2">
-                            <img src="./img/sect3-1img/로고3.png" alt="로고3">
-                        </div>
-                        <div class="sect3-1-box4">
-                            <div class="tool">
-                                <p class="p1">
-                                    작업툴
-                                </p>
-                                <div class="i-w">
-                                    <img src="./img/sect3-1img/html.png" alt="html">
-                                    <img src="./img/sect3-1img/css3.png" alt="css3">
-                                    <img src="./img/sect3-1img/scss.png" alt="scss">
-                                    <img src="./img/sect3-1img/jq.png" alt="jq">
-                                    <img src="./img/sect3-1img/java.png" alt="java">
-                                </div>
-                            </div>
-                            <div class="date">
-                                <p class="p1">
-                                    작업기간
-                                </p>
-                                <p>6.17 ~ 6.18(1일)</p>
-                            </div>
-                            <div class="site">
-                                <a href="#">
-                                    <p class="p1">
-                                        사이트 이동
-                                    </p>
-                                    <img src="./img/sect3-1img/arrow.png" alt="애로우">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+            <div class="Description common">
+                <div class="wrap">
+                    <h2 id="work-title">작품명</h2>
+                    <p><strong id="work-description-label">작품설명:</strong>
+                        <span id="work-description">설명이 여기에
+                            표시됩니다.</span>
+                    </p>
+                    <p><strong id="work-duration-label">작품제작기간:</strong>
+                        <span id="work-duration">2024년 1월 - 2024년
+                            3월</span>
+                    </p>
+                    <a href="#" id="work-link">사이트이동 <span><img src="./svg/arrow2.svg" alt=""></span></a>
                 </div>
             </div>
-            <div class="down">
-                <div class="box-wrap">
-                    <div class="sect3-1-box3">
-                        <div class="sect3-1-box2">
-                            <img src="./img/sect3-1img/로고4.png" alt="로고4">
-                        </div>
-                        <div class="sect3-1-box4">
-                            <div class="tool">
-                                <p class="p1">
-                                    작업툴
-                                </p>
-                                <div class="i-w">
-                                    <img src="./img/sect3-1img/html.png" alt="html">
-                                    <img src="./img/sect3-1img/css3.png" alt="css3">
-                                    <img src="./img/sect3-1img/scss.png" alt="scss">
-                                    <img src="./img/sect3-1img/jq.png" alt="jq">
-                                    <img src="./img/sect3-1img/java.png" alt="java">
-                                </div>
-                            </div>
-                            <div class="date">
-                                <p class="p1">
-                                    작업기간
-                                </p>
-                                <p>6.17 ~ 6.18(1일)</p>
-                            </div>
-                            <div class="site">
-                                <a href="#">
-                                    <p class="p1">
-                                        사이트 이동
-                                    </p>
-                                    <img src="./img/sect3-1img/arrow.png" alt="애로우">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="sect3-1-box3">
-                        <div class="sect3-1-box2">
-                            <img src="./img/sect3-1img/로고5.png" alt="로고5">
-                        </div>
-                        <div class="sect3-1-box4">
-                            <div class="tool">
-                                <p class="p1">
-                                    작업툴
-                                </p>
-                                <div class="i-w">
-                                    <img src="./img/sect3-1img/html.png" alt="html">
-                                    <img src="./img/sect3-1img/css3.png" alt="css3">
-                                    <img src="./img/sect3-1img/scss.png" alt="scss">
-                                    <img src="./img/sect3-1img/jq.png" alt="jq">
-                                    <img src="./img/sect3-1img/java.png" alt="java">
-                                </div>
-                            </div>
-                            <div class="date">
-                                <p class="p1">
-                                    작업기간
-                                </p>
-                                <p>6.17 ~ 6.18(1일)</p>
-                            </div>
-                            <div class="site">
-                                <a href="#">
-                                    <p class="p1">
-                                        사이트 이동
-                                    </p>
-                                    <img src="./img/sect3-1img/arrow.png" alt="애로우">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="sect3-1-box3">
-                        <div class="sect3-1-box2">
-                            <img src="./img/sect3-1img/로고6.png" alt="로고6">
-                        </div>
-                        <div class="sect3-1-box4">
-                            <div class="tool">
-                                <p class="p1">
-                                    작업툴
-                                </p>
-                                <div class="i-w">
-                                    <img src="./img/sect3-1img/html.png" alt="html">
-                                    <img src="./img/sect3-1img/css3.png" alt="css3">
-                                    <img src="./img/sect3-1img/scss.png" alt="scss">
-                                    <img src="./img/sect3-1img/jq.png" alt="jq">
-                                    <img src="./img/sect3-1img/java.png" alt="java">
-                                </div>
-                            </div>
-                            <div class="date">
-                                <p class="p1">
-                                    작업기간
-                                </p>
-                                <p>6.17 ~ 6.18(1일)</p>
-                            </div>
-                            <div class="site">
-                                <a href="#">
-                                    <p class="p1">
-                                        사이트 이동
-                                    </p>
-                                    <img src="./img/sect3-1img/arrow.png" alt="애로우">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="sect3-1-box3">
-                        <div class="sect3-1-box2">
-                            <img src="./img/sect3-1img/로고7.png" alt="로고7">
-                        </div>
-                        <div class="sect3-1-box4">
-                            <div class="tool">
-                                <p class="p1">
-                                    작업툴
-                                </p>
-                                <div class="i-w">
-                                    <img src="./img/sect3-1img/html.png" alt="html">
-                                    <img src="./img/sect3-1img/css3.png" alt="css3">
-                                    <img src="./img/sect3-1img/scss.png" alt="scss">
-                                    <img src="./img/sect3-1img/jq.png" alt="jq">
-                                    <img src="./img/sect3-1img/java.png" alt="java">
-                                </div>
-                            </div>
-                            <div class="date">
-                                <p class="p1">
-                                    작업기간
-                                </p>
-                                <p>6.17 ~ 6.18(1일)</p>
-                            </div>
-                            <div class="site">
-                                <a href="#">
-                                    <p class="p1">
-                                        사이트 이동
-                                    </p>
-                                    <img src="./img/sect3-1img/arrow.png" alt="애로우">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="box-wrap">
-                    <div class="sect3-1-box3">
-                        <div class="sect3-1-box2">
-                            <img src="./img/sect3-1img/로고8.png" alt="로고8">
-                        </div>
-                        <div class="sect3-1-box4">
-                            <div class="tool">
-                                <p class="p1">
-                                    작업툴
-                                </p>
-                                <div class="i-w">
-                                    <img src="./img/sect3-1img/html.png" alt="html">
-                                    <img src="./img/sect3-1img/css3.png" alt="css3">
-                                    <img src="./img/sect3-1img/scss.png" alt="scss">
-                                    <img src="./img/sect3-1img/jq.png" alt="jq">
-                                    <img src="./img/sect3-1img/java.png" alt="java">
-                                </div>
-                            </div>
-                            <div class="date">
-                                <p class="p1">
-                                    작업기간
-                                </p>
-                                <p>6.17 ~ 6.18(1일)</p>
-                            </div>
-                            <div class="site">
-                                <a href="#">
-                                    <p class="p1">
-                                        사이트 이동
-                                    </p>
-                                    <img src="./img/sect3-1img/arrow.png" alt="애로우">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="sect3-1-box3">
-                        <div class="sect3-1-box2">
-                            <img src="./img/sect3-1img/로고9.png" alt="로고9">
-                        </div>
-                        <div class="sect3-1-box4">
-                            <div class="tool">
-                                <p class="p1">
-                                    작업툴
-                                </p>
-                                <div class="i-w">
-                                    <img src="./img/sect3-1img/html.png" alt="html">
-                                    <img src="./img/sect3-1img/css3.png" alt="css3">
-                                    <img src="./img/sect3-1img/scss.png" alt="scss">
-                                    <img src="./img/sect3-1img/jq.png" alt="jq">
-                                    <img src="./img/sect3-1img/java.png" alt="java">
-                                </div>
-                            </div>
-                            <div class="date">
-                                <p class="p1">
-                                    작업기간
-                                </p>
-                                <p>6.17 ~ 6.18(1일)</p>
-                            </div>
-                            <div class="site">
-                                <a href="#">
-                                    <p class="p1">
-                                        사이트 이동
-                                    </p>
-                                    <img src="./img/sect3-1img/arrow.png" alt="애로우">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="sect3-1-box3">
-                        <div class="sect3-1-box2">
-                            <img src="./img/sect3-1img/로고10.png" alt="로고10">
-                        </div>
-                        <div class="sect3-1-box4">
-                            <div class="tool">
-                                <p class="p1">
-                                    작업툴
-                                </p>
-                                <div class="i-w">
-                                    <img src="./img/sect3-1img/html.png" alt="html">
-                                    <img src="./img/sect3-1img/css3.png" alt="css3">
-                                    <img src="./img/sect3-1img/scss.png" alt="scss">
-                                    <img src="./img/sect3-1img/jq.png" alt="jq">
-                                    <img src="./img/sect3-1img/java.png" alt="java">
-                                </div>
-                            </div>
-                            <div class="date">
-                                <p class="p1">
-                                    작업기간
-                                </p>
-                                <p>6.17 ~ 6.18(1일)</p>
-                            </div>
-                            <div class="site">
-                                <a href="#">
-                                    <p class="p1">
-                                        사이트 이동
-                                    </p>
-                                    <img src="./img/sect3-1img/arrow.png" alt="애로우">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="sect3-1-box3">
-                        <div class="sect3-1-box2">
-                            <img src="./img/sect3-1img/로고11.png" alt="로고11">
-                        </div>
-                        <div class="sect3-1-box4">
-                            <div class="tool">
-                                <p class="p1">
-                                    작업툴
-                                </p>
-                                <div class="i-w">
-                                    <img src="./img/sect3-1img/html.png" alt="html">
-                                    <img src="./img/sect3-1img/css3.png" alt="css3">
-                                    <img src="./img/sect3-1img/scss.png" alt="scss">
-                                    <img src="./img/sect3-1img/jq.png" alt="jq">
-                                    <img src="./img/sect3-1img/java.png" alt="java">
-                                </div>
-                            </div>
-                            <div class="date">
-                                <p class="p1">
-                                    작업기간
-                                </p>
-                                <p>6.17 ~ 6.18(1일)</p>
-                            </div>
-                            <div class="site">
-                                <a href="#">
-                                    <p class="p1">
-                                        사이트 이동
-                                    </p>
-                                    <img src="./img/sect3-1img/arrow.png" alt="애로우">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="view-more common">
+                리스트 목록
+                <div class="toggle-button" onclick="this.classList.toggle('active')">
+                    <div class="toggle-knob"></div>
+                  </div>
             </div>
-    </section>
-    <section class=" sect sect3-2">
-        <div class="inner">
-            <div class="swiper sect3-2Swiper">
+            <div class="swiper sect3-1Swiper common">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide slide1">
-                        <a href="#">
-                            <img src="" alt="더롱다크 로고">
-                        </a>
-                        <div class="wrap">
-                            <p>작업툴</p>
-                            <ul>
-                                <li><img src="./img/sect3-1img/html.png" alt="html"></li>
-                                <li><img src="./img/sect3-1img/css3.png" alt="css"></li>
-                                <li><img src="./img/sect3-1img/scss.png" alt="scss"></li>
-                                <li><img src="./img/sect3-1img/jq.png" alt="제이"></li>
-                                <li><img src="./img/sect3-1img/java.png" alt="자바"></li>
-                            </ul>
-                        </div>
-                        <div class="p-w">
-                            <p>제작기간</p>
-                            <p>2024.6.17</p>
-
-                        </div>
                     </div>
                     <div class="swiper-slide slide2">
-                        <img src="" alt="빵빵이일상">
                     </div>
                     <div class="swiper-slide slide3">
-                        <img src="" alt="루즈벨트">
                     </div>
                     <div class="swiper-slide slide4">
-                        <img src="" alt="죠스떡뽁이">
                     </div>
                     <div class="swiper-slide slide5">
-                        <img src="" alt="빵바오">
                     </div>
                     <div class="swiper-slide slide6">
-                        <img src="" alt="넥스원">
+                        <img src="./img/sect3-1img/로고6.png" alt="넥스원로고6">
                     </div>
                     <div class="swiper-slide slide7">
-                        <img src="" alt="메이플그리드">
                     </div>
                     <div class="swiper-slide slide8">
-                        <img src="" alt="메이플87">
                     </div>
                     <div class="swiper-slide slide9">
-                        <img src="" alt="쌤소나이트">
+                        <img src="./img/sect3-1img/쌤소나이트.png" alt="쌤소나이트 로고">
                     </div>
                     <div class="swiper-slide slide10">
-                        <img src="" alt="루카831">
                     </div>
                     <div class="swiper-slide slide11">
-                        <img src="" alt="우담라이팅">
+                        <img src="./img/sect3-1img/로고10.png" alt="우담라이팅 로고10">
                     </div>
                     <div class="swiper-slide slide12">
-                        <img src="" alt="웨스틴조선">
+                        <img src="./img/sect3-1img/로고11.png" alt="웨스틴조선 로고11">
                     </div>
                     <div class="swiper-slide slide13">
-                        <img src="" alt="뮤고박스">
                     </div>
                     <div class="swiper-slide slide14">
-                        <img src="" alt="칠성사이다">
+                        <img src="./img/sect3-1img/칠성.png" alt="칠성사이다" class="img1">
+                        <img src="./img/sect3-1img/칠성 효과9-19.png" alt="칠성사이다 효과" class="img2">
                     </div>
                     <div class="swiper-slide slide15">
-                        <img src="" alt="청와대">
+                        <img src="./img/sect3-1img/청와대10-10.png" alt="청와대">
                     </div>
                     <div class="swiper-slide slide16">
-                        <img src="" alt="예스24">
+                        <img src="/img/sect3-1img/예스24 10-21.png" alt="예스24">
                     </div>
                     <div class="swiper-slide slide17">
-                        <img src="" alt="에이스침대">
-                    </div>
-                    <div class="swiper-slide slide18">
-                        <img src="" alt="테스트">
+                        <img src="./img/sect3-1img/에이스10-24 1.png" alt="에이스침대">
                     </div>
                 </div>
-                <div class="swiper-pagination"></div>
+                <!-- <div class="swiper-pagination"></div> -->
+            </div>
+            <div class="swiper-button-prev common">
+                <img src="./svg/arrow1.svg" alt="">
+            </div>
+            <div class="swiper-button-next common">
+                <img src="./svg/arrow1.svg" alt="">
+            </div>
+            <div class="slide-counter common">
+                <p>1/17</p>
+            </div>
+
+            <div class="hidden-list">
             </div>
         </div>
     </section>
+
     <!-- videoEditing -->
     <section class="sect sect4">
         <div class="inner">
@@ -995,7 +618,7 @@
             </div>
         </div>
     </section>
-    <!-- web -->
+    <!-- project -->
     <section class="sect sect5">
         <div class="inner">
         </div>
@@ -1004,14 +627,7 @@
         <div class="inner">
         </div>
     </section>
-    <section class="sect sect5-2">
-        <div class="inner">
-        </div>
-    </section>
-    <section class="sect sect5-3">
-        <div class="inner">
-        </div>
-    </section>
+
 
 
 

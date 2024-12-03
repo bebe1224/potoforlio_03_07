@@ -8,6 +8,48 @@
   color: inherit;
 }
 
+@keyframes wobble-left {
+  0%, 100% {
+    transform: translateY(0) rotate(0);
+    transform-origin: 50% 50%;
+  }
+  15% {
+    transform: translateY(-30px) rotate(-6deg);
+  }
+  30% {
+    transform: translateY(15px) rotate(6deg);
+  }
+  45% {
+    transform: translateY(-15px) rotate(-3.6deg);
+  }
+  60% {
+    transform: translateY(9px) rotate(2.4deg);
+  }
+  75% {
+    transform: translateY(-6px) rotate(-1.2deg);
+  }
+}
+@keyframes shake {
+  0%, 100% {
+    transform: rotate(0deg);
+    transform-origin: 50% 0;
+  }
+  10% {
+    transform: rotate(2deg);
+  }
+  20%, 40%, 60% {
+    transform: rotate(-4deg);
+  }
+  30%, 50%, 70% {
+    transform: rotate(4deg);
+  }
+  80% {
+    transform: rotate(-2deg);
+  }
+  90% {
+    transform: rotate(2deg);
+  }
+}
 .pink_line {
   position: relative;
   z-index: 1;
@@ -322,6 +364,34 @@ body::-webkit-scrollbar-track,
   border-radius: 10px;
 }
 
+.toggle-button {
+  width: 60px;
+  height: 30px;
+  background-color: #ccc; /* 기본 배경색 (비활성 상태) */
+  border-radius: 30px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* 배경색 변경 효과 */
+  /* 토글 내부 원 */
+  /* 활성화 상태 (토글이 오른쪽으로 이동) */
+}
+.toggle-button .toggle-knob {
+  width: 26px;
+  height: 26px;
+  background-color: white; /* 원의 색상 */
+  border-radius: 50%;
+  position: absolute;
+  top: 2px; /* 상단 여백 */
+  left: 2px; /* 좌측 여백 */
+  transition: left 0.3s ease; /* 원 이동 효과 */
+}
+.toggle-button.active {
+  background-color: #4caf50; /* 활성화된 배경색 */
+}
+.toggle-button.active .toggle-knob {
+  left: 32px; /* 오른쪽으로 이동 */
+}
+
 .sect3-1-box1 {
   display: flex;
   justify-content: center;
@@ -437,14 +507,10 @@ header .inner ul {
   height: 100vh;
 }
 
-.sect1 {
-  background-color: #000;
-  background-image: radial-gradient(circle at top right, rgba(121, 68, 154, 0.13), transparent), radial-gradient(circle at 20% 80%, rgba(41, 196, 255, 0.13), transparent);
-}
-.sect1 canvas {
+.sect1 .star-field {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  background-color: rgb(0, 0, 0);
+  background-image: radial-gradient(circle at top right, rgba(121, 68, 154, 0.13), transparent), radial-gradient(circle at 20% 80%, rgba(41, 196, 255, 0.13), transparent);
 }
 .sect1 .inner {
   display: flex;
@@ -485,6 +551,13 @@ header .inner ul {
   top: 10%;
 }
 
+.sect2 .star-field {
+  transform: scaleY(-1);
+  position: absolute;
+  background-color: rgb(0, 0, 0);
+  background-image: radial-gradient(circle at top right, rgba(121, 68, 154, 0.13), transparent), radial-gradient(circle at 20% 80%, rgba(41, 196, 255, 0.13), transparent);
+  clip-path: polygon(100% 100%, 0% 100%, 0% 78.89%, 2% 78.8%, 4% 78.55%, 6% 78.14%, 8% 77.58%, 10% 76.9%, 12% 76.12%, 14% 75.27%, 16% 74.38%, 18% 73.47%, 20% 72.59%, 22% 71.75%, 24% 71%, 26% 70.36%, 28% 69.85%, 30% 69.49%, 32% 69.3%, 34% 69.27%, 36% 69.41%, 38% 69.72%, 40% 70.18%, 42% 70.78%, 44% 71.49%, 46% 72.3%, 48% 73.17%, 50% 74.07%, 52% 74.98%, 54% 75.85%, 56% 76.65%, 58% 77.37%, 60% 77.97%, 62% 78.43%, 64% 78.74%, 66% 78.88%, 68% 78.85%, 70% 78.65%, 72% 78.29%, 74% 77.78%, 76% 77.14%, 78% 76.39%, 80% 75.56%, 82% 74.68%, 84% 73.77%, 86% 72.88%, 88% 72.02%, 90% 71.24%, 92% 70.56%, 94% 70.01%, 96% 69.6%, 98% 69.34%, 100% 69.26%);
+}
 .sect2 .inner {
   position: relative;
 }
@@ -661,6 +734,13 @@ header .inner ul {
   position: relative;
   overflow: hidden;
 }
+.sect2-2 .star-field {
+  transform: scaleY(-1);
+  position: absolute;
+  background-color: rgb(0, 0, 0);
+  background-image: radial-gradient(circle at top right, rgba(121, 68, 154, 0.13), transparent), radial-gradient(circle at 20% 80%, rgba(41, 196, 255, 0.13), transparent);
+  clip-path: polygon(100% 0%, 0% 0%, 0% 23.7%, 2% 23.53%, 4% 23.01%, 6% 22.18%, 8% 21.04%, 10% 19.66%, 12% 18.07%, 14% 16.33%, 16% 14.51%, 18% 12.66%, 20% 10.86%, 22% 9.16%, 24% 7.63%, 26% 6.33%, 28% 5.29%, 30% 4.55%, 32% 4.15%, 34% 4.09%, 36% 4.38%, 38% 5.01%, 40% 5.95%, 42% 7.17%, 44% 8.63%, 46% 10.28%, 48% 12.05%, 50% 13.89%, 52% 15.73%, 54% 17.5%, 56% 19.15%, 58% 20.61%, 60% 21.83%, 62% 22.77%, 64% 23.4%, 66% 23.68%, 68% 23.63%, 70% 23.22%, 72% 22.49%, 74% 21.45%, 76% 20.15%, 78% 18.62%, 80% 16.92%, 82% 15.12%, 84% 13.27%, 86% 11.45%, 88% 9.71%, 90% 8.12%, 92% 6.73%, 94% 5.6%, 96% 4.76%, 98% 4.25%, 100% 4.07%);
+}
 .sect2-2 .inner .p-ws {
   display: flex;
   flex-direction: column;
@@ -686,23 +766,23 @@ header .inner ul {
   width: 350px;
 }
 .sect2-2 .inner img:nth-of-type(2) {
-  width: 1000px;
+  width: 600px;
 }
 .sect2-2 .inner img:nth-of-type(3) {
-  width: 600px;
+  width: 300px;
 }
 .sect2-2 .inner .position1 {
   top: 45%;
   left: 6.5%;
 }
 .sect2-2 .inner .position2 {
-  top: -29%;
-  right: -12%;
+  top: 5%;
+  right: 5%;
 }
 .sect2-2 .inner .position3 {
-  top: 44%;
-  right: 5%;
-  transform: rotate(26deg);
+  top: 50%;
+  right: 15%;
+  transform: rotate(25deg);
 }
 
 .sect3 .star-field {
@@ -808,81 +888,24 @@ header .inner ul {
 }
 .sect3-1 .star-field {
   position: absolute;
-  clip-path: polygon(100% 100%, 0% 100%, 0% 42.22%, 2% 42.03%, 4% 41.48%, 6% 40.59%, 8% 39.38%, 10% 37.91%, 12% 36.22%, 14% 34.36%, 16% 32.42%, 18% 30.46%, 20% 28.54%, 22% 26.73%, 24% 25.11%, 26% 23.71%, 28% 22.61%, 30% 21.83%, 32% 21.4%, 34% 21.34%, 36% 21.64%, 38% 22.31%, 40% 23.31%, 42% 24.61%, 44% 26.17%, 46% 27.92%, 48% 29.81%, 50% 31.77%, 52% 33.72%, 54% 35.61%, 56% 37.36%, 58% 38.92%, 60% 40.22%, 62% 41.22%, 64% 41.89%, 66% 42.19%, 68% 42.13%, 70% 41.7%, 72% 40.92%, 74% 39.82%, 76% 38.43%, 78% 36.8%, 80% 34.99%, 82% 33.08%, 84% 31.11%, 86% 29.17%, 88% 27.32%, 90% 25.62%, 92% 24.15%, 94% 22.94%, 96% 22.05%, 98% 21.5%, 100% 21.32%);
   background-color: rgb(0, 0, 0);
   background-image: radial-gradient(circle at top right, rgba(121, 68, 154, 0.13), transparent), radial-gradient(circle at 20% 80%, rgba(41, 196, 255, 0.13), transparent);
+  clip-path: polygon(100% 100%, 0% 100%, 0% 23.24%, 2% 23.15%, 4% 22.88%, 6% 22.43%, 8% 21.82%, 10% 21.06%, 12% 20.16%, 14% 19.15%, 16% 18.06%, 18% 16.89%, 20% 15.69%, 22% 14.48%, 24% 13.28%, 26% 12.13%, 28% 11.04%, 30% 10.05%, 32% 9.18%, 34% 8.44%, 36% 7.85%, 38% 7.44%, 40% 7.19%, 42% 7.13%, 44% 7.25%, 46% 7.56%, 48% 8.03%, 50% 8.67%, 52% 9.45%, 54% 10.37%, 56% 11.39%, 58% 12.5%, 60% 13.68%, 62% 14.88%, 64% 16.09%, 66% 17.29%, 68% 18.43%, 70% 19.5%, 72% 20.47%, 74% 21.33%, 76% 22.04%, 78% 22.6%, 80% 22.99%, 82% 23.2%, 84% 23.23%, 86% 23.08%, 88% 22.75%, 90% 22.24%, 92% 21.58%, 94% 20.77%, 96% 19.84%, 98% 18.8%, 100% 17.67%);
 }
 .sect3-1 .inner {
-  display: flex;
-  flex-direction: column;
-  transform: scaleY(-1);
-  padding: 80px 0px;
-  gap: 32px;
-}
-.sect3-1 .inner .up {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   position: relative;
-  height: 40%;
+  transform: scaleY(-1);
 }
-.sect3-1 .inner .up .common {
+.sect3-1 .inner .sect3-1Swiper {
+  padding: 20px 0px;
+  width: 1080px;
+  height: 576px;
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-30%, -50%);
 }
-.sect3-1 .inner .up .position1 {
-  top: -10%;
-  left: 20%;
-}
-.sect3-1 .inner .up .position2 {
-  top: 0%;
-  left: 22.5%;
-}
-.sect3-1 .inner .up .position3 {
-  top: 30%;
-  left: 25%;
-}
-.sect3-1 .inner .up .position4 {
-  top: 62%;
-  left: 38%;
-}
-.sect3-1 .inner .up .box-wrap {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-.sect3-1 .inner .up .box-wrap .sect3-1-box3 {
-  display: flex;
-  flex-direction: row-reverse;
-}
-.sect3-1 .inner .up .size4 {
-  width: 200px;
-}
-.sect3-1 .inner .down {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 60%;
-}
-.sect3-1 .inner .down .box-wrap {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-.sect3-1 .inner .down .box-wrap .sect3-1-box3 {
-  display: flex;
-  flex-direction: row-reverse;
-}
-
-.sect3-2 .inner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.sect3-2 .inner .sect3-2Swiper {
-  width: 1200px;
-  height: 600px;
-}
-.sect3-2 .inner .sect3-2Swiper .swiper-wrapper .swiper-slide {
+.sect3-1 .inner .sect3-1Swiper .swiper-wrapper .swiper-slide {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -891,37 +914,150 @@ header .inner ul {
   background-size: cover;
   background-position: center;
 }
-.sect3-2 .inner .sect3-2Swiper .swiper-wrapper .swiper-slide .wrap {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 8px;
+.sect3-1 .inner .sect3-1Swiper .swiper-wrapper .slide1 {
+  background: url(./img/sect3-1img/더롱다크.gif) no-repeat center/cover;
+}
+.sect3-1 .inner .sect3-1Swiper .swiper-wrapper .slide2 {
+  background: url(./img/sect3-1img/빵빵이일상.png) no-repeat center/cover;
+}
+.sect3-1 .inner .sect3-1Swiper .swiper-wrapper .slide3 {
+  background: url(./img/sect3-1img/루즈벨트.png) no-repeat center/cover;
+}
+.sect3-1 .inner .sect3-1Swiper .swiper-wrapper .slide4 {
+  background: url(./img/sect3-1img/죠스7-9.png) no-repeat center/cover;
+}
+.sect3-1 .inner .sect3-1Swiper .swiper-wrapper .slide5 {
+  background: url(./img/sect3-1img/빵바오7-12.png) no-repeat center/cover;
+}
+.sect3-1 .inner .sect3-1Swiper .swiper-wrapper .slide6 {
+  background-color: #fff;
+}
+.sect3-1 .inner .sect3-1Swiper .swiper-wrapper .slide7 {
+  background: url(./img/sect3-1img/메이플스토리\ 8-2.png) no-repeat center/cover;
+}
+.sect3-1 .inner .sect3-1Swiper .swiper-wrapper .slide8 {
+  background: url(./img/sect3-1img/메이플스토리8-7.png) no-repeat center/cover;
+}
+.sect3-1 .inner .sect3-1Swiper .swiper-wrapper .slide9 {
+  background-color: #fff;
+}
+.sect3-1 .inner .sect3-1Swiper .swiper-wrapper .slide9 img {
+  width: 200px;
+}
+.sect3-1 .inner .sect3-1Swiper .swiper-wrapper .slide10 {
+  background: url(./img/sect3-1img/루카831\ 8-26.png) no-repeat center/cover;
+}
+.sect3-1 .inner .sect3-1Swiper .swiper-wrapper .slide11 {
+  background-color: #fff;
+}
+.sect3-1 .inner .sect3-1Swiper .swiper-wrapper .slide12 {
+  background-color: #fff;
+}
+.sect3-1 .inner .sect3-1Swiper .swiper-wrapper .slide13 {
+  background: url(./img/sect3-1img/뮤고.png) no-repeat center/cover;
+}
+.sect3-1 .inner .sect3-1Swiper .swiper-wrapper .slide14 {
+  background-color: #fff;
+}
+.sect3-1 .inner .sect3-1Swiper .swiper-wrapper .slide14 img {
   position: absolute;
-  top: 60%;
 }
-.sect3-2 .inner .sect3-2Swiper .swiper-wrapper .swiper-slide .wrap ul {
+.sect3-1 .inner .sect3-1Swiper .swiper-wrapper .slide15 {
+  background-color: #fff;
+}
+.sect3-1 .inner .sect3-1Swiper .swiper-wrapper .slide16 {
+  background-color: #fff;
+}
+.sect3-1 .inner .sect3-1Swiper .swiper-wrapper .slide17 {
+  background-color: #fff;
+}
+.sect3-1 .inner .Description {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 8px;
-}
-.sect3-2 .inner .sect3-2Swiper .swiper-wrapper .swiper-slide .p-w {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 8px;
   position: absolute;
-  top: 70%;
+  top: 50%;
+  transform: translate(0%, -50%) translate3d(0px, 0px, -100.083px) rotateX(0deg) rotateY(20.0417deg) scale(1);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 440px;
+  height: 300px;
 }
-.sect3-2 .inner .sect3-2Swiper .swiper-wrapper .slide1 {
-  background-image: url(./img/sect3-1img/더롱다크.gif);
+.sect3-1 .inner .Description .wrap {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  gap: 16px;
+  color: rgb(0, 0, 0);
+}
+.sect3-1 .inner .Description .wrap h2 {
+  font-size: 28px;
+}
+.sect3-1 .inner .Description .wrap p {
+  font-size: 18px;
+}
+.sect3-1 .inner .Description .wrap a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+  transition: 0.3s ease-in-out;
+}
+.sect3-1 .inner .Description .wrap a span img {
+  width: 48px;
+  animation: shake 2s ease-in-out infinite;
+}
+.sect3-1 .inner .Description .wrap a:hover {
+  color: rgb(255, 72, 0);
+  transform: scale(1.05);
+}
+.sect3-1 .inner .view-more {
+  position: absolute;
+  top: 72%;
+  left: 3.5%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-weight: bold;
+}
+.sect3-1 .inner .view-more .toggle-button {
+  margin-top: 16px;
+}
+.sect3-1 .inner .swiper-button-prev {
+  margin-left: 470px;
+  transform: scaleX(-1);
+}
+.sect3-1 .inner .swiper-button-prev::after {
+  content: "";
+}
+.sect3-1 .inner .swiper-button-next {
+  margin-right: 30px;
+}
+.sect3-1 .inner .swiper-button-next::after {
+  content: "";
+}
+.sect3-1 .inner .slide-counter {
+  position: absolute;
+  left: 1%;
+  top: 30%;
+  transform: translate(0%, -50%);
+  font-size: 24px;
+  color: #fff;
+  font-weight: bold;
+}
+.sect3-1 .inner .hidden-list {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 100%;
+  height: 100vh;
 }
 
 .sect4 {
   background: url(./img/sect4img/cloud0.png) no-repeat center/cover;
-  background-attachment: fixed;
+  background-color: #fafafa;
 }
 .sect4 .inner {
   display: flex;
@@ -1028,10 +1164,12 @@ header .inner ul {
 }
 
 .sect4-1 {
+  transform: scaleY(-1);
   background: url(./img/sect4img/cloud0.png) no-repeat center/cover;
-  background-attachment: fixed;
+  background-color: #fafafa;
 }
 .sect4-1 .inner {
+  transform: scaleY(-1);
   position: relative;
   display: flex;
   justify-content: center;
@@ -1054,7 +1192,6 @@ header .inner ul {
   font-weight: bold;
 }
 .sect4-1 .inner .video-frame iframe {
-  pointer-events: none;
   position: absolute;
   z-index: 1;
 }
@@ -1104,12 +1241,11 @@ header .inner ul {
 }
 
 .sect4-2 {
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
   background: url(./img/sect4-2img/핑크\ 구름\ 평평.png);
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: bottom;
-  background-attachment: fixed;
+  background-color: #fafafa;
 }
 .sect4-2 .inner {
   display: flex;
