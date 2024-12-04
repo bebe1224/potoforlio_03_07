@@ -186,4 +186,4 @@ canvases.forEach((canvas) => {
   starFields.push({ canvas, context, stars, velocity });
 });
 
-// ================ 
+// ================ wave
