@@ -76,7 +76,6 @@
 // =====scrollbar
 body::-webkit-scrollbar,
 .sect4-1 .list-box::-webkit-scrollbar,
-.sect3::-webkit-scrollbar,
 .sect4-2 .boxs::-webkit-scrollbar {
   width: 8px;
   /* 스크롤바 너비 */
@@ -84,7 +83,6 @@ body::-webkit-scrollbar,
 
 body::-webkit-scrollbar-thumb,
 .sect4-1 .list-box::-webkit-scrollbar-thumb,
-.sect2-1::-webkit-scrollbar-thumb,
 .sect4-2 .boxs::-webkit-scrollbar-thumb {
   background: rgba(0, 0, 0, 0.3);
   /* 스크롤바 손잡이 색상 */
@@ -95,7 +93,6 @@ body::-webkit-scrollbar-thumb,
 
 body::-webkit-scrollbar-thumb:hover,
 .sect4-1 .list-box::-webkit-scrollbar-thumb:hover,
-.sect2-1::-webkit-scrollbar-thumb:hover,
 .sect4-2 .boxs::-webkit-scrollbar-thumb:hover {
   background: rgba(0, 0, 0, 0.5);
   /* 호버 시 손잡이 색상 변경 */
@@ -103,7 +100,6 @@ body::-webkit-scrollbar-thumb:hover,
 
 body::-webkit-scrollbar-track,
 .sect4-1 .list-box::-webkit-scrollbar-track,
-.sect2-1::-webkit-scrollbar-track,
 .sect4-2 .boxs::-webkit-scrollbar-track {
   background: rgba(0, 0, 0, 0.1);
   /* 스크롤바 배경 */
@@ -162,7 +158,7 @@ header {
     height: 100vh;
   }
 }
-
+// =====
 .sect1 {
   .star-field {
     position: absolute;
@@ -178,54 +174,46 @@ header {
 
     }
   }
+
   .inner {
-    @include fccc;
-
-    .p-w {
-      @include fccc;
-      gap: 32px;
-      position: absolute;
-      top: 300px;
-
-      p {
+    position: relative;
+    display: flex;
+    .left {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 45%;
+      b {
         color: #fff;
+        text-transform: uppercase;
       }
-
-      .p1 {
-        cursor: pointer;
-        font-size: 100px;
-        font-weight: bold;
-        transition: 0.3s ease-in-out;
-
-        // &:hover {
-        //   color: gold;
-        // }
+      .b1 {
+        font-size: 32px;
       }
-
-      .p2 {
-        cursor: pointer;
-        font-size: 48px;
-        text-decoration: underline;
-        transition: 0.3s ease-in-out;
-
-        &:hover {
-          color: gold;
+      .b-wrap {
+        @include fcsc;
+        .b2 {
+          font-style: italic;
+          font-size: 128px;
         }
       }
     }
-
-    img {
-      position: absolute;
-      left: 35%;
-      top: 10%;
+    .right {
+      @include fcc;
+      width: 55%;
+      img {
+        width: 800px;
+      }
     }
   }
 }
-
+// =====
 .sect2 {
+  position: relative;
   .star-field {
     transform: scaleY(-1);
     position: absolute;
+    z-index: 1;
     background-color: rgb(0, 0, 0);
     background-image: radial-gradient(
         circle at top right,
@@ -293,59 +281,22 @@ header {
   }
   .inner {
     position: relative;
-
-    img {
-      position: absolute;
-      transform: translate(-50%, -50%);
-    }
-
-    .position1 {
-      top: 45%;
-      left: 50%;
-    }
-
-    .position2 {
-      top: 75%;
-      left: 50%;
-    }
-
-    .position3 {
-      top: 20%;
-      left: 10%;
-    }
-
-    .position4 {
-      top: 78%;
-      left: 88%;
-    }
-
-    .scale1 {
-      width: 350px;
-    }
-
-    .scale2 {
-      width: 400px;
-    }
-
-    .scale3 {
-      width: 300px;
-    }
-  }
-}
-
-.sect2-1 {
-  .inner {
+    z-index: 2;
     display: flex;
+    p {
+      color: black;
+      position: relative;
+      z-index: 3;
+    }
 
     .left {
       @include fccc;
       gap: 64px;
       width: 45%;
-
       .p1 {
+        color: #fff;
         white-space: nowrap;
         font-size: 36px;
-
         span {
           font-weight: bold;
           font-size: 38px;
@@ -399,6 +350,16 @@ header {
 
             .p2 {
               font-size: 28px;
+            }
+          }
+        }
+        .p-ws1 {
+          .p1 {
+            color: #fff;
+          }
+          .p-w {
+            .w {
+              color: #fff;
             }
           }
         }
@@ -473,7 +434,9 @@ header {
             }
           }
         }
-
+        .PERSONALITY {
+          color: #fff;
+        }
         .i-ws {
           @include fc;
           gap: 16px;
@@ -492,8 +455,7 @@ header {
     }
   }
 }
-
-.sect2-2 {
+.sect2-1 {
   position: relative;
   overflow: hidden;
   .star-field {
@@ -618,7 +580,7 @@ header {
     }
   }
 }
-
+// =====
 .sect3 {
   .star-field {
     position: absolute;
@@ -648,7 +610,7 @@ header {
 
         .p1 {
           font-family: "NovaSlim";
-          font-size: 88px;
+          font-size: 76px;
           color: #fff;
         }
 
@@ -674,7 +636,6 @@ header {
         display: flex;
         flex-wrap: wrap;
         gap: 18px;
-
         .p1 {
           color: #fff;
           font-size: 21px;
@@ -694,11 +655,14 @@ header {
 
           .i-w {
             text-align: center;
-            width: 100px;
+            width: 120px;
 
             img {
             }
           }
+        }
+        .Designer {
+          transform: translateY(-16px);
         }
       }
     }
@@ -706,43 +670,21 @@ header {
     .right {
       width: 70%;
       position: relative;
-
-      .common {
+      img {
         position: absolute;
       }
-
       .position1 {
-        top: 15%;
+        left: 10%;
       }
-
+      .size1 {
+      }
       .position2 {
-        top: 7%;
-        left: 18%;
+        top: 10%;
+        left: 40%;
       }
-
-      .position3 {
-        top: 8%;
-        left: 21%;
-      }
-
-      .position4 {
-        top: 15%;
-        left: 25%;
-      }
-
-      .position5 {
-        top: 55%;
-        left: 60%;
-      }
-
-      .position6 {
-        top: 55%;
-        left: 65%;
-      }
-
-      .position7 {
-        top: 72.5%;
-        left: 56%;
+      .size2 {
+        width: 900px;
+        animation: float 3s ease-in-out infinite;
       }
     }
   }
@@ -1037,7 +979,7 @@ header {
     }
   }
 }
-
+// =====
 .sect4 {
   background: url(../img/sect4img/cloud0.png) no-repeat center/cover;
   background-color: #fafafa;
@@ -1349,113 +1291,15 @@ header {
 }
 
 // ===== sect1 반응형
-@media (max-width: 1024px) and (min-width: 768px) {
-  .sect1 {
-    .inner {
-      @include fccc;
-      gap: 32px;
 
-      .p-w {
-        @include fccc;
-        gap: 16px;
-        position: absolute;
-        top: 300px;
-
-        p {
-          color: #fff;
-        }
-
-        .p1 {
-          font-size: 88px;
-        }
-
-        .p2 {
-          font-size: 44px;
-        }
-      }
-
-      img {
-        position: absolute;
-        left: 25%;
-        top: 15%;
-      }
-
-      .img-scail {
-        width: 330px;
-      }
-    }
-  }
-}
-
-@media (max-width: 768px) and (min-width: 0px) {
-  .sect1 {
-    .inner {
-      @include fccc;
-      gap: 32px;
-
-      .p-w {
-        @include fccc;
-        gap: 16px;
-        position: absolute;
-        top: 300px;
-
-        p {
-          color: #fff;
-        }
-
-        .p1 {
-          font-size: 80px;
-        }
-
-        .p2 {
-          font-size: 40px;
-        }
-      }
-
-      img {
-        position: absolute;
-        left: 20%;
-        top: 20%;
-      }
-
-      .img-scail {
-        width: 250px;
-      }
-    }
-  }
-}
-
-// ===== sect2,sect2-1,sect2-2 반응형
+// ===== sect2,sect2-1반응형
 @media (max-width: 1530px) and (min-width: 845px) {
   .sect {
     .inner {
       width: calc(100% - 120px);
     }
   }
-
   .sect2 {
-    //   margin-top: 100px;
-    .inner {
-      img {
-        position: absolute;
-        transform: translate(-50%, -50%);
-      }
-
-      .scale1 {
-        width: 182px;
-      }
-
-      .scale2 {
-        width: 216px;
-      }
-
-      .scale3 {
-        width: 152px;
-      }
-    }
-  }
-
-  .sect2-1 {
     .inner {
       position: relative;
       display: flex;
@@ -1536,7 +1380,13 @@ header {
               }
             }
           }
-
+          .p-ws2 {
+            .p1 {
+              background: linear-gradient(111deg, white 10%, black 100%);
+              -webkit-background-clip: text;
+              color: transparent;
+            }
+          }
           .p-ws3 {
             @include fcsc;
             gap: 16px;
@@ -1660,37 +1510,13 @@ header {
     }
   }
 }
-
 @media (max-width: 845px) and (min-width: 0px) {
   .sect {
     .inner {
       width: calc(100% - 60px);
     }
   }
-
   .sect2 {
-    //   margin-top: 100px;
-    .inner {
-      img {
-        position: absolute;
-        transform: translate(-50%, -50%);
-      }
-
-      .scale1 {
-        width: 114px;
-      }
-
-      .scale2 {
-        width: 135px;
-      }
-
-      .scale3 {
-        width: 95px;
-      }
-    }
-  }
-
-  .sect2-1 {
     overflow: auto;
     -webkit-overflow-scrolling: touch;
 
@@ -1767,7 +1593,16 @@ header {
               }
             }
           }
-
+          .p-ws1 {
+            .p1 {
+              color: #000000;
+            }
+            .p-w {
+              .w {
+                color: #000000;
+              }
+            }
+          }
           .p-ws3 {
             @include fc;
             gap: 16px;
@@ -1856,7 +1691,9 @@ header {
               font-size: 24px;
               font-weight: bold;
             }
-
+            .PERSONALITY {
+              color: black;
+            }
             .i-w {
               img {
                 width: 200px;
@@ -1873,9 +1710,8 @@ header {
     }
   }
 }
-
 @media (max-width: 1560px) and (min-width: 901px) {
-  .sect2-2 {
+  .sect2-1 {
     position: relative;
     overflow: hidden;
 
@@ -1934,9 +1770,8 @@ header {
     }
   }
 }
-
 @media (max-width: 901px) and (min-width: 0px) {
-  .sect2-2 {
+  .sect2-1 {
     position: relative;
     overflow: hidden;
 
@@ -1998,7 +1833,6 @@ header {
     }
   }
 }
-
 // ===== sect3 반응형
 // ===== sect4 반응형
 @media (max-width: 1787px) and (min-width: 1030px) {
