@@ -1,4 +1,8 @@
 @charset "UTF-8";
+body {
+  overflow-x: hidden;
+}
+
 .pink_line {
   position: relative;
   z-index: 1;
@@ -42,7 +46,6 @@ body::-webkit-scrollbar-thumb,
   /* 스크롤바 손잡이 색상 */
   border-radius: 4px;
   /* 둥근 모서리 */
-  -webkit-transition: background 0.3s ease;
   transition: background 0.3s ease;
 }
 
@@ -156,8 +159,7 @@ header .inner ul {
   z-index: 1;
   background-color: rgb(0, 0, 0);
   background-image: radial-gradient(circle at top right, rgba(121, 68, 154, 0.13), transparent), radial-gradient(circle at 20% 80%, rgba(41, 196, 255, 0.13), transparent);
-  -webkit-clip-path: polygon(100% 100%, 0% 100%, 0% 78.89%, 2% 78.8%, 4% 78.55%, 6% 78.14%, 8% 77.58%, 10% 76.9%, 12% 76.12%, 14% 75.27%, 16% 74.38%, 18% 73.47%, 20% 72.59%, 22% 71.75%, 24% 71%, 26% 70.36%, 28% 69.85%, 30% 69.49%, 32% 69.3%, 34% 69.27%, 36% 69.41%, 38% 69.72%, 40% 70.18%, 42% 70.78%, 44% 71.49%, 46% 72.3%, 48% 73.17%, 50% 74.07%, 52% 74.98%, 54% 75.85%, 56% 76.65%, 58% 77.37%, 60% 77.97%, 62% 78.43%, 64% 78.74%, 66% 78.88%, 68% 78.85%, 70% 78.65%, 72% 78.29%, 74% 77.78%, 76% 77.14%, 78% 76.39%, 80% 75.56%, 82% 74.68%, 84% 73.77%, 86% 72.88%, 88% 72.02%, 90% 71.24%, 92% 70.56%, 94% 70.01%, 96% 69.6%, 98% 69.34%, 100% 69.26%);
-          clip-path: polygon(100% 100%, 0% 100%, 0% 78.89%, 2% 78.8%, 4% 78.55%, 6% 78.14%, 8% 77.58%, 10% 76.9%, 12% 76.12%, 14% 75.27%, 16% 74.38%, 18% 73.47%, 20% 72.59%, 22% 71.75%, 24% 71%, 26% 70.36%, 28% 69.85%, 30% 69.49%, 32% 69.3%, 34% 69.27%, 36% 69.41%, 38% 69.72%, 40% 70.18%, 42% 70.78%, 44% 71.49%, 46% 72.3%, 48% 73.17%, 50% 74.07%, 52% 74.98%, 54% 75.85%, 56% 76.65%, 58% 77.37%, 60% 77.97%, 62% 78.43%, 64% 78.74%, 66% 78.88%, 68% 78.85%, 70% 78.65%, 72% 78.29%, 74% 77.78%, 76% 77.14%, 78% 76.39%, 80% 75.56%, 82% 74.68%, 84% 73.77%, 86% 72.88%, 88% 72.02%, 90% 71.24%, 92% 70.56%, 94% 70.01%, 96% 69.6%, 98% 69.34%, 100% 69.26%);
+  clip-path: polygon(100% 100%, 0% 100%, 0% 78.89%, 2% 78.8%, 4% 78.55%, 6% 78.14%, 8% 77.58%, 10% 76.9%, 12% 76.12%, 14% 75.27%, 16% 74.38%, 18% 73.47%, 20% 72.59%, 22% 71.75%, 24% 71%, 26% 70.36%, 28% 69.85%, 30% 69.49%, 32% 69.3%, 34% 69.27%, 36% 69.41%, 38% 69.72%, 40% 70.18%, 42% 70.78%, 44% 71.49%, 46% 72.3%, 48% 73.17%, 50% 74.07%, 52% 74.98%, 54% 75.85%, 56% 76.65%, 58% 77.37%, 60% 77.97%, 62% 78.43%, 64% 78.74%, 66% 78.88%, 68% 78.85%, 70% 78.65%, 72% 78.29%, 74% 77.78%, 76% 77.14%, 78% 76.39%, 80% 75.56%, 82% 74.68%, 84% 73.77%, 86% 72.88%, 88% 72.02%, 90% 71.24%, 92% 70.56%, 94% 70.01%, 96% 69.6%, 98% 69.34%, 100% 69.26%);
 }
 .sect2 .inner {
   position: relative;
@@ -324,8 +326,7 @@ header .inner ul {
   position: absolute;
   background-color: rgb(0, 0, 0);
   background-image: radial-gradient(circle at top right, rgba(121, 68, 154, 0.13), transparent), radial-gradient(circle at 20% 80%, rgba(41, 196, 255, 0.13), transparent);
-  -webkit-clip-path: polygon(100% 0%, 0% 0%, 0% 23.7%, 2% 23.53%, 4% 23.01%, 6% 22.18%, 8% 21.04%, 10% 19.66%, 12% 18.07%, 14% 16.33%, 16% 14.51%, 18% 12.66%, 20% 10.86%, 22% 9.16%, 24% 7.63%, 26% 6.33%, 28% 5.29%, 30% 4.55%, 32% 4.15%, 34% 4.09%, 36% 4.38%, 38% 5.01%, 40% 5.95%, 42% 7.17%, 44% 8.63%, 46% 10.28%, 48% 12.05%, 50% 13.89%, 52% 15.73%, 54% 17.5%, 56% 19.15%, 58% 20.61%, 60% 21.83%, 62% 22.77%, 64% 23.4%, 66% 23.68%, 68% 23.63%, 70% 23.22%, 72% 22.49%, 74% 21.45%, 76% 20.15%, 78% 18.62%, 80% 16.92%, 82% 15.12%, 84% 13.27%, 86% 11.45%, 88% 9.71%, 90% 8.12%, 92% 6.73%, 94% 5.6%, 96% 4.76%, 98% 4.25%, 100% 4.07%);
-          clip-path: polygon(100% 0%, 0% 0%, 0% 23.7%, 2% 23.53%, 4% 23.01%, 6% 22.18%, 8% 21.04%, 10% 19.66%, 12% 18.07%, 14% 16.33%, 16% 14.51%, 18% 12.66%, 20% 10.86%, 22% 9.16%, 24% 7.63%, 26% 6.33%, 28% 5.29%, 30% 4.55%, 32% 4.15%, 34% 4.09%, 36% 4.38%, 38% 5.01%, 40% 5.95%, 42% 7.17%, 44% 8.63%, 46% 10.28%, 48% 12.05%, 50% 13.89%, 52% 15.73%, 54% 17.5%, 56% 19.15%, 58% 20.61%, 60% 21.83%, 62% 22.77%, 64% 23.4%, 66% 23.68%, 68% 23.63%, 70% 23.22%, 72% 22.49%, 74% 21.45%, 76% 20.15%, 78% 18.62%, 80% 16.92%, 82% 15.12%, 84% 13.27%, 86% 11.45%, 88% 9.71%, 90% 8.12%, 92% 6.73%, 94% 5.6%, 96% 4.76%, 98% 4.25%, 100% 4.07%);
+  clip-path: polygon(100% 0%, 0% 0%, 0% 23.7%, 2% 23.53%, 4% 23.01%, 6% 22.18%, 8% 21.04%, 10% 19.66%, 12% 18.07%, 14% 16.33%, 16% 14.51%, 18% 12.66%, 20% 10.86%, 22% 9.16%, 24% 7.63%, 26% 6.33%, 28% 5.29%, 30% 4.55%, 32% 4.15%, 34% 4.09%, 36% 4.38%, 38% 5.01%, 40% 5.95%, 42% 7.17%, 44% 8.63%, 46% 10.28%, 48% 12.05%, 50% 13.89%, 52% 15.73%, 54% 17.5%, 56% 19.15%, 58% 20.61%, 60% 21.83%, 62% 22.77%, 64% 23.4%, 66% 23.68%, 68% 23.63%, 70% 23.22%, 72% 22.49%, 74% 21.45%, 76% 20.15%, 78% 18.62%, 80% 16.92%, 82% 15.12%, 84% 13.27%, 86% 11.45%, 88% 9.71%, 90% 8.12%, 92% 6.73%, 94% 5.6%, 96% 4.76%, 98% 4.25%, 100% 4.07%);
 }
 .sect2-1 .inner .p-ws {
   display: flex;
@@ -463,8 +464,7 @@ header .inner ul {
   position: absolute;
   background-color: rgb(0, 0, 0);
   background-image: radial-gradient(circle at top right, rgba(121, 68, 154, 0.13), transparent), radial-gradient(circle at 20% 80%, rgba(41, 196, 255, 0.13), transparent);
-  -webkit-clip-path: polygon(100% 100%, 0% 100%, 0% 23.24%, 2% 23.15%, 4% 22.88%, 6% 22.43%, 8% 21.82%, 10% 21.06%, 12% 20.16%, 14% 19.15%, 16% 18.06%, 18% 16.89%, 20% 15.69%, 22% 14.48%, 24% 13.28%, 26% 12.13%, 28% 11.04%, 30% 10.05%, 32% 9.18%, 34% 8.44%, 36% 7.85%, 38% 7.44%, 40% 7.19%, 42% 7.13%, 44% 7.25%, 46% 7.56%, 48% 8.03%, 50% 8.67%, 52% 9.45%, 54% 10.37%, 56% 11.39%, 58% 12.5%, 60% 13.68%, 62% 14.88%, 64% 16.09%, 66% 17.29%, 68% 18.43%, 70% 19.5%, 72% 20.47%, 74% 21.33%, 76% 22.04%, 78% 22.6%, 80% 22.99%, 82% 23.2%, 84% 23.23%, 86% 23.08%, 88% 22.75%, 90% 22.24%, 92% 21.58%, 94% 20.77%, 96% 19.84%, 98% 18.8%, 100% 17.67%);
-          clip-path: polygon(100% 100%, 0% 100%, 0% 23.24%, 2% 23.15%, 4% 22.88%, 6% 22.43%, 8% 21.82%, 10% 21.06%, 12% 20.16%, 14% 19.15%, 16% 18.06%, 18% 16.89%, 20% 15.69%, 22% 14.48%, 24% 13.28%, 26% 12.13%, 28% 11.04%, 30% 10.05%, 32% 9.18%, 34% 8.44%, 36% 7.85%, 38% 7.44%, 40% 7.19%, 42% 7.13%, 44% 7.25%, 46% 7.56%, 48% 8.03%, 50% 8.67%, 52% 9.45%, 54% 10.37%, 56% 11.39%, 58% 12.5%, 60% 13.68%, 62% 14.88%, 64% 16.09%, 66% 17.29%, 68% 18.43%, 70% 19.5%, 72% 20.47%, 74% 21.33%, 76% 22.04%, 78% 22.6%, 80% 22.99%, 82% 23.2%, 84% 23.23%, 86% 23.08%, 88% 22.75%, 90% 22.24%, 92% 21.58%, 94% 20.77%, 96% 19.84%, 98% 18.8%, 100% 17.67%);
+  clip-path: polygon(100% 100%, 0% 100%, 0% 23.24%, 2% 23.15%, 4% 22.88%, 6% 22.43%, 8% 21.82%, 10% 21.06%, 12% 20.16%, 14% 19.15%, 16% 18.06%, 18% 16.89%, 20% 15.69%, 22% 14.48%, 24% 13.28%, 26% 12.13%, 28% 11.04%, 30% 10.05%, 32% 9.18%, 34% 8.44%, 36% 7.85%, 38% 7.44%, 40% 7.19%, 42% 7.13%, 44% 7.25%, 46% 7.56%, 48% 8.03%, 50% 8.67%, 52% 9.45%, 54% 10.37%, 56% 11.39%, 58% 12.5%, 60% 13.68%, 62% 14.88%, 64% 16.09%, 66% 17.29%, 68% 18.43%, 70% 19.5%, 72% 20.47%, 74% 21.33%, 76% 22.04%, 78% 22.6%, 80% 22.99%, 82% 23.2%, 84% 23.23%, 86% 23.08%, 88% 22.75%, 90% 22.24%, 92% 21.58%, 94% 20.77%, 96% 19.84%, 98% 18.8%, 100% 17.67%);
 }
 .sect3-1 .inner {
   position: relative;
@@ -823,7 +823,7 @@ header .inner ul {
   opacity: 0;
 }
 .sect4-1 .bg1 {
-  background: url(../img/sect4-1img/아침도시\ 구름\ 추가.jpg);
+  background: url(../img/sect4-1img/아침도시\ 구름\ 추가.png);
   background-repeat: no-repeat;
   background-position: 100% 100%;
   background-size: 100% 100%;
@@ -917,6 +917,48 @@ header .inner ul {
   background-size: 100% 100%;
   background-attachment: fixed;
 }
+.sect5 .inner {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  gap: 150px;
+  border: 1px solid #ffffff;
+  position: relative;
+}
+.sect5 .inner .p1 {
+  font-size: 100px;
+  font-family: "NovaSlim";
+  color: #fff;
+}
+.sect5 .inner .surcle_wrap {
+  display: flex;
+  gap: 100px;
+}
+.sect5 .inner .surcle_wrap .surcle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 300px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 999px;
+}
+.sect5 .inner .surcle_wrap .surcle img {
+  animation: rotateAnimation 30s infinite linear;
+  width: 360px;
+  height: 360px;
+}
+.sect5 .inner .surcle_wrap .surcle img:hover {
+  animation-play-state: paused;
+}
+.sect5 .inner .surcle_wrap .position2 {
+  transform: translateY(100px);
+}
+.sect5 .inner .surcle_wrap .position4 {
+  transform: translateY(100px);
+}
+
 @media (max-width: 1530px) and (min-width: 845px) {
   .sect .inner {
     width: calc(100% - 120px);
@@ -1667,154 +1709,5 @@ header .inner ul {
   }
   .sect4-1 .inner .list-box .video-list li .p-w p:nth-child(3) {
     color: #606060;
-  }
-}
-@media (max-width: 1523px) and (min-width: 1160px) {
-  .sect6 .inner {
-    display: flex;
-  }
-  .sect6 .inner .right {
-    width: 70%;
-    position: relative;
-  }
-  .sect6 .inner .right .common {
-    position: absolute;
-  }
-  .sect6 .inner .right .position1 {
-    width: 200px;
-    top: 15%;
-  }
-  .sect6 .inner .right .position2 {
-    width: 30px;
-    top: 7%;
-    left: 18%;
-  }
-  .sect6 .inner .right .position3 {
-    width: 80px;
-    top: 8%;
-    left: 21%;
-  }
-  .sect6 .inner .right .position4 {
-    width: 600px;
-    top: 15%;
-    left: 25%;
-  }
-  .sect6 .inner .right .position5 {
-    width: 30px;
-    top: 55%;
-    left: 60%;
-  }
-  .sect6 .inner .right .position6 {
-    width: 80px;
-    top: 55%;
-    left: 65%;
-  }
-  .sect6 .inner .right .position7 {
-    width: 430px;
-    top: 72.5%;
-    left: 56%;
-  }
-}
-@media (max-width: 1160px) and (min-width: 1223px) {
-  .sect6 .inner {
-    display: flex;
-  }
-  .sect6 .inner .right {
-    width: 70%;
-    position: relative;
-  }
-  .sect6 .inner .right .common {
-    position: absolute;
-  }
-  .sect6 .inner .right .position1 {
-    width: 160px;
-    top: 15%;
-  }
-  .sect6 .inner .right .position2 {
-    width: 24px;
-    top: 7%;
-    left: 18%;
-  }
-  .sect6 .inner .right .position3 {
-    width: 64px;
-    top: 8%;
-    left: 21%;
-  }
-  .sect6 .inner .right .position4 {
-    width: 480px;
-    top: 15%;
-    left: 25%;
-  }
-  .sect6 .inner .right .position5 {
-    width: 24px;
-    top: 55%;
-    left: 60%;
-  }
-  .sect6 .inner .right .position6 {
-    width: 64px;
-    top: 55%;
-    left: 65%;
-  }
-  .sect6 .inner .right .position7 {
-    width: 350px;
-    top: 72.5%;
-    left: 56%;
-  }
-}
-@media (max-width: 1223px) and (min-width: 0) {
-  .sect6 .inner .left {
-    width: 100%;
-    gap: 48px;
-  }
-  .sect6 .inner .left .p-w0 {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 48px;
-  }
-  .sect6 .inner .left .p-w0 .p1 {
-    font-family: "NovaSlim", sans-serif;
-    font-size: 80px;
-    color: #fff;
-  }
-  .sect6 .inner .left .p-w0 .p2 {
-    color: #7d7d7d;
-    font-size: 21px;
-    font-weight: bold;
-  }
-  .sect6 .inner .left .p-w0 .p3 {
-    color: #fff;
-    font-size: 48px;
-  }
-  .sect6 .inner .left .p-w0 .p3 span {
-    font-weight: bold;
-  }
-  .sect6 .inner .left .p-ws {
-    margin: 0 auto;
-    width: 282px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 18px;
-  }
-  .sect6 .inner .left .p-ws .p1 {
-    color: #fff;
-    font-size: 21px;
-    font-weight: bold;
-  }
-  .sect6 .inner .left .p-ws .p-w .p1 {
-    font-size: 18px;
-    color: #7d7d7d;
-  }
-  .sect6 .inner .left .p-ws .p-w .p2 {
-    font-size: 16px;
-    color: #afafaf;
-  }
-  .sect6 .inner .left .p-ws .p-w .i-w {
-    text-align: center;
-    width: 100px;
-  }
-  .sect6 .inner .right {
-    display: none;
   }
 }/*# sourceMappingURL=index.css.map */

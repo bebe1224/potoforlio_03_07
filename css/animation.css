@@ -87,3 +87,11 @@
 /* 이동하는거 픽셀로 해야지
 트렌슬레이트로 하니까
 css 에서 중첩이되서 문제생김 */
+@keyframes rotateAnimation {
+  0% {
+    transform: rotate(0deg); /* 시작 각도 */
+  }
+  100% {
+    transform: rotate(360deg); /* 360도 회전 */
+  }
+}
