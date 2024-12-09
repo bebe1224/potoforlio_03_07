@@ -1,0 +1,2413 @@
+// ===== mixin
+@mixin fsbc {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin fcc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin fsc {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+@mixin fcs {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+
+@mixin fccc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+@mixin fc {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin fcsc {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+}
+
+// ===== 밑줄
+.pink_line {
+  position: relative;
+  z-index: 1;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+    border-bottom: 20px solid #e996a7;
+    transform: translateY(5px);
+    z-index: -1;
+  }
+}
+
+// ===== font
+@font-face {
+  font-family: "NovaSlim";
+  src: url("/font/Nova_Slim/NovaSlim-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Caveat-bold";
+  src: url("/font/Caveat-f/Caveat-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+// =====scrollbar
+body::-webkit-scrollbar,
+.sect4-1 .list-box::-webkit-scrollbar,
+.sect4-2 .boxs::-webkit-scrollbar {
+  width: 8px;
+  /* 스크롤바 너비 */
+}
+
+body::-webkit-scrollbar-thumb,
+.sect4-1 .list-box::-webkit-scrollbar-thumb,
+.sect4-2 .boxs::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.3);
+  /* 스크롤바 손잡이 색상 */
+  border-radius: 4px;
+  /* 둥근 모서리 */
+  transition: background 0.3s ease;
+}
+
+body::-webkit-scrollbar-thumb:hover,
+.sect4-1 .list-box::-webkit-scrollbar-thumb:hover,
+.sect4-2 .boxs::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.5);
+  /* 호버 시 손잡이 색상 변경 */
+}
+
+body::-webkit-scrollbar-track,
+.sect4-1 .list-box::-webkit-scrollbar-track,
+.sect4-2 .boxs::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  /* 스크롤바 배경 */
+  border-radius: 4px;
+  /* 둥근 모서리 */
+}
+
+// ===== progress
+.progress {
+  z-index: 9999;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 1px;
+  height: 10px;
+  background-color: rgb(255, 174, 0);
+}
+
+// ===== header
+header {
+  z-index: 999;
+  position: fixed;
+  top: 0px;
+  background-color: #ebebeb;
+  width: 100%;
+  height: 100px;
+
+  .inner {
+    @include fsbc;
+    margin: 0 auto;
+    width: calc(100% - 320px);
+    height: 100px;
+
+    h1 {}
+
+    ul {
+      display: flex;
+      gap: 32px;
+
+      .main-m {}
+    }
+  }
+}
+
+// ===== sect
+.sect {
+  overflow: hidden;
+  background-color: #fafafa;
+  width: 100%;
+  height: 100vh;
+
+  .inner {
+    margin: 0 auto;
+    width: calc(100% - 240px);
+    height: 100vh;
+  }
+}
+
+// =====
+.sect1 {
+  .star-field {
+    position: absolute;
+
+    background-color: rgb(0, 0, 0);
+
+    background-image: radial-gradient(circle at top right,
+      rgba(121, 68, 154, 0.13),
+      transparent),
+    radial-gradient(circle at 20% 80%, rgba(41, 196, 255, 0.13), transparent) {}
+  }
+
+  .inner {
+    position: relative;
+    display: flex;
+
+    .left {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 0px 0px 80px 0px;
+      width: 45%;
+
+      b {
+        color: #fff;
+        text-transform: uppercase;
+      }
+
+      .b1 {
+        font-size: 32px;
+      }
+
+      .b-wrap {
+        @include fcsc;
+
+        .b2 {
+          font-style: italic;
+          font-size: 128px;
+        }
+      }
+    }
+
+    .right {
+      @include fcc;
+      width: 55%;
+
+      img {
+        width: 800px;
+      }
+    }
+  }
+}
+
+// =====
+.sect2 {
+  position: relative;
+
+  .star-field {
+    transform: scaleY(-1);
+    position: absolute;
+    z-index: 1;
+    background-color: rgb(0, 0, 0);
+
+    background-image: radial-gradient(circle at top right,
+      rgba(121, 68, 154, 0.13),
+      transparent),
+    radial-gradient(circle at 20% 80%, rgba(41, 196, 255, 0.13), transparent) {}
+
+    clip-path: polygon(100% 100%,
+      0% 100%,
+      0% 78.89%,
+      2% 78.8%,
+      4% 78.55%,
+      6% 78.14%,
+      8% 77.58%,
+      10% 76.9%,
+      12% 76.12%,
+      14% 75.27%,
+      16% 74.38%,
+      18% 73.47%,
+      20% 72.59%,
+      22% 71.75%,
+      24% 71%,
+      26% 70.36%,
+      28% 69.85%,
+      30% 69.49%,
+      32% 69.3%,
+      34% 69.27%,
+      36% 69.41%,
+      38% 69.72%,
+      40% 70.18%,
+      42% 70.78%,
+      44% 71.49%,
+      46% 72.3%,
+      48% 73.17%,
+      50% 74.07%,
+      52% 74.98%,
+      54% 75.85%,
+      56% 76.65%,
+      58% 77.37%,
+      60% 77.97%,
+      62% 78.43%,
+      64% 78.74%,
+      66% 78.88%,
+      68% 78.85%,
+      70% 78.65%,
+      72% 78.29%,
+      74% 77.78%,
+      76% 77.14%,
+      78% 76.39%,
+      80% 75.56%,
+      82% 74.68%,
+      84% 73.77%,
+      86% 72.88%,
+      88% 72.02%,
+      90% 71.24%,
+      92% 70.56%,
+      94% 70.01%,
+      96% 69.6%,
+      98% 69.34%,
+      100% 69.26%);
+  }
+
+  .inner {
+    position: relative;
+    z-index: 2;
+    display: flex;
+
+    p {
+      color: black;
+      position: relative;
+      z-index: 3;
+    }
+
+    .left {
+      @include fccc;
+      gap: 64px;
+      width: 45%;
+
+      .p1 {
+        color: #fff;
+        white-space: nowrap;
+        font-size: 36px;
+
+        span {
+          font-weight: bold;
+          font-size: 38px;
+        }
+      }
+
+      .i-w {
+        @include fcc;
+        position: relative;
+        width: 380px;
+        height: 600px;
+        background-color: #d9d9d9;
+
+        img {}
+
+        .star-img {
+          position: absolute;
+          top: 0%;
+          width: 500px;
+        }
+      }
+
+      .shape {
+        border-radius: 100%;
+      }
+    }
+
+    .right {
+      display: flex;
+      width: 55%;
+
+      .one {
+        @include fccc;
+        gap: 32px;
+        width: 50%;
+
+        .p-ws {
+          @include fcsc;
+          width: 350.5px;
+          gap: 16px;
+
+          .p1 {
+            font-weight: bold;
+            font-size: 32px;
+          }
+
+          .p-w {
+            @include fc;
+            gap: 8px;
+
+            .p2 {
+              font-size: 28px;
+            }
+          }
+        }
+
+        .p-ws1 {
+          .p1 {
+            color: #fff;
+          }
+
+          .p-w {
+            .w {
+              color: #fff;
+            }
+          }
+        }
+
+        .p-ws3 {
+          @include fc;
+          gap: 16px;
+
+          .p {
+            font-weight: bold;
+            font-size: 32px;
+          }
+
+          .wrap {
+            @include fcc;
+            gap: 32px;
+
+            .p-w {
+              @include fc;
+              gap: 8px;
+
+              .p1 {
+                font-size: 28px;
+              }
+            }
+
+            .i-w {
+              @include fc;
+              gap: 38px;
+            }
+          }
+        }
+      }
+
+      .two {
+        @include fccc;
+        gap: 32px;
+        width: 50%;
+        margin-bottom: 40px;
+
+        .p-wss {
+          @include fc;
+          gap: 16px;
+
+          .p1 {
+            font-size: 32px;
+            font-weight: bold;
+          }
+
+          .p-ws {
+            @include fc;
+            gap: 8px;
+
+            .p-w {
+              display: flex;
+              gap: 32px;
+
+              .p2 {
+                font-size: 28px;
+              }
+            }
+
+            .p-w1 {
+              display: flex;
+              font-size: 28px;
+
+              .p1 {}
+
+              .p2 {}
+            }
+          }
+        }
+
+        .PERSONALITY {
+          color: #fff;
+        }
+
+        .i-ws {
+          @include fc;
+          gap: 16px;
+
+          .p1 {
+            font-size: 32px;
+            font-weight: bold;
+          }
+
+          .i-w {
+            img {}
+          }
+        }
+      }
+    }
+  }
+}
+
+.sect2-1 {
+  position: relative;
+  overflow: hidden;
+
+  .star-field {
+    transform: scaleY(-1);
+    position: absolute;
+    background-color: rgb(0, 0, 0);
+
+    background-image: radial-gradient(circle at top right,
+      rgba(121, 68, 154, 0.13),
+      transparent),
+    radial-gradient(circle at 20% 80%, rgba(41, 196, 255, 0.13), transparent) {}
+
+    clip-path: polygon(100% 0%,
+      0% 0%,
+      0% 23.7%,
+      2% 23.53%,
+      4% 23.01%,
+      6% 22.18%,
+      8% 21.04%,
+      10% 19.66%,
+      12% 18.07%,
+      14% 16.33%,
+      16% 14.51%,
+      18% 12.66%,
+      20% 10.86%,
+      22% 9.16%,
+      24% 7.63%,
+      26% 6.33%,
+      28% 5.29%,
+      30% 4.55%,
+      32% 4.15%,
+      34% 4.09%,
+      36% 4.38%,
+      38% 5.01%,
+      40% 5.95%,
+      42% 7.17%,
+      44% 8.63%,
+      46% 10.28%,
+      48% 12.05%,
+      50% 13.89%,
+      52% 15.73%,
+      54% 17.5%,
+      56% 19.15%,
+      58% 20.61%,
+      60% 21.83%,
+      62% 22.77%,
+      64% 23.4%,
+      66% 23.68%,
+      68% 23.63%,
+      70% 23.22%,
+      72% 22.49%,
+      74% 21.45%,
+      76% 20.15%,
+      78% 18.62%,
+      80% 16.92%,
+      82% 15.12%,
+      84% 13.27%,
+      86% 11.45%,
+      88% 9.71%,
+      90% 8.12%,
+      92% 6.73%,
+      94% 5.6%,
+      96% 4.76%,
+      98% 4.25%,
+      100% 4.07%);
+  }
+
+  .inner {
+    .p-ws {
+      @include fc;
+      gap: 16px;
+      margin-top: 80px;
+
+      .p1 {
+        font-size: 32px;
+        font-weight: bold;
+      }
+
+      .p-w {
+        @include fc;
+        gap: 8px;
+
+        .p2 {
+          font-size: 28px;
+        }
+      }
+    }
+
+    img {
+      position: absolute;
+
+      &:nth-of-type(1) {
+        width: 350px;
+      }
+
+      &:nth-of-type(2) {
+        width: 600px;
+      }
+
+      &:nth-of-type(3) {
+        width: 300px;
+      }
+    }
+
+    .position1 {
+      top: 45%;
+      left: 6.5%;
+    }
+
+    .position2 {
+      top: 5%;
+      right: 5%;
+    }
+
+    .position3 {
+      top: 50%;
+      right: 15%;
+      transform: rotate(25deg);
+    }
+  }
+}
+
+// =====
+.sect3 {
+  .star-field {
+    position: absolute;
+    background-color: rgb(0, 0, 0);
+
+    background-image: radial-gradient(circle at top right,
+      rgba(121, 68, 154, 0.13),
+      transparent),
+    radial-gradient(circle at 20% 80%, rgba(41, 196, 255, 0.13), transparent) {}
+  }
+
+  .inner {
+    display: flex;
+
+    .left {
+      @include fcsc;
+      gap: 48px;
+      width: 30%;
+      position: relative;
+
+      .p-w0 {
+        @include fc;
+        gap: 48px;
+
+        .p1 {
+          font-family: "NovaSlim";
+          font-size: 76px;
+          color: #fff;
+        }
+
+        .p2 {
+          white-space: nowrap;
+          color: #7d7d7d;
+          font-size: 28px;
+          font-weight: bold;
+        }
+
+        .p3 {
+          color: #fff;
+          font-size: 52px;
+
+          span {
+            font-weight: bold;
+          }
+        }
+      }
+
+      .p-ws {
+        width: 282px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18px;
+
+        .p1 {
+          color: #fff;
+          font-size: 21px;
+          font-weight: bold;
+        }
+
+        .p-w {
+          .p1 {
+            font-size: 18px;
+            color: #7d7d7d;
+          }
+
+          .p2 {
+            font-size: 16px;
+            color: #afafaf;
+          }
+
+          .i-w {
+            text-align: center;
+            width: 120px;
+
+            img {}
+          }
+        }
+
+        .Designer {
+          transform: translateY(-16px);
+        }
+      }
+    }
+
+    .right {
+      width: 70%;
+      position: relative;
+
+      img {
+        position: absolute;
+      }
+
+      .position1 {
+        left: 10%;
+      }
+
+      .size1 {}
+
+      .position2 {
+        top: 10%;
+        left: 40%;
+      }
+
+      .size2 {
+        width: 900px;
+        animation: float 3s ease-in-out infinite;
+      }
+    }
+  }
+}
+
+.sect3-1 {
+  transform: scaleY(-1);
+
+  .star-field {
+    position: absolute;
+    background-color: rgb(0, 0, 0);
+
+    background-image: radial-gradient(circle at top right,
+      rgba(121, 68, 154, 0.13),
+      transparent),
+    radial-gradient(circle at 20% 80%, rgba(41, 196, 255, 0.13), transparent) {}
+
+    clip-path: polygon(100% 100%,
+      0% 100%,
+      0% 23.24%,
+      2% 23.15%,
+      4% 22.88%,
+      6% 22.43%,
+      8% 21.82%,
+      10% 21.06%,
+      12% 20.16%,
+      14% 19.15%,
+      16% 18.06%,
+      18% 16.89%,
+      20% 15.69%,
+      22% 14.48%,
+      24% 13.28%,
+      26% 12.13%,
+      28% 11.04%,
+      30% 10.05%,
+      32% 9.18%,
+      34% 8.44%,
+      36% 7.85%,
+      38% 7.44%,
+      40% 7.19%,
+      42% 7.13%,
+      44% 7.25%,
+      46% 7.56%,
+      48% 8.03%,
+      50% 8.67%,
+      52% 9.45%,
+      54% 10.37%,
+      56% 11.39%,
+      58% 12.5%,
+      60% 13.68%,
+      62% 14.88%,
+      64% 16.09%,
+      66% 17.29%,
+      68% 18.43%,
+      70% 19.5%,
+      72% 20.47%,
+      74% 21.33%,
+      76% 22.04%,
+      78% 22.6%,
+      80% 22.99%,
+      82% 23.2%,
+      84% 23.23%,
+      86% 23.08%,
+      88% 22.75%,
+      90% 22.24%,
+      92% 21.58%,
+      94% 20.77%,
+      96% 19.84%,
+      98% 18.8%,
+      100% 17.67%);
+  }
+
+  .inner {
+    position: relative;
+    transform: scaleY(-1);
+
+    .wrap {
+      transition: 0.3s ease-in-out;
+      width: 100%;
+      height: 100vh;
+
+      .sect3-1Swiper {
+        padding: 20px 0px;
+        width: 1080px;
+        height: 576px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-30%, -50%);
+
+        .swiper-wrapper {
+          .swiper-slide {
+            @include fcc;
+            position: relative;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+          }
+
+          .slide1 {
+            background: url(../img/sect3-1img/더롱다크.gif) no-repeat center/cover;
+          }
+
+          .slide2 {
+            background: url(../img/sect3-1img/빵빵이일상.png) no-repeat center/cover;
+          }
+
+          .slide3 {
+            background: url(../img/sect3-1img/루즈벨트.png) no-repeat center/cover;
+          }
+
+          .slide4 {
+            background: url(../img/sect3-1img/죠스7-9.png) no-repeat center/cover;
+          }
+
+          .slide5 {
+            background: url(../img/sect3-1img/빵바오7-12.png) no-repeat center/cover;
+          }
+
+          .slide6 {
+            background-color: #fff;
+          }
+
+          .slide7 {
+            background: url(../img/sect3-1img/메이플스토리\ 8-2.png) no-repeat center/cover;
+          }
+
+          .slide8 {
+            background: url(../img/sect3-1img/메이플스토리8-7.png) no-repeat center/cover;
+          }
+
+          .slide9 {
+            background-color: #fff;
+
+            img {
+              width: 200px;
+            }
+          }
+
+          .slide10 {
+            background: url(../img/sect3-1img/루카831\ 8-26.png) no-repeat center/cover;
+          }
+
+          .slide11 {
+            background-color: #fff;
+          }
+
+          .slide12 {
+            background-color: #fff;
+          }
+
+          .slide13 {
+            background: url(../img/sect3-1img/뮤고.png) no-repeat center/cover;
+          }
+
+          .slide14 {
+            background-color: #fff;
+
+            img {
+              position: absolute;
+            }
+
+            .img1 {}
+
+            .img2 {}
+          }
+
+          .slide15 {
+            background-color: #fff;
+          }
+
+          .slide16 {
+            background-color: #fff;
+          }
+
+          .slide17 {
+            background-color: #fff;
+          }
+        }
+      }
+
+      .Description {
+        @include fcc;
+        position: absolute;
+        top: 50%;
+        transform: translate(0%, -50%) translate3d(0px, 0px, -100.083px) rotateX(0deg) rotateY(20.0417deg) scale(1);
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+          rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+        background-color: rgba(255, 255, 255, 0.9);
+
+        width: 440px;
+        height: 300px;
+
+        .p-w {
+          @include fcsc;
+          gap: 16px;
+          color: rgb(0, 0, 0);
+
+          h2 {
+            font-size: 28px;
+          }
+
+          p {
+            font-size: 18px;
+          }
+
+          a {
+            @include fcc;
+            gap: 8px;
+            font-size: 18px;
+            transition: 0.3s ease-in-out;
+
+            span {
+              img {
+                width: 48px;
+                animation: shake 2s ease-in-out infinite;
+              }
+            }
+
+            &:hover {
+              color: rgb(255, 72, 0);
+              transform: scale(1.05);
+            }
+          }
+        }
+      }
+
+      .swiper-button-prev {
+        margin-left: 470px;
+        transform: scaleX(-1);
+
+        &::after {
+          content: "";
+        }
+      }
+
+      .swiper-button-next {
+        margin-right: 30px;
+
+        &::after {
+          content: "";
+        }
+      }
+
+      .slide-counter {
+        position: absolute;
+        left: 1%;
+        top: 30%;
+        transform: translate(0%, -50%);
+        font-size: 24px;
+        color: #fff;
+        font-weight: bold;
+      }
+    }
+
+    .list-p {
+      color: #000;
+      position: absolute;
+      top: 80%;
+      left: 1%;
+    }
+
+    .view-more {
+      position: absolute;
+      top: 85.5%;
+      left: 3.6%;
+      transform: translate(-50%, -50%);
+      color: #000;
+    }
+
+    .hidden-list {
+      @include fccc;
+      gap: 52px;
+      padding: 0px 0px 160px 0px;
+      transition: 0.3s ease-in-out;
+      position: absolute;
+      top: 0%;
+      left: 0%;
+      width: 100%;
+      height: 100vh;
+      z-index: -1;
+      opacity: 0;
+
+      // z-index: 999;
+      .title {
+        font-family: "NovaSlim";
+        animation: shake2 2.5s ease-in-out infinite;
+        width: 100%;
+        padding-left: 170px;
+        text-transform: uppercase;
+        color: #fff;
+        font-size: 52px;
+      }
+
+      .list-wrap {
+        @include fcs;
+        gap: 200px;
+        width: 100%;
+
+        ul {
+          @include fcsc;
+          gap: 48px;
+          color: #fff;
+
+          li {
+            transition: 0.3s ease-in-out;
+            font-size: 24px;
+
+            a {
+              b {
+                font-size: 28px;
+              }
+            }
+
+            &:hover {
+              transform: scale(1.05);
+              color: goldenrod;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// =====
+.sect4 {
+  background: linear-gradient(180deg, #fafafa 32%, #cfecfb 56%, #94d8fb 100%);
+
+  .inner {
+    position: relative;
+    display: flex;
+
+    .plane {
+      transform: rotate(-7deg);
+      position: absolute;
+      top: 40%;
+      left: 25%;
+      width: 1000px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .cloud {
+      position: absolute;
+      animation: float 4s ease-in-out infinite;
+      top: 75%;
+      left: 80%;
+
+      &:nth-of-type(2) {
+        top: 60%;
+        left: 70%;
+      }
+
+      &:nth-of-type(3) {
+        top: 65%;
+        left: 25%;
+      }
+
+      &:nth-of-type(4) {
+        top: 75%;
+        left: 40%;
+      }
+    }
+
+    .left {
+      @include fcsc;
+      gap: 48px;
+      width: 35%;
+      position: relative;
+
+      .p-w0 {
+        @include fc;
+        gap: 48px;
+
+        .p1 {
+          font-family: "NovaSlim", sans-serif;
+          font-size: 88px;
+        }
+
+        .p2 {
+          color: #7d7d7d;
+          font-size: 28px;
+          font-weight: bold;
+        }
+
+        .p3 {
+          font-size: 52px;
+
+          span {
+            font-weight: bold;
+          }
+        }
+      }
+
+      .p-ws {
+        width: 282px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18px;
+
+        .p1 {
+          font-size: 21px;
+          font-weight: bold;
+        }
+
+        .p-w {
+          .p1 {
+            font-size: 18px;
+            color: #7d7d7d;
+          }
+
+          .p2 {
+            font-size: 16px;
+            color: #afafaf;
+          }
+
+          .i-w {
+            img {}
+          }
+        }
+      }
+    }
+
+    .right {
+      @include fcc;
+      position: relative;
+      width: 65%;
+
+      .swiper {
+        transform: rotate(0deg);
+        position: absolute;
+        left: 40px;
+        width: 600px;
+        height: 700px;
+
+        .swiper-wrapper {
+          .swiper-slide {
+            @include fcc;
+            box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+              rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+              rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+            border-radius: 18px;
+            overflow: hidden;
+
+            .img {
+              filter: blur(10px);
+            }
+
+            a {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+
+              .img2 {
+                width: 600px;
+                transition: 0.5s ease-in-out;
+
+                &:hover {
+                  transform: scale(1.2);
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .btn-wrap {
+        @include fcsc;
+        gap: 32px;
+        position: absolute;
+        right: 60px;
+
+        .bg {
+          transition: 0.3s ease-in-out;
+
+          // &:nth-child(1) {
+          //   background-color: #3dd1e7;
+          // }
+          &.on {
+            background-color: #3dd1e7;
+          }
+        }
+      }
+    }
+  }
+}
+
+.sect4-1 {
+  position: relative;
+
+  .bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+  }
+
+  .bg1 {
+    background: url(./img/sect4-1img/아침도시\ 구름\ 추가.png);
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+    background-size: 100% 100%;
+    z-index: 1;
+    opacity: 1;
+  }
+
+  .bg2 {
+    background: url(../img/sect4-1img/밤도시.png);
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+    background-size: 100% 100%;
+    z-index: 2;
+    background-attachment: fixed;
+  }
+
+  .inner {
+    @include fcc;
+    gap: 32px;
+    position: relative;
+    // background-color: #fafafa;
+    z-index: 3;
+
+    .video-frame {
+      position: relative;
+      width: 1080px;
+      height: 607px;
+      background-color: rgba(255, 255, 255, 0.1);
+      box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+        rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+        rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+
+      .button-85 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 21px;
+        font-weight: bold;
+      }
+
+      iframe {
+        // pointer-events: none; // 이게 있어야 아이프레임 문제해결 벗 상호작용안돼!
+        // touch-action: none;
+        position: absolute;
+        z-index: 1;
+      }
+    }
+
+    .button-49 {
+      position: absolute;
+      right: 20%;
+      top: 5%;
+      z-index: 2;
+    }
+
+    .list-box {
+      position: relative;
+      overflow: auto;
+      // box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+      //   rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+      box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+        rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+        rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+      width: 456px;
+      height: 775px;
+      background-color: rgba(255, 255, 255, 0.3);
+
+      .video-list {
+        @include fccc;
+        gap: 16px;
+        padding: 40px 0px 40px 0px;
+
+        li {
+          width: 410px;
+          display: flex;
+          gap: 16px;
+          cursor: pointer;
+
+          .p-w {
+            @include fcsc;
+            gap: 8px;
+
+            p {
+              font-weight: bold;
+
+              &:nth-child(2) {
+                font-size: 18px;
+              }
+
+              &:nth-child(3) {
+                color: #606060;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// =====
+.sect5 {
+  background: url(../img/sect4-1img/밤도시.png);
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+
+  .inner {}
+}
+
+// ===== sect1 반응형
+
+// ===== sect2,sect2-1반응형
+@media (max-width: 1530px) and (min-width: 845px) {
+  .sect {
+    .inner {
+      width: calc(100% - 120px);
+    }
+  }
+
+  .sect2 {
+    .inner {
+      position: relative;
+      display: flex;
+
+      .left {
+        padding: 80px 0px;
+        display: flex;
+        justify-content: start;
+        gap: 32px;
+        width: 40%;
+
+        .p1 {
+          font-size: 21px;
+          position: absolute;
+
+          span {
+            font-weight: bold;
+            font-size: 24px;
+          }
+        }
+
+        .i-w {
+          @include fcc;
+          width: 241px;
+          height: 362px;
+          background-color: #d9d9d9;
+          position: absolute;
+
+          img {}
+
+          .star-img {
+            position: absolute;
+            top: 0%;
+            width: 241px;
+          }
+        }
+
+        .shape {
+          border-radius: 100%;
+        }
+
+        .position0 {
+          left: 50px;
+        }
+
+        .position1 {
+          left: 110px;
+          top: 180px;
+        }
+      }
+
+      .right {
+        display: flex;
+        width: 60%;
+
+        .one {
+          @include fccc;
+          gap: 32px;
+
+          .p-ws {
+            @include fcsc;
+            width: 350.5px;
+            gap: 16px;
+            position: absolute;
+
+            .p1 {
+              font-weight: bold;
+              font-size: 21px;
+            }
+
+            .p-w {
+              @include fc;
+              gap: 8px;
+
+              .p2 {
+                font-size: 18px;
+              }
+            }
+          }
+
+          .p-ws2 {
+            .p1 {
+              background: linear-gradient(111deg, white 10%, black 100%);
+              -webkit-background-clip: text;
+              color: transparent;
+            }
+          }
+
+          .p-ws3 {
+            @include fcsc;
+            gap: 16px;
+            position: absolute;
+
+            .p {
+              font-weight: bold;
+              font-size: 21px;
+            }
+
+            .wrap {
+              @include fcc;
+              gap: 32px;
+
+              .p-w {
+                @include fc;
+                gap: 8px;
+
+                .p1 {
+                  font-size: 18px;
+                }
+              }
+
+              .i-w {
+                @include fc;
+                gap: 27px;
+
+                img {
+                  width: 120px;
+                }
+              }
+            }
+          }
+
+          .position1 {
+            top: 5%;
+            left: 57.5%;
+          }
+
+          .position2 {
+            top: 20%;
+            left: 57.5%;
+          }
+
+          .position3 {
+            left: 100px;
+            top: 570px;
+          }
+        }
+
+        .two {
+          @include fccc;
+          gap: 32px;
+          width: 50%;
+          margin-bottom: 40px;
+
+          .p-wss {
+            @include fc;
+            gap: 16px;
+            position: absolute;
+
+            .p1 {
+              font-size: 21px;
+              font-weight: bold;
+            }
+
+            .p-ws {
+              @include fc;
+              gap: 8px;
+
+              .p-w {
+                display: flex;
+                gap: 32px;
+
+                .p2 {
+                  font-size: 18px;
+                }
+              }
+
+              .p-w1 {
+                display: flex;
+                font-size: 18px;
+
+                .p1 {}
+
+                .p2 {}
+              }
+            }
+          }
+
+          .position1 {
+            top: 35%;
+            left: 57.5%;
+          }
+
+          .i-ws {
+            @include fc;
+            gap: 16px;
+            position: absolute;
+
+            .p1 {
+              font-size: 24px;
+              font-weight: bold;
+            }
+
+            .i-w {
+              img {
+                width: 200px;
+              }
+            }
+          }
+
+          .position2 {
+            top: 63%;
+            left: 57.5%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 845px) and (min-width: 0px) {
+  .sect {
+    .inner {
+      width: calc(100% - 60px);
+    }
+  }
+
+  .sect2 {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+
+    .inner {
+      position: relative;
+      flex-wrap: wrap;
+
+      .left {
+        padding: 80px 0px 48px 0px;
+        display: flex;
+        gap: 32px;
+        width: 100%;
+
+        .p1 {
+          font-size: 18px;
+          width: 340px;
+          text-align: center;
+
+          span {
+            font-weight: bold;
+            font-size: 21px;
+          }
+        }
+
+        .i-w {
+          @include fcc;
+
+          width: 241px;
+          height: 362px;
+          background-color: #d9d9d9;
+
+          img {}
+
+          .star-img {
+            width: 241px;
+          }
+        }
+
+        .shape {
+          border-radius: 100%;
+        }
+      }
+
+      .right {
+        padding: 0px 0px 48px 0px;
+        flex-wrap: wrap;
+        width: 100%;
+        gap: 32px;
+
+        .one {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 32px;
+          width: 100%;
+
+          .p-ws {
+            @include fccc;
+            width: 350.5px;
+            gap: 16px;
+
+            .p1 {
+              font-weight: bold;
+              font-size: 21px;
+            }
+
+            .p-w {
+              @include fccc;
+              gap: 8px;
+
+              .p2 {
+                font-size: 18px;
+              }
+            }
+          }
+
+          .p-ws1 {
+            .p1 {
+              color: #000000;
+            }
+
+            .p-w {
+              .w {
+                color: #000000;
+              }
+            }
+          }
+
+          .p-ws3 {
+            @include fc;
+            gap: 16px;
+
+            .p {
+              font-weight: bold;
+              font-size: 21px;
+            }
+
+            .wrap {
+              @include fcc;
+              gap: 32px;
+
+              .p-w {
+                @include fc;
+                gap: 8px;
+
+                .p1 {
+                  font-size: 18px;
+                }
+              }
+
+              .i-w {
+                @include fc;
+                gap: 27px;
+
+                img {
+                  width: 100px;
+                }
+              }
+            }
+          }
+        }
+
+        .two {
+          @include fcc;
+          gap: 32px;
+          width: 100%;
+          margin-bottom: 40px;
+
+          .p-wss {
+            @include fcc;
+            gap: 16px;
+
+            .p1 {
+              font-size: 21px;
+              font-weight: bold;
+            }
+
+            .p-ws {
+              @include fc;
+              gap: 8px;
+
+              .p-w {
+                display: flex;
+                gap: 32px;
+
+                .p2 {
+                  font-size: 18px;
+                }
+              }
+
+              .p-w1 {
+                display: flex;
+                font-size: 18px;
+
+                .p1 {}
+
+                .p2 {}
+              }
+            }
+          }
+
+          .position1 {
+            top: 35%;
+            left: 57.5%;
+          }
+
+          .i-ws {
+            @include fcc;
+            gap: 16px;
+
+            .p1 {
+              font-size: 24px;
+              font-weight: bold;
+            }
+
+            .PERSONALITY {
+              color: black;
+            }
+
+            .i-w {
+              img {
+                width: 200px;
+              }
+            }
+          }
+
+          .position2 {
+            top: 63%;
+            left: 57.5%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1560px) and (min-width: 901px) {
+  .sect2-1 {
+    position: relative;
+    overflow: hidden;
+
+    .inner {
+      .p-ws {
+        @include fc;
+        gap: 16px;
+        margin-top: 80px;
+
+        .p1 {
+          font-size: 28px;
+          font-weight: bold;
+        }
+
+        .p-w {
+          @include fc;
+          gap: 8px;
+
+          .p2 {
+            font-size: 24px;
+          }
+        }
+      }
+
+      img {
+        position: absolute;
+
+        &:nth-of-type(1) {
+          width: 300px;
+        }
+
+        &:nth-of-type(2) {
+          width: 800px;
+        }
+
+        &:nth-of-type(3) {
+          width: 350px;
+        }
+      }
+
+      .position1 {
+        top: 5%;
+        left: 70%;
+      }
+
+      .position2 {
+        top: 30%;
+        left: -15%;
+      }
+
+      .position3 {
+        top: 35%;
+        left: 40%;
+        transform: rotate(45deg) scale(1, -1);
+      }
+    }
+  }
+}
+
+@media (max-width: 901px) and (min-width: 0px) {
+  .sect2-1 {
+    position: relative;
+    overflow: hidden;
+
+    .inner {
+      @include fccc;
+
+      .p-ws {
+        @include fcc;
+        gap: 24px;
+        margin-top: 0px;
+
+        .p1 {
+          font-size: 24px;
+          font-weight: bold;
+        }
+
+        .p-w {
+          @include fc;
+          gap: 12px;
+
+          .p2 {
+            width: 290px;
+            font-size: 21px;
+          }
+        }
+      }
+
+      img {
+        position: absolute;
+
+        &:nth-of-type(1) {
+          width: 200px;
+        }
+
+        &:nth-of-type(2) {
+          width: 350px;
+        }
+
+        &:nth-of-type(3) {
+          width: 250px;
+        }
+      }
+
+      .position1 {
+        top: 75%;
+        left: 6.5%;
+      }
+
+      .position2 {
+        top: -11%;
+        right: -14%;
+      }
+
+      .position3 {
+        top: 14%;
+        right: 5%;
+        transform: rotate(40deg);
+      }
+    }
+  }
+}
+
+// ===== sect3 반응형
+// ===== sect4 반응형
+@media (max-width: 1787px) and (min-width: 1030px) {
+  .sect4 {
+    .inner {
+      display: flex;
+
+      .left {
+        @include fcsc;
+        gap: 48px;
+        width: 35%;
+        position: relative;
+        display: none;
+
+        .p-w0 {
+          @include fc;
+          gap: 48px;
+
+          .p1 {
+            font-family: "NovaSlim", sans-serif;
+            font-size: 88px;
+          }
+
+          .p2 {
+            color: #7d7d7d;
+            font-size: 28px;
+            font-weight: bold;
+          }
+
+          .p3 {
+            font-size: 52px;
+
+            span {
+              font-weight: bold;
+            }
+          }
+        }
+
+        .p-ws {
+          width: 282px;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 18px;
+
+          .p1 {
+            font-size: 21px;
+            font-weight: bold;
+          }
+
+          .p-w {
+            .p1 {
+              font-size: 18px;
+              color: #7d7d7d;
+            }
+
+            .p2 {
+              font-size: 16px;
+              color: #afafaf;
+            }
+
+            .i-w {
+              img {}
+            }
+          }
+        }
+      }
+
+      .right {
+        @include fcc;
+        position: relative;
+        width: 100%;
+
+        .swiper {
+          transform: rotate(0deg);
+          position: static;
+          width: 600px;
+          height: 700px;
+
+          .swiper-wrapper {
+            .swiper-slide {
+              .img {}
+
+              .img2 {}
+            }
+          }
+        }
+
+        .btn-wrap {
+          @include fcsc;
+          gap: 32px;
+          position: static;
+
+          .bg {
+            transition: 0.3s ease-in-out;
+
+            &.on {
+              background-color: #3dd1e7;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1030px) and (min-width: 536px) {
+  .sect4 {
+    .inner {
+      display: flex;
+
+      .left {
+        @include fcsc;
+        gap: 48px;
+        width: 35%;
+        position: relative;
+
+        .p-w0 {
+          @include fc;
+          gap: 48px;
+
+          .p1 {
+            font-family: "NovaSlim", sans-serif;
+            font-size: 88px;
+          }
+
+          .p2 {
+            color: #7d7d7d;
+            font-size: 28px;
+            font-weight: bold;
+          }
+
+          .p3 {
+            font-size: 52px;
+
+            span {
+              font-weight: bold;
+            }
+          }
+        }
+
+        .p-ws {
+          width: 282px;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 18px;
+
+          .p1 {
+            font-size: 21px;
+            font-weight: bold;
+          }
+
+          .p-w {
+            .p1 {
+              font-size: 18px;
+              color: #7d7d7d;
+            }
+
+            .p2 {
+              font-size: 16px;
+              color: #afafaf;
+            }
+
+            .i-w {
+              img {}
+            }
+          }
+        }
+      }
+
+      .right {
+        @include fcc;
+        position: relative;
+        width: 100%;
+        display: none;
+
+        .swiper {
+          transform: rotate(0deg);
+          position: static;
+          width: 600px;
+          height: 700px;
+
+          .swiper-wrapper {
+            .swiper-slide {
+              .img {}
+
+              .img2 {}
+            }
+          }
+        }
+
+        .btn-wrap {
+          @include fcsc;
+          gap: 32px;
+          position: static;
+
+          .bg {
+            transition: 0.3s ease-in-out;
+
+            &.on {
+              background-color: #3dd1e7;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 536px) and (min-width: 0px) {
+  .sect4 {
+    .inner {
+      display: flex;
+
+      .left {
+        @include fccc;
+        gap: 48px;
+        width: 100%;
+        position: relative;
+
+        .p-w0 {
+          @include fcc;
+          gap: 48px;
+
+          .p1 {
+            font-family: "NovaSlim", sans-serif;
+            font-size: 72px;
+          }
+
+          .p2 {
+            color: #7d7d7d;
+            font-size: 24px;
+            font-weight: bold;
+          }
+
+          .p3 {
+            text-align: center;
+            font-size: 48px;
+
+            span {
+              font-weight: bold;
+            }
+          }
+        }
+
+        .p-ws {
+          width: 282px;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 18px;
+
+          .p1 {
+            font-size: 21px;
+            font-weight: bold;
+          }
+
+          .p-w {
+            .p1 {
+              font-size: 18px;
+              color: #7d7d7d;
+            }
+
+            .p2 {
+              font-size: 16px;
+              color: #afafaf;
+            }
+
+            .i-w {
+              img {}
+            }
+          }
+        }
+      }
+
+      .right {
+        @include fcc;
+        position: relative;
+        display: none;
+      }
+    }
+  }
+}
+
+// ===== sect4-1 반응형
+
+@media (max-width: 1279px) and (min-width: 769px) {
+  .sect4-1 {
+    .inner {
+      position: relative;
+      @include fccc;
+      gap: 24px;
+
+      .video-frame {
+        position: relative;
+        width: 800px;
+        height: 450px;
+
+        .button-85 {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-size: 21px;
+          font-weight: bold;
+        }
+
+        iframe {
+          position: absolute;
+          z-index: 1;
+        }
+      }
+
+      .button-49 {
+        position: absolute;
+        left: 14%;
+        top: 62%;
+      }
+
+      .list-box {
+        display: flex;
+        justify-content: start;
+        width: 800px;
+        height: 225px;
+        background-color: rgba(255, 255, 255, 0.5);
+
+        .video-list {
+          flex-direction: row;
+          gap: 16px;
+          padding: 40px 40px 40px 40px;
+
+          li {
+            width: 410px;
+            display: flex;
+            gap: 16px;
+            cursor: pointer;
+
+            .p-w {
+              @include fcsc;
+              gap: 8px;
+
+              p {
+                font-weight: bold;
+
+                &:nth-child(2) {
+                  font-size: 18px;
+                }
+
+                &:nth-child(3) {
+                  color: #606060;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) and (min-width: 481px) {}
+
+@media (max-width: 480px) and (min-width: 0px) {}
+
+// ===== sect6 반응형
+@media (max-width: 1523px) and (min-width: 1160px) {
+  .sect6 {
+    .inner {
+      display: flex;
+
+      .right {
+        width: 70%;
+        position: relative;
+
+        .common {
+          position: absolute;
+        }
+
+        .position1 {
+          width: 200px;
+          top: 15%;
+        }
+
+        .position2 {
+          width: 30px;
+          top: 7%;
+          left: 18%;
+        }
+
+        .position3 {
+          width: 80px;
+          top: 8%;
+          left: 21%;
+        }
+
+        .position4 {
+          width: 600px;
+          top: 15%;
+          left: 25%;
+        }
+
+        .position5 {
+          width: 30px;
+          top: 55%;
+          left: 60%;
+        }
+
+        .position6 {
+          width: 80px;
+          top: 55%;
+          left: 65%;
+        }
+
+        .position7 {
+          width: 430px;
+          top: 72.5%;
+          left: 56%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1160px) and (min-width: 1223px) {
+  .sect6 {
+    .inner {
+      display: flex;
+
+      .right {
+        width: 70%;
+        position: relative;
+
+        .common {
+          position: absolute;
+        }
+
+        .position1 {
+          width: 160px;
+          top: 15%;
+        }
+
+        .position2 {
+          width: 24px;
+          top: 7%;
+          left: 18%;
+        }
+
+        .position3 {
+          width: 64px;
+          top: 8%;
+          left: 21%;
+        }
+
+        .position4 {
+          width: 480px;
+          top: 15%;
+          left: 25%;
+        }
+
+        .position5 {
+          width: 24px;
+          top: 55%;
+          left: 60%;
+        }
+
+        .position6 {
+          width: 64px;
+          top: 55%;
+          left: 65%;
+        }
+
+        .position7 {
+          width: 350px;
+          top: 72.5%;
+          left: 56%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1223px) and (min-width: 0) {
+  .sect6 {
+    .inner {
+      .left {
+        width: 100%;
+        gap: 48px;
+
+        .p-w0 {
+          width: 100%;
+          @include fcc;
+          gap: 48px;
+
+          .p1 {
+            font-family: "NovaSlim", sans-serif;
+            font-size: 80px;
+            color: #fff;
+          }
+
+          .p2 {
+            color: #7d7d7d;
+            font-size: 21px;
+            font-weight: bold;
+          }
+
+          .p3 {
+            color: #fff;
+            font-size: 48px;
+
+            span {
+              font-weight: bold;
+            }
+          }
+        }
+
+        .p-ws {
+          margin: 0 auto;
+          width: 282px;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 18px;
+
+          .p1 {
+            color: #fff;
+            font-size: 21px;
+            font-weight: bold;
+          }
+
+          .p-w {
+            .p1 {
+              font-size: 18px;
+              color: #7d7d7d;
+            }
+
+            .p2 {
+              font-size: 16px;
+              color: #afafaf;
+            }
+
+            .i-w {
+              text-align: center;
+              width: 100px;
+
+              img {}
+            }
+          }
+        }
+      }
+
+      .right {
+        display: none;
+      }
+    }
+  }
+}

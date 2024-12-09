@@ -75,12 +75,15 @@
 }
 @keyframes float {
   0% {
-    transform: translateY(0);
+    margin-top: 0;
   }
   50% {
-    transform: translateY(-20px);
+    margin-top: -20px;
   }
   100% {
-    transform: translateY(0);
+    margin-top: 0;
   }
 }
+/* 이동하는거 픽셀로 해야지
+트렌슬레이트로 하니까
+css 에서 중첩이되서 문제생김 */

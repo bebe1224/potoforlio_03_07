@@ -89,6 +89,12 @@ sections.forEach((sect, i) => {
     .filter((box) => box !== null); // 존재하는 요소만 필터링
 
   sect.addEventListener("wheel", function (e) {
+
+    // // .sect4-1에서는 일반 스크롤을 허용
+    // if (sect.classList.contains("sect4-1")) {
+    //   return; // 이 섹션은 아무 처리도 하지 않고, 기본 스크롤이 동작하도록 함
+    // }
+
     let isInsideScrollableBox = false;
 
     // 스크롤 가능한 박스들 중 하나에 마우스가 있는지 확인
@@ -128,38 +134,38 @@ sections.forEach((sect, i) => {
 });
 
 // =====
-const boxs = document.querySelector('.sect4-2 .boxs'); // 스크롤 가능한 박스
-const section = document.querySelector('.sect4-2'); // 현재 섹션
-const nextSection = section.nextElementSibling; // 다음 섹션
-const prevSection = section.previousElementSibling; // 이전 섹션
+// const boxs = document.querySelector('.sect4-2 .boxs'); // 스크롤 가능한 박스
+// const section = document.querySelector('.sect4-2'); // 현재 섹션
+// const nextSection = section.nextElementSibling; // 다음 섹션
+// const prevSection = section.previousElementSibling; // 이전 섹션
 
-let isScrolling; // 스크롤 중인지 확인하는 변수
+// let isScrolling; // 스크롤 중인지 확인하는 변수
 
-// 스크롤 이벤트 처리
-boxs.addEventListener('scroll', (e) => {
-  const scrollTop = boxs.scrollTop; // 현재 스크롤 위치
-  const scrollHeight = boxs.scrollHeight; // 스크롤 가능한 전체 높이
-  const clientHeight = boxs.clientHeight; // 보여지는 영역의 높이
+// // 스크롤 이벤트 처리
+// boxs.addEventListener('scroll', (e) => {
+//   const scrollTop = boxs.scrollTop; // 현재 스크롤 위치
+//   const scrollHeight = boxs.scrollHeight; // 스크롤 가능한 전체 높이
+//   const clientHeight = boxs.clientHeight; // 보여지는 영역의 높이
   
-  // 스크롤이 멈추었을 때, 일정 시간이 지난 후 처리
-  if (isScrolling) {
-    clearTimeout(isScrolling);
-  }
+//   // 스크롤이 멈추었을 때, 일정 시간이 지난 후 처리
+//   if (isScrolling) {
+//     clearTimeout(isScrolling);
+//   }
 
-  // 스크롤이 멈춘 뒤 300ms 후에 섹션 이동
-  isScrolling = setTimeout(() => {
-    // 맨 아래로 스크롤 시
-    if (scrollTop + clientHeight >= scrollHeight) {
-      if (nextSection) {
-        nextSection.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
+//   // 스크롤이 멈춘 뒤 300ms 후에 섹션 이동
+//   isScrolling = setTimeout(() => {
+//     // 맨 아래로 스크롤 시
+//     if (scrollTop + clientHeight >= scrollHeight) {
+//       if (nextSection) {
+//         nextSection.scrollIntoView({ behavior: 'smooth' });
+//       }
+//     }
 
-    // 맨 위로 스크롤 시
-    if (scrollTop <= 0) {
-      if (prevSection) {
-        prevSection.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  }, 300); // 300ms 대기 후 섹션 이동
-});
+//     // 맨 위로 스크롤 시
+//     if (scrollTop <= 0) {
+//       if (prevSection) {
+//         prevSection.scrollIntoView({ behavior: 'smooth' });
+//       }
+//     }
+//   }, 300); // 300ms 대기 후 섹션 이동
+// });
