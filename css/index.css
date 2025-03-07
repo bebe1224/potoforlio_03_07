@@ -16,18 +16,6 @@
   z-index: -1;
 }
 
-@font-face {
-  font-family: "NovaSlim";
-  src: url("/font/Nova_Slim/NovaSlim-Regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Caveat-bold";
-  src: url("/font/Caveat-f/Caveat-Bold.ttf") format("truetype");
-  font-weight: 700;
-  font-style: normal;
-}
 @keyframes dashArray {
   0% {
     stroke-dasharray: 0 1 359 0;
@@ -432,7 +420,7 @@ header .inner ul {
   gap: 48px;
 }
 .sect3 .inner .left .p-w0 .p1 {
-  font-family: "NovaSlim";
+  font-family: "Nova Slim", system-ui;
   font-size: 76px;
   color: #fff;
 }
@@ -775,7 +763,7 @@ header .inner ul {
   gap: 48px;
 }
 .sect4 .inner .left .p-w0 .p1 {
-  font-family: "NovaSlim", sans-serif;
+  font-family: "Nova Slim", system-ui;
   font-size: 88px;
 }
 .sect4 .inner .left .p-w0 .p2 {
@@ -1087,11 +1075,11 @@ header .inner ul {
   flex-direction: column;
   gap: 64px;
   position: relative;
+  font-family: "Nova Slim", system-ui;
 }
 .sect5 .inner .p1 {
   margin-top: 100px;
   font-size: 100px;
-  font-family: "NovaSlim";
   color: #fff;
 }
 .sect5 .inner .surcle_wrap {
