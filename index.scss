@@ -1,6 +1,4 @@
-body {
-  overflow-x: hidden;
-}
+
 // ===== mixin
 @mixin fsbc {
   display: flex;
@@ -44,6 +42,7 @@ body {
   align-items: start;
   flex-direction: column;
 }
+
 @mixin fscc {
   display: flex;
   justify-content: start;
@@ -85,38 +84,69 @@ body {
   font-style: normal;
 }
 
-// =====scrollbar
-body::-webkit-scrollbar,
-.sect4-1 .list-box::-webkit-scrollbar,
-.sect4-2 .boxs::-webkit-scrollbar {
-  width: 8px;
-  /* 스크롤바 너비 */
+// 키프레임
+@keyframes dashArray {
+  0% {
+    stroke-dasharray: 0 1 359 0;
+  }
+
+  50% {
+    stroke-dasharray: 0 359 1 0;
+  }
+
+  100% {
+    stroke-dasharray: 359 1 0 0;
+  }
 }
 
-body::-webkit-scrollbar-thumb,
-.sect4-1 .list-box::-webkit-scrollbar-thumb,
-.sect4-2 .boxs::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.3);
-  /* 스크롤바 손잡이 색상 */
-  border-radius: 4px;
-  /* 둥근 모서리 */
-  transition: background 0.3s ease;
+@keyframes spinDashArray {
+  0% {
+    stroke-dasharray: 270 90;
+  }
+
+  50% {
+    stroke-dasharray: 0 360;
+  }
+
+  100% {
+    stroke-dasharray: 270 90;
+  }
 }
 
-body::-webkit-scrollbar-thumb:hover,
-.sect4-1 .list-box::-webkit-scrollbar-thumb:hover,
-.sect4-2 .boxs::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 0, 0, 0.5);
-  /* 호버 시 손잡이 색상 변경 */
+@keyframes dashOffset {
+  0% {
+    stroke-dashoffset: 365;
+  }
+
+  100% {
+    stroke-dashoffset: 5;
+  }
 }
 
-body::-webkit-scrollbar-track,
-.sect4-1 .list-box::-webkit-scrollbar-track,
-.sect4-2 .boxs::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.1);
-  /* 스크롤바 배경 */
-  border-radius: 4px;
-  /* 둥근 모서리 */
+@keyframes spin {
+  0% {
+    rotate: 0deg;
+  }
+
+  12.5%,
+  25% {
+    rotate: 270deg;
+  }
+
+  37.5%,
+  50% {
+    rotate: 540deg;
+  }
+
+  62.5%,
+  75% {
+    rotate: 810deg;
+  }
+
+  87.5%,
+  100% {
+    rotate: 1080deg;
+  }
 }
 
 // ===== progress
@@ -128,6 +158,11 @@ body::-webkit-scrollbar-track,
   width: 1px;
   height: 10px;
   background-color: rgb(255, 174, 0);
+}
+
+// ==== body
+body {
+  overflow-x: hidden;
 }
 
 // ===== header
@@ -145,15 +180,13 @@ header {
     width: calc(100% - 320px);
     height: 100px;
 
-    h1 {
-    }
+    h1 {}
 
     ul {
       display: flex;
       gap: 32px;
 
-      .main-m {
-      }
+      .main-m {}
     }
   }
 }
@@ -168,6 +201,7 @@ header {
   .inner {
     margin: 0 auto;
     width: calc(100% - 240px);
+    min-width: 1672px;
     height: 100vh;
   }
 }
@@ -176,17 +210,14 @@ header {
 .sect1 {
   .star-field {
     position: absolute;
-
+    width: 100%;
+    height: 100%;
     background-color: rgb(0, 0, 0);
 
-    background-image: radial-gradient(
-        circle at top right,
-        rgba(121, 68, 154, 0.13),
-        transparent
-      ),
-      radial-gradient(circle at 20% 80%, rgba(41, 196, 255, 0.13), transparent) {
-
-    }
+    background-image: radial-gradient(circle at top right,
+      rgba(121, 68, 154, 0.13),
+      transparent),
+    radial-gradient(circle at 20% 80%, rgba(41, 196, 255, 0.13), transparent) {}
   }
 
   .inner {
@@ -223,6 +254,7 @@ header {
       @include fcc;
       width: 55%;
 
+
       img {
         width: 800px;
       }
@@ -235,22 +267,20 @@ header {
   position: relative;
 
   .star-field {
+    width: 100%;
+    min-width: 600px;
+    height: 100%;
     transform: scaleY(-1);
     position: absolute;
     z-index: 1;
     background-color: rgb(0, 0, 0);
 
-    background-image: radial-gradient(
-        circle at top right,
-        rgba(121, 68, 154, 0.13),
-        transparent
-      ),
-      radial-gradient(circle at 20% 80%, rgba(41, 196, 255, 0.13), transparent) {
+    background-image: radial-gradient(circle at top right,
+      rgba(121, 68, 154, 0.13),
+      transparent),
+    radial-gradient(circle at 20% 80%, rgba(41, 196, 255, 0.13), transparent) {}
 
-    }
-
-    clip-path: polygon(
-      100% 100%,
+    clip-path: polygon(100% 100%,
       0% 100%,
       0% 78.89%,
       2% 78.8%,
@@ -302,8 +332,7 @@ header {
       94% 70.01%,
       96% 69.6%,
       98% 69.34%,
-      100% 69.26%
-    );
+      100% 69.26%);
   }
 
   .inner {
@@ -318,9 +347,11 @@ header {
     }
 
     .left {
+      position: relative;
       @include fccc;
       gap: 64px;
       width: 45%;
+      min-width: 752px;
 
       .p1 {
         color: #fff;
@@ -335,19 +366,24 @@ header {
 
       .i-w {
         @include fcc;
-        position: relative;
         width: 380px;
         height: 600px;
         background-color: #d9d9d9;
+        overflow: hidden;
 
         img {
+          object-fit: cover;
+          width: 150%;
         }
 
-        .star-img {
-          position: absolute;
-          top: 0%;
-          width: 500px;
-        }
+      }
+
+      .star-img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 500px;
+        transform: translate(-50%, -50%);
       }
 
       .shape {
@@ -358,6 +394,7 @@ header {
     .right {
       display: flex;
       width: 55%;
+      min-width: 919px;
 
       .one {
         @include fccc;
@@ -366,7 +403,7 @@ header {
 
         .p-ws {
           @include fcsc;
-          width: 350.5px;
+          width: 350px;
           gap: 16px;
 
           .p1 {
@@ -427,61 +464,56 @@ header {
       }
 
       .two {
-        @include fccc;
+        display: flex;
+        flex-direction: column;
         gap: 32px;
         width: 50%;
-        margin-bottom: 40px;
 
-        .p-wss {
-          @include fc;
+        //공통
+        .wrap {
+          display: flex;
+          flex-direction: column;
           gap: 16px;
 
           .p1 {
             font-size: 32px;
             font-weight: bold;
           }
-
-          .p-ws {
-            @include fc;
-            gap: 8px;
-
-            .p-w {
-              display: flex;
-              gap: 32px;
-
-              .p2 {
-                font-size: 28px;
-              }
-            }
-
-            .p-w1 {
-              display: flex;
-              font-size: 28px;
-
-              .p1 {
-              }
-
-              .p2 {
-              }
-            }
-          }
         }
 
-        .PERSONALITY {
-          color: #fff;
-        }
+        //개별(1)
+        .wrap:nth-of-type(1) {
+          margin-top: 68px;
 
-        .i-ws {
-          @include fc;
-          gap: 16px;
-
-          .p1 {
-            font-size: 32px;
-            font-weight: bold;
+          .white {
+            color: #fff;
           }
 
           .i-w {
+
+
             img {
+              height: 258px;
+            }
+          }
+        }
+
+        //개별(2)
+        .wrap:nth-of-type(2) {
+          .p1 {}
+
+          .p_wrap {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+
+            p {
+              font-size: 20px;
+
+              span {
+                font-weight: bold;
+                padding-right: 8px;
+              }
             }
           }
         }
@@ -495,21 +527,19 @@ header {
   overflow: hidden;
 
   .star-field {
+    width: 100%;
+    min-width: 1190px;
+    height: 100%;
     transform: scaleY(-1);
     position: absolute;
     background-color: rgb(0, 0, 0);
 
-    background-image: radial-gradient(
-        circle at top right,
-        rgba(121, 68, 154, 0.13),
-        transparent
-      ),
-      radial-gradient(circle at 20% 80%, rgba(41, 196, 255, 0.13), transparent) {
+    background-image: radial-gradient(circle at top right,
+      rgba(121, 68, 154, 0.13),
+      transparent),
+    radial-gradient(circle at 20% 80%, rgba(41, 196, 255, 0.13), transparent) {}
 
-    }
-
-    clip-path: polygon(
-      100% 0%,
+    clip-path: polygon(100% 0%,
       0% 0%,
       0% 23.7%,
       2% 23.53%,
@@ -561,61 +591,67 @@ header {
       94% 5.6%,
       96% 4.76%,
       98% 4.25%,
-      100% 4.07%
-    );
+      100% 4.07%);
   }
 
   .inner {
-    .p-ws {
-      @include fc;
-      gap: 16px;
-      margin-top: 80px;
+    @include fcc;
 
-      .p1 {
-        font-size: 32px;
-        font-weight: bold;
-      }
+    .left {
+      position: relative;
+      width: 50%;
+      height: 100vh;
 
-      .p-w {
+      .p-ws {
         @include fc;
-        gap: 8px;
+        gap: 16px;
+        margin-top: 80px;
 
-        .p2 {
-          font-size: 28px;
+        .p1 {
+          font-size: 32px;
+          font-weight: bold;
+        }
+
+        .p-w {
+          @include fc;
+          gap: 8px;
+
+          .p2 {
+            font-size: 28px;
+          }
         }
       }
-    }
 
-    img {
-      position: absolute;
-
-      &:nth-of-type(1) {
+      img {
+        position: absolute;
+        top: 53%;
+        left: 10%;
         width: 350px;
       }
+    }
 
-      &:nth-of-type(2) {
-        width: 600px;
+    .right {
+      position: relative;
+      width: 50%;
+      height: 100vh;
+
+      img {
+        position: absolute;
+
+
+        &:nth-of-type(1) {
+          width: 600px;
+          top: 0%;
+          left: 30%;
+        }
+
+        &:nth-of-type(2) {
+          width: 300px;
+          top: 48%;
+          left: 55%;
+
+        }
       }
-
-      &:nth-of-type(3) {
-        width: 300px;
-      }
-    }
-
-    .position1 {
-      top: 45%;
-      left: 6.5%;
-    }
-
-    .position2 {
-      top: 5%;
-      right: 5%;
-    }
-
-    .position3 {
-      top: 50%;
-      right: 15%;
-      transform: rotate(25deg);
     }
   }
 }
@@ -623,17 +659,15 @@ header {
 // =====
 .sect3 {
   .star-field {
+    width: 100%;
+    height: 100%;
     position: absolute;
     background-color: rgb(0, 0, 0);
 
-    background-image: radial-gradient(
-        circle at top right,
-        rgba(121, 68, 154, 0.13),
-        transparent
-      ),
-      radial-gradient(circle at 20% 80%, rgba(41, 196, 255, 0.13), transparent) {
-
-    }
+    background-image: radial-gradient(circle at top right,
+      rgba(121, 68, 154, 0.13),
+      transparent),
+    radial-gradient(circle at 20% 80%, rgba(41, 196, 255, 0.13), transparent) {}
   }
 
   .inner {
@@ -699,8 +733,7 @@ header {
             text-align: center;
             width: 120px;
 
-            img {
-            }
+            img {}
           }
         }
 
@@ -722,8 +755,7 @@ header {
         left: 10%;
       }
 
-      .size1 {
-      }
+      .size1 {}
 
       .position2 {
         top: 10%;
@@ -742,20 +774,18 @@ header {
   transform: scaleY(-1);
 
   .star-field {
+    width: 100%;
+    min-width: 880px;
+    height: 100%;
     position: absolute;
     background-color: rgb(0, 0, 0);
 
-    background-image: radial-gradient(
-        circle at top right,
-        rgba(121, 68, 154, 0.13),
-        transparent
-      ),
-      radial-gradient(circle at 20% 80%, rgba(41, 196, 255, 0.13), transparent) {
+    background-image: radial-gradient(circle at top right,
+      rgba(121, 68, 154, 0.13),
+      transparent),
+    radial-gradient(circle at 20% 80%, rgba(41, 196, 255, 0.13), transparent) {}
 
-    }
-
-    clip-path: polygon(
-      100% 100%,
+    clip-path: polygon(100% 100%,
       0% 100%,
       0% 23.24%,
       2% 23.15%,
@@ -807,13 +837,13 @@ header {
       94% 20.77%,
       96% 19.84%,
       98% 18.8%,
-      100% 17.67%
-    );
+      100% 17.67%);
   }
 
   .inner {
     position: relative;
     transform: scaleY(-1);
+    min-width: 1672px; //모바일에서 꼭줄이거나 없애야함
 
     .wrap {
       transition: 0.3s ease-in-out;
@@ -839,28 +869,23 @@ header {
           }
 
           .slide1 {
-            background: url(../img/sect3-1img/더롱다크.gif) no-repeat
-              center/cover;
+            background: url(../img/sect3-1img/더롱다크.gif) no-repeat center/cover;
           }
 
           .slide2 {
-            background: url(../img/sect3-1img/빵빵이일상.png) no-repeat
-              center/cover;
+            background: url(../img/sect3-1img/빵빵이일상.png) no-repeat center/cover;
           }
 
           .slide3 {
-            background: url(../img/sect3-1img/루즈벨트.png) no-repeat
-              center/cover;
+            background: url(../img/sect3-1img/루즈벨트.png) no-repeat center/cover;
           }
 
           .slide4 {
-            background: url(../img/sect3-1img/죠스7-9.png) no-repeat
-              center/cover;
+            background: url(../img/sect3-1img/죠스7-9.png) no-repeat center/cover;
           }
 
           .slide5 {
-            background: url(../img/sect3-1img/빵바오7-12.png) no-repeat
-              center/cover;
+            background: url(../img/sect3-1img/빵바오7-12.png) no-repeat center/cover;
           }
 
           .slide6 {
@@ -868,13 +893,11 @@ header {
           }
 
           .slide7 {
-            background: url(../img/sect3-1img/메이플스토리\ 8-2.png) no-repeat
-              center/cover;
+            background: url(../img/sect3-1img/메이플스토리\ 8-2.png) no-repeat center/cover;
           }
 
           .slide8 {
-            background: url(../img/sect3-1img/메이플스토리8-7.png) no-repeat
-              center/cover;
+            background: url(../img/sect3-1img/메이플스토리8-7.png) no-repeat center/cover;
           }
 
           .slide9 {
@@ -886,8 +909,7 @@ header {
           }
 
           .slide10 {
-            background: url(../img/sect3-1img/루카831\ 8-26.png) no-repeat
-              center/cover;
+            background: url(../img/sect3-1img/루카831\ 8-26.png) no-repeat center/cover;
           }
 
           .slide11 {
@@ -909,11 +931,9 @@ header {
               position: absolute;
             }
 
-            .img1 {
-            }
+            .img1 {}
 
-            .img2 {
-            }
+            .img2 {}
           }
 
           .slide15 {
@@ -934,12 +954,10 @@ header {
         @include fcc;
         position: absolute;
         top: 50%;
-        transform: translate(0%, -50%) translate3d(0px, 0px, -100.083px)
-          rotateX(0deg) rotateY(20.0417deg) scale(1);
+        transform: translate(0%, -50%) translate3d(0px, 0px, -100.083px) rotateX(0deg) rotateY(20.0417deg) scale(1);
         box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
           rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
         background-color: rgba(255, 255, 255, 0.9);
-
         width: 440px;
         height: 300px;
 
@@ -994,6 +1012,17 @@ header {
         }
       }
 
+      .swiper-button-prev,
+      .swiper-button-next {
+        img {
+          transition: 0.3s ease-in-out;
+
+          &:hover {
+            opacity: 0.5;
+          }
+        }
+      }
+
       .slide-counter {
         position: absolute;
         left: 1%;
@@ -1005,19 +1034,18 @@ header {
       }
     }
 
-    .list-p {
-      color: #000;
+    .w {
+      @include fc;
+      gap: 16px;
       position: absolute;
-      top: 80%;
+      top: 81%;
       left: 1%;
-    }
 
-    .view-more {
-      position: absolute;
-      top: 85.5%;
-      left: 3.6%;
-      transform: translate(-50%, -50%);
-      color: #000;
+      .list-p {
+        color: #000;
+      }
+
+      .view-more {}
     }
 
     .hidden-list {
@@ -1167,8 +1195,7 @@ header {
           }
 
           .i-w {
-            img {
-            }
+            img {}
           }
         }
       }
@@ -1245,15 +1272,15 @@ header {
   .bg {
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     opacity: 0;
   }
 
   .bg1 {
     background: url(../img/sect4-1img/아침도시\ 구름\ 추가.png);
     background-repeat: no-repeat;
-    background-position: 100% 100%;
-    background-size: 100% 100%;
+    background-position: 100% 0%;
+    background-size: cover;
     z-index: 1;
     opacity: 1;
   }
@@ -1261,88 +1288,243 @@ header {
   .bg2 {
     background: url(../img/sect4-1img/밤도시.png);
     background-repeat: no-repeat;
-    background-position: 100% 100%;
-    background-size: 100% 100%;
+    background-position: 100% 0%;
+    background-size: cover;
     z-index: 2;
     background-attachment: fixed;
   }
 
   .inner {
-    @include fcc;
+    @include fcs;
     gap: 32px;
     position: relative;
-    // background-color: #fafafa;
     z-index: 3;
 
-    .video-frame {
-      position: relative;
-      width: 1080px;
-      height: 607px;
-      background-color: rgba(255, 255, 255, 0.1);
-      box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
-        rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
-        rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    .video_wrap {
+      @include fccc;
+      gap: 32px;
 
-      .button-85 {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 21px;
-        font-weight: bold;
-      }
+      .video_frame {
+        @include fcc;
+        margin-top: 80px;
+        width: 1080px;
+        height: 607px;
+        background-color: rgba(255, 255, 255, 0.1);
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+          rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+          rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+        pointer-events: none;
 
-      iframe {
-        // pointer-events: none; // 이게 있어야 아이프레임 문제해결 벗 상호작용안돼!
-        // touch-action: none;
-        position: absolute;
-        z-index: 1;
-      }
-    }
+        @mixin position($pos) {
+          position: $pos;
+        }
 
-    .button-49 {
-      position: absolute;
-      right: 20%;
-      top: 5%;
-      z-index: 2;
-    }
+        .absolute {
+          @include position(absolute);
+        }
 
-    .list-box {
-      position: relative;
-      overflow: auto;
-      // box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
-      //   rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-      box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
-        rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
-        rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-      width: 456px;
-      height: 775px;
-      background-color: rgba(255, 255, 255, 0.3);
+        .inline-block {
+          display: inline-block;
+        }
 
-      .video-list {
-        @include fccc;
-        gap: 16px;
-        padding: 40px 0px 40px 0px;
-
-        li {
-          width: 410px;
+        .loader {
           display: flex;
-          gap: 16px;
+          margin: 0.25em 0;
+        }
+
+        .w-2 {
+          width: 0.5em;
+        }
+
+        .dash {
+          animation: dashArray 2s ease-in-out infinite,
+            dashOffset 2s linear infinite;
+        }
+
+        .spin {
+          animation: spinDashArray 2s ease-in-out infinite,
+            spin 8s ease-in-out infinite,
+            dashOffset 2s linear infinite;
+          transform-origin: center;
+        }
+      }
+
+      .video-controls {
+        @include fcc;
+        gap: 16px;
+        width: 1080px;
+        height: 160px;
+        background-color: rgba(255, 255, 255, 0.1);
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+          rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+          rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+
+        //공통
+        button {
+          position: relative;
+          font-size: 1.2em;
+          padding: 0.7em 1.4em;
+          background-color: #BF0426;
+          text-decoration: none;
+          border: none;
+          border-radius: 0.5em;
+          color: #DEDEDE;
+          box-shadow: 0.5em 0.5em 0.5em rgba(0, 0, 0, 0.3);
+          width: 120px;
+          transition: opacity 0.3s ease-in-out;
           cursor: pointer;
 
-          .p-w {
-            @include fcsc;
-            gap: 8px;
+          &:hover {
+            opacity: 0.9;
+          }
 
-            p {
-              font-weight: bold;
+          &:hover::before {
+            width: 1.6em;
+            height: 1.6em;
+          }
 
-              &:nth-child(2) {
-                font-size: 18px;
+          &:active {
+            box-shadow: 0.2em 0.2em 0.3em rgba(0, 0, 0, 0.3);
+            transform: translate(0.1em, 0.1em);
+          }
+
+          &::before {
+            position: absolute;
+            content: '';
+            height: 0;
+            width: 0;
+            top: 0;
+            left: 0;
+            background: linear-gradient(135deg, rgba(33, 33, 33, 1) 0%, rgba(33, 33, 33, 1) 50%, rgba(150, 4, 31, 1) 50%, rgba(191, 4, 38, 1) 60%);
+            border-radius: 0 0 0.5em 0;
+            box-shadow: 0.2em 0.2em 0.2em rgba(0, 0, 0, 0.3);
+            transition: 0.3s;
+          }
+        }
+
+        //개별
+        #playBtn {}
+
+        #pauseBtn {}
+
+        #forwardBtn {}
+
+        #backwardBtn {}
+
+        #volumeControl {}
+
+        // level settings 👇
+        $slider-width: 100%;
+        $slider-height: 6px;
+        $slider-bg: rgb(0, 0, 0, 0.9); //이걸로 볼륨색 조절 가능 
+        $slider-border-radius: 999px;
+        $level-color: #e4e4e4;
+        $level-transition-duration: 0.1s;
+        $icon-margin: 15px;
+        $icon-color: $slider-bg;
+        $icon-size: 25px;
+
+        .slider {
+          cursor: pointer;
+          display: inline-flex;
+          flex-direction: row-reverse;
+          align-items: center;
+
+          .volume {
+            display: inline-block;
+            vertical-align: top;
+            margin-right: $icon-margin;
+            color: $icon-color;
+            width: $icon-size;
+            height: auto;
+          }
+
+          .level {
+            appearance: none;
+            width: $slider-width;
+            height: $slider-height;
+            background: $slider-bg;
+            overflow: hidden;
+            border-radius: $slider-border-radius;
+            transition: height $level-transition-duration;
+            cursor: inherit;
+
+            &::-webkit-slider-thumb {
+              appearance: none;
+              width: 0;
+              height: 0;
+              box-shadow: -200px 0 0 200px $level-color;
+            }
+
+            &:hover {
+              height: calc($slider-height * 2);
+            }
+          }
+        }
+
+      }
+    }
+
+
+    .swiper_wrap {
+      margin-top: 80px;
+
+      .swiper {
+        padding: 32px 0px;
+        width: 400px;
+        height: 800px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+          rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+          rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+          rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+        background-color: rgba(255, 255, 255, 0.3);
+
+        .swiper-wrapper {
+          @include fsc;
+          height: auto;
+
+          .swiper-slide {
+            @include fcc;
+            gap: 32px;
+            width: 95%;
+            background-color: rgba(255, 255, 255, 0.1);
+            box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+              rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+              rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+            cursor: pointer;
+
+            .i_w {
+              overflow: hidden;
+              width: 180px;
+              border-radius: 9px;
+
+              img {
+                transition: 0.5s ease-in-out;
+                width: 100%;
               }
 
-              &:nth-child(3) {
-                color: #606060;
+              &:hover img {
+                transform: scale(1.1)
+              }
+            }
+
+            .p-w {
+              @include fcsc;
+              gap: 8px;
+              min-width: 130px;
+              width: 130px;
+
+              p {
+                font-weight: bold;
+
+                &:nth-child(2) {
+                  font-size: 18px;
+                }
+
+                &:nth-child(3) {
+                  color: #303030;
+                }
               }
             }
           }
@@ -1351,6 +1533,7 @@ header {
     }
   }
 }
+
 // =====
 .sect5 {
   background: url(../img/sect4-1img/밤도시.png);
@@ -1361,40 +1544,47 @@ header {
 
   .inner {
     @include fscc;
-    gap: 150px;
-    border: 1px solid #ffffff;
+    gap: 64px;
     position: relative;
+
     .p1 {
+      margin-top: 100px;
       font-size: 100px;
       font-family: "NovaSlim";
       color: #fff;
     }
+
     .surcle_wrap {
       // border: 1px solid #ffffff;
       display: flex;
       gap: 100px;
+
       .surcle {
         @include fcc;
         width: 300px;
         height: 300px;
         background-color: rgba(255, 255, 255, 0.5);
         border-radius: 999px;
+
         img {
           animation: rotateAnimation 30s infinite linear;
           width: 360px;
           height: 360px;
+
           &:hover {
             animation-play-state: paused;
           }
         }
       }
-      .position1 {
-      }
+
+      .position1 {}
+
       .position2 {
         transform: translateY(100px);
       }
-      .position3 {
-      }
+
+      .position3 {}
+
       .position4 {
         transform: translateY(100px);
       }
@@ -1402,323 +1592,116 @@ header {
   }
 }
 
-// ===== sect1 반응형
-
-// ===== sect2,sect2-1반응형
-@media (max-width: 1530px) and (min-width: 845px) {
+@media (min-width: 0px) and (max-width: 767px) {
   .sect {
     .inner {
-      width: calc(100% - 120px);
+      width: 90%;
+      min-width: 90%;
+      // min-width: 540px;
     }
   }
 
-  .sect2 {
+  .sect1 {
+
     .inner {
-      position: relative;
-      display: flex;
+      justify-content: center;
+      flex-direction: column;
 
       .left {
-        padding: 80px 0px;
-        display: flex;
+        padding: 0;
+        width: 100%;
+
+        .b1 {
+          font-size: 24px;
+        }
+
+        .b-wrap {
+          .b2 {
+            font-size: 62px;
+          }
+        }
+      }
+
+      .right {
+        @include fcc;
+        width: 100%;
+
+        img {
+          width: 400px;
+        }
+      }
+    }
+  }
+
+  // =====
+  .sect2 {
+    .inner {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      padding-bottom: 32px;
+
+      .left {
+        align-items: start;
         justify-content: start;
-        gap: 32px;
-        width: 40%;
+        padding-top: 100px;
+        gap: 0;
+        width: 100%;
+        min-width: 100%;
 
         .p1 {
-          font-size: 21px;
-          position: absolute;
+          font-size: 24px;
 
           span {
-            font-weight: bold;
             font-size: 24px;
           }
         }
 
         .i-w {
-          @include fcc;
-          width: 241px;
-          height: 362px;
-          background-color: #d9d9d9;
-          position: absolute;
-
-          img {
-          }
-
-          .star-img {
-            position: absolute;
-            top: 0%;
-            width: 241px;
-          }
+          display: none;
         }
 
-        .shape {
-          border-radius: 100%;
-        }
-
-        .position0 {
-          left: 50px;
-        }
-
-        .position1 {
-          left: 110px;
-          top: 180px;
+        .star-img {
+          display: none;
         }
       }
 
       .right {
         display: flex;
-        width: 60%;
+        width: 100%;
+        min-width: 100%;
 
         .one {
-          @include fccc;
-          gap: 32px;
-
-          .p-ws {
-            @include fcsc;
-            width: 350.5px;
-            gap: 16px;
-            position: absolute;
-
-            .p1 {
-              font-weight: bold;
-              font-size: 21px;
-            }
-
-            .p-w {
-              @include fc;
-              gap: 8px;
-
-              .p2 {
-                font-size: 18px;
-              }
-            }
-          }
-
-          .p-ws2 {
-            .p1 {
-              background: linear-gradient(111deg, white 10%, black 100%);
-              -webkit-background-clip: text;
-              color: transparent;
-            }
-          }
-
-          .p-ws3 {
-            @include fcsc;
-            gap: 16px;
-            position: absolute;
-
-            .p {
-              font-weight: bold;
-              font-size: 21px;
-            }
-
-            .wrap {
-              @include fcc;
-              gap: 32px;
-
-              .p-w {
-                @include fc;
-                gap: 8px;
-
-                .p1 {
-                  font-size: 18px;
-                }
-              }
-
-              .i-w {
-                @include fc;
-                gap: 27px;
-
-                img {
-                  width: 120px;
-                }
-              }
-            }
-          }
-
-          .position1 {
-            top: 5%;
-            left: 57.5%;
-          }
-
-          .position2 {
-            top: 20%;
-            left: 57.5%;
-          }
-
-          .position3 {
-            left: 100px;
-            top: 570px;
-          }
-        }
-
-        .two {
-          @include fccc;
+          @include fcsc;
           gap: 32px;
           width: 50%;
-          margin-bottom: 40px;
-
-          .p-wss {
-            @include fc;
-            gap: 16px;
-            position: absolute;
-
-            .p1 {
-              font-size: 21px;
-              font-weight: bold;
-            }
-
-            .p-ws {
-              @include fc;
-              gap: 8px;
-
-              .p-w {
-                display: flex;
-                gap: 32px;
-
-                .p2 {
-                  font-size: 18px;
-                }
-              }
-
-              .p-w1 {
-                display: flex;
-                font-size: 18px;
-
-                .p1 {
-                }
-
-                .p2 {
-                }
-              }
-            }
-          }
-
-          .position1 {
-            top: 35%;
-            left: 57.5%;
-          }
-
-          .i-ws {
-            @include fc;
-            gap: 16px;
-            position: absolute;
-
-            .p1 {
-              font-size: 24px;
-              font-weight: bold;
-            }
-
-            .i-w {
-              img {
-                width: 200px;
-              }
-            }
-          }
-
-          .position2 {
-            top: 63%;
-            left: 57.5%;
-          }
-        }
-      }
-    }
-  }
-}
-
-@media (max-width: 845px) and (min-width: 0px) {
-  .sect {
-    .inner {
-      width: calc(100% - 60px);
-    }
-  }
-
-  .sect2 {
-    overflow: auto;
-    -webkit-overflow-scrolling: touch;
-
-    .inner {
-      position: relative;
-      flex-wrap: wrap;
-
-      .left {
-        padding: 80px 0px 48px 0px;
-        display: flex;
-        gap: 32px;
-        width: 100%;
-
-        .p1 {
-          font-size: 18px;
-          width: 340px;
-          text-align: center;
-
-          span {
-            font-weight: bold;
-            font-size: 21px;
-          }
-        }
-
-        .i-w {
-          @include fcc;
-
-          width: 241px;
-          height: 362px;
-          background-color: #d9d9d9;
-
-          img {
-          }
-
-          .star-img {
-            width: 241px;
-          }
-        }
-
-        .shape {
-          border-radius: 100%;
-        }
-      }
-
-      .right {
-        padding: 0px 0px 48px 0px;
-        flex-wrap: wrap;
-        width: 100%;
-        gap: 32px;
-
-        .one {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 32px;
-          width: 100%;
+          min-width: 190px;
 
           .p-ws {
-            @include fccc;
-            width: 350.5px;
-            gap: 16px;
+            @include fcsc;
+            width: 100%;
 
             .p1 {
-              font-weight: bold;
-              font-size: 21px;
+              font-size: 20px;
             }
 
             .p-w {
-              @include fccc;
-              gap: 8px;
-
               .p2 {
-                font-size: 18px;
+                font-size: 16px;
               }
             }
           }
 
           .p-ws1 {
+
+
             .p1 {
-              color: #000000;
+              color: #000;
             }
 
             .p-w {
               .w {
-                color: #000000;
+                color: #000;
               }
             }
           }
@@ -1727,30 +1710,31 @@ header {
             @include fc;
             gap: 16px;
 
+
             .p {
               font-weight: bold;
-              font-size: 21px;
+              font-size: 24px;
             }
 
             .wrap {
-              @include fcc;
-              gap: 32px;
+              @include fsc;
+              gap: 16px;
 
               .p-w {
                 @include fc;
-                gap: 8px;
+                gap: 12px;
 
                 .p1 {
-                  font-size: 18px;
+                  font-size: 16px;
                 }
               }
 
               .i-w {
                 @include fc;
-                gap: 27px;
+                gap: 28px;
 
                 img {
-                  width: 100px;
+                  width: 80px;
                 }
               }
             }
@@ -1758,561 +1742,276 @@ header {
         }
 
         .two {
-          @include fcc;
+          display: flex;
+          flex-direction: column;
           gap: 32px;
-          width: 100%;
-          margin-bottom: 40px;
+          width: 50%;
+          min-width: 190px;
 
-          .p-wss {
-            @include fcc;
+          // padding: 0px 10px;
+
+          //공통
+          .wrap {
+            display: flex;
+            flex-direction: column;
             gap: 16px;
 
             .p1 {
-              font-size: 21px;
-              font-weight: bold;
-            }
-
-            .p-ws {
-              @include fc;
-              gap: 8px;
-
-              .p-w {
-                display: flex;
-                gap: 32px;
-
-                .p2 {
-                  font-size: 18px;
-                }
-              }
-
-              .p-w1 {
-                display: flex;
-                font-size: 18px;
-
-                .p1 {
-                }
-
-                .p2 {
-                }
-              }
+              font-size: 20px;
             }
           }
 
-          .position1 {
-            top: 35%;
-            left: 57.5%;
-          }
+          //개별(1)
+          .wrap:nth-of-type(1) {
+            margin-top: -1px;
 
-          .i-ws {
-            @include fcc;
-            gap: 16px;
-
-            .p1 {
-              font-size: 24px;
-              font-weight: bold;
-            }
-
-            .PERSONALITY {
-              color: black;
+            .white {
+              color: #000;
             }
 
             .i-w {
+
+
               img {
-                width: 200px;
+                height: 140px;
               }
             }
           }
 
-          .position2 {
-            top: 63%;
-            left: 57.5%;
+          //개별(2)
+          .wrap:nth-of-type(2) {
+            .p1 {}
+
+            .p_wrap {
+              @include fc;
+              gap: 8px;
+              width: 100%;
+              min-width: 190px;
+
+              p {
+                font-size: 15px;
+
+                span {
+                  font-weight: bold;
+                  padding-right: 8px;
+                }
+              }
+            }
           }
         }
       }
     }
   }
-}
 
-@media (max-width: 1560px) and (min-width: 901px) {
   .sect2-1 {
-    position: relative;
-    overflow: hidden;
-
-    .inner {
-      .p-ws {
-        @include fc;
-        gap: 16px;
-        margin-top: 80px;
-
-        .p1 {
-          font-size: 28px;
-          font-weight: bold;
-        }
-
-        .p-w {
-          @include fc;
-          gap: 8px;
-
-          .p2 {
-            font-size: 24px;
-          }
-        }
-      }
-
-      img {
-        position: absolute;
-
-        &:nth-of-type(1) {
-          width: 300px;
-        }
-
-        &:nth-of-type(2) {
-          width: 800px;
-        }
-
-        &:nth-of-type(3) {
-          width: 350px;
-        }
-      }
-
-      .position1 {
-        top: 5%;
-        left: 70%;
-      }
-
-      .position2 {
-        top: 30%;
-        left: -15%;
-      }
-
-      .position3 {
-        top: 35%;
-        left: 40%;
-        transform: rotate(45deg) scale(1, -1);
-      }
-    }
-  }
-}
-
-@media (max-width: 901px) and (min-width: 0px) {
-  .sect2-1 {
-    position: relative;
     overflow: hidden;
 
     .inner {
       @include fccc;
 
-      .p-ws {
-        @include fcc;
-        gap: 24px;
-        margin-top: 0px;
+      .left {
+        width: 100%;
 
-        .p1 {
-          font-size: 24px;
-          font-weight: bold;
-        }
-
-        .p-w {
+        .p-ws {
           @include fc;
           gap: 12px;
-
-          .p2 {
-            width: 290px;
-            font-size: 21px;
-          }
-        }
-      }
-
-      img {
-        position: absolute;
-
-        &:nth-of-type(1) {
-          width: 200px;
-        }
-
-        &:nth-of-type(2) {
-          width: 350px;
-        }
-
-        &:nth-of-type(3) {
-          width: 250px;
-        }
-      }
-
-      .position1 {
-        top: 75%;
-        left: 6.5%;
-      }
-
-      .position2 {
-        top: -11%;
-        right: -14%;
-      }
-
-      .position3 {
-        top: 14%;
-        right: 5%;
-        transform: rotate(40deg);
-      }
-    }
-  }
-}
-
-// ===== sect3 반응형
-// ===== sect4 반응형
-@media (max-width: 1787px) and (min-width: 1030px) {
-  .sect4 {
-    .inner {
-      display: flex;
-
-      .left {
-        @include fcsc;
-        gap: 48px;
-        width: 35%;
-        position: relative;
-        display: none;
-
-        .p-w0 {
-          @include fc;
-          gap: 48px;
+          margin-top: 40px;
 
           .p1 {
-            font-family: "NovaSlim", sans-serif;
-            font-size: 88px;
-          }
-
-          .p2 {
-            color: #7d7d7d;
-            font-size: 28px;
-            font-weight: bold;
-          }
-
-          .p3 {
-            font-size: 52px;
-
-            span {
-              font-weight: bold;
-            }
-          }
-        }
-
-        .p-ws {
-          width: 282px;
-          display: flex;
-          flex-wrap: wrap;
-          gap: 18px;
-
-          .p1 {
-            font-size: 21px;
-            font-weight: bold;
+            font-size: 24px;
           }
 
           .p-w {
-            .p1 {
-              font-size: 18px;
-              color: #7d7d7d;
-            }
+            @include fc;
+            gap: 4px;
 
             .p2 {
               font-size: 16px;
-              color: #afafaf;
-            }
-
-            .i-w {
-              img {
-              }
+              letter-spacing: -1px;
             }
           }
+        }
+
+        img {
+          top: 55%;
+          left: 0%;
+          width: 180px;
         }
       }
 
       .right {
-        @include fcc;
-        position: relative;
         width: 100%;
 
-        .swiper {
-          transform: rotate(0deg);
-          position: static;
-          width: 600px;
-          height: 700px;
 
-          .swiper-wrapper {
-            .swiper-slide {
-              .img {
-              }
+        img {
 
-              .img2 {
-              }
-            }
+
+          &:nth-of-type(1) {
+            width: 300px;
+            top: 5%;
+            left: 38%;
           }
-        }
 
-        .btn-wrap {
-          @include fcsc;
-          gap: 32px;
-          position: static;
+          &:nth-of-type(2) {
+            width: 150px;
+            top: 55%;
+            left: 60%;
 
-          .bg {
-            transition: 0.3s ease-in-out;
-
-            &.on {
-              background-color: #3dd1e7;
-            }
           }
         }
       }
     }
   }
-}
 
-@media (max-width: 1030px) and (min-width: 536px) {
-  .sect4 {
+  // =====
+  .sect3 {
+
     .inner {
       display: flex;
 
       .left {
-        @include fcsc;
-        gap: 48px;
-        width: 35%;
-        position: relative;
 
         .p-w0 {
-          @include fc;
-          gap: 48px;
 
           .p1 {
-            font-family: "NovaSlim", sans-serif;
-            font-size: 88px;
-          }
-
-          .p2 {
-            color: #7d7d7d;
-            font-size: 28px;
-            font-weight: bold;
-          }
-
-          .p3 {
-            font-size: 52px;
-
-            span {
-              font-weight: bold;
-            }
-          }
-        }
-
-        .p-ws {
-          width: 282px;
-          display: flex;
-          flex-wrap: wrap;
-          gap: 18px;
-
-          .p1 {
-            font-size: 21px;
-            font-weight: bold;
-          }
-
-          .p-w {
-            .p1 {
-              font-size: 18px;
-              color: #7d7d7d;
-            }
-
-            .p2 {
-              font-size: 16px;
-              color: #afafaf;
-            }
-
-            .i-w {
-              img {
-              }
-            }
-          }
-        }
-      }
-
-      .right {
-        @include fcc;
-        position: relative;
-        width: 100%;
-        display: none;
-
-        .swiper {
-          transform: rotate(0deg);
-          position: static;
-          width: 600px;
-          height: 700px;
-
-          .swiper-wrapper {
-            .swiper-slide {
-              .img {
-              }
-
-              .img2 {
-              }
-            }
-          }
-        }
-
-        .btn-wrap {
-          @include fcsc;
-          gap: 32px;
-          position: static;
-
-          .bg {
-            transition: 0.3s ease-in-out;
-
-            &.on {
-              background-color: #3dd1e7;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-@media (max-width: 536px) and (min-width: 0px) {
-  .sect4 {
-    .inner {
-      display: flex;
-
-      .left {
-        @include fccc;
-        gap: 48px;
-        width: 100%;
-        position: relative;
-
-        .p-w0 {
-          @include fcc;
-          gap: 48px;
-
-          .p1 {
-            font-family: "NovaSlim", sans-serif;
             font-size: 72px;
           }
 
           .p2 {
-            color: #7d7d7d;
             font-size: 24px;
-            font-weight: bold;
           }
 
           .p3 {
-            text-align: center;
             font-size: 48px;
-
-            span {
-              font-weight: bold;
-            }
-          }
-        }
-
-        .p-ws {
-          width: 282px;
-          display: flex;
-          flex-wrap: wrap;
-          gap: 18px;
-
-          .p1 {
-            font-size: 21px;
-            font-weight: bold;
-          }
-
-          .p-w {
-            .p1 {
-              font-size: 18px;
-              color: #7d7d7d;
-            }
-
-            .p2 {
-              font-size: 16px;
-              color: #afafaf;
-            }
-
-            .i-w {
-              img {
-              }
-            }
           }
         }
       }
 
       .right {
-        @include fcc;
-        position: relative;
         display: none;
       }
     }
   }
-}
 
-// ===== sect4-1 반응형
-
-@media (max-width: 1279px) and (min-width: 769px) {
-  .sect4-1 {
+  .sect3-1 {
     .inner {
-      position: relative;
-      @include fccc;
-      gap: 24px;
 
-      .video-frame {
-        position: relative;
-        width: 800px;
-        height: 450px;
+      .wrap {
+        transition: 0.3s ease-in-out;
+        width: 100%;
+        height: 100vh;
 
-        .button-85 {
+        .sect3-1Swiper {
+          padding: 0px;
+          width: 330px;
+          height: 480px;
+          top: 38%;
+          transform: translate(-50%, -50%) !important;
+
+          .swiper-wrapper {
+            .swiper-slide {
+              @include fcc;
+              position: relative;
+              background-repeat: no-repeat;
+              background-size: cover;
+              background-position: center;
+            }
+
+            .slide14 {
+              .img1 {
+                width: 300px;
+              }
+
+              .img2 {
+                width: 400px;
+              }
+            }
+          }
+        }
+
+        .Description {
           position: absolute;
-          top: 50%;
+          top: 80%;
           left: 50%;
-          transform: translate(-50%, -50%);
-          font-size: 21px;
-          font-weight: bold;
+          transform: translate(-50%, -50%) !important;
+          width: 330px;
+          height: 200px;
+
+          .p-w {
+            h2 {
+              font-size: 24px;
+            }
+
+            p {
+              font-size: 16px;
+            }
+
+            a {
+              font-size: 18px;
+            }
+          }
         }
 
-        iframe {
+        .swiper-button-prev {
+          margin-left: 0px;
+          top: 38%;
+        }
+
+        .swiper-button-next {
+          margin-right: 0px;
+          top: 38%;
+        }
+
+        .slide-counter {
           position: absolute;
-          z-index: 1;
+          top: 5%;
+          left: 19%;
+          transform: translate(-19%, -5%);
         }
       }
 
-      .button-49 {
+      .w {
+        @include fc;
+        gap: 8px;
         position: absolute;
-        left: 14%;
-        top: 62%;
+        top: 90%;
+        left: 72%;
+        transform: translate(-50%, -50%);
+
+        .list-p {
+          color: #000;
+          font-size: 14px;
+        }
+
+        .view-more {}
       }
 
-      .list-box {
-        display: flex;
-        justify-content: start;
-        width: 800px;
-        height: 225px;
-        background-color: rgba(255, 255, 255, 0.5);
+      .hidden-list {
 
-        .video-list {
-          flex-direction: row;
-          gap: 16px;
-          padding: 40px 40px 40px 40px;
+        // z-index: 999;
+        .title {
+          padding-left: 0px;
+          font-size: 48px;
+        }
 
-          li {
-            width: 410px;
-            display: flex;
+        .list-wrap {
+          @include fcs;
+          gap: 20px;
+          width: 100%;
+          height: auto;
+
+          ul {
+            @include fcsc;
             gap: 16px;
-            cursor: pointer;
 
-            .p-w {
-              @include fcsc;
-              gap: 8px;
+            li {
+              font-size: 16px;
 
-              p {
-                font-weight: bold;
+              a {
+                @include fcsc;
 
-                &:nth-child(2) {
+                b {
                   font-size: 18px;
-                }
-
-                &:nth-child(3) {
-                  color: #606060;
                 }
               }
             }
@@ -2321,10 +2020,157 @@ header {
       }
     }
   }
-}
 
-@media (max-width: 768px) and (min-width: 481px) {
-}
+  // =====
+  .sect4 {
+    .inner {
+      .plane {
+        display: none;
+      }
 
-@media (max-width: 480px) and (min-width: 0px) {
+      .cloud {
+        display: none;
+      }
+
+      .left {
+        @include fcsc;
+        gap: 48px;
+        width: 35%;
+        position: relative;
+
+        .p-w0 {
+          @include fc;
+          gap: 48px;
+
+          .p1 {
+            font-size: 72px;
+          }
+
+          .p2 {
+            font-size: 24px;
+          }
+
+          .p3 {
+            font-size: 48px;
+          }
+        }
+      }
+    }
+  }
+
+  .sect4-1 {
+    position: relative;
+
+    .inner {
+      @include fccc;
+      gap: 32px;
+
+      .video_wrap {
+        @include fccc;
+        gap: 8px;
+        width: 100%;
+
+        .video_frame {
+          @include fcc;
+          margin-top: 0px;
+          width: 100%;
+          min-height: 280px;
+          height: auto
+        }
+
+        .video-controls {
+          @include fcc;
+          gap: 12px;
+          width: 100%;
+          height: 80px;
+          padding: 12px;
+
+          //공통
+          button {
+            @include fcc;
+            width: 32px;
+            font-size: 16px;
+          }
+        }
+      }
+
+
+      .swiper_wrap {
+        margin-top: 0px;
+        width: 100%;
+
+        .swiper {
+          @include fcc;
+          padding: 0;
+          width: 100%;
+          height: 180px;
+
+          .swiper-wrapper {
+            @include fsc;
+
+            .swiper-slide {
+              @include fcc;
+              gap: 32px;
+              height: 140px;
+
+              .i_w {
+                width: 180px;
+              }
+
+              .p-w {
+                @include fcsc;
+                gap: 8px;
+
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // =====
+  .sect5 {
+    background-position: 100% 100%;
+    background-size: cover;
+
+    .inner {
+      @include fscc;
+      gap: 60px;
+
+      .p1 {
+        margin-top: 100px;
+        font-size: 72px;
+      }
+
+      .surcle_wrap {
+        @include fcc;
+        flex-wrap: wrap;
+        gap: 52px;
+
+        .surcle {
+          @include fcc;
+          width: 150px;
+          height: 150px;
+
+          img {
+            width: 180px;
+            height: 180px;
+          }
+        }
+
+        .position1 {}
+
+        .position2 {
+          transform: translateY(50px);
+        }
+
+        .position3 {}
+
+        .position4 {
+          transform: translateY(50px);
+        }
+      }
+    }
+  }
 }

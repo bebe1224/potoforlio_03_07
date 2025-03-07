@@ -1,0 +1,12 @@
+/* btn1 ==== */
+.btn1 {
+    background-color: #C91518;
+    transition: 0.3s ease-in-out;
+    padding: 8px 0px;
+    border: none;
+    border-radius: 15px;
+}
+
+.btn1:hover {
+    background-color: rgb(8, 8, 8);
+}
