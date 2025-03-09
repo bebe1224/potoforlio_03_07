@@ -22,7 +22,7 @@ gsap.to(".bg1", {
     start: "top top",
     end: "bottom top",
     scrub: true,
-    markers: false, // 스크롤 시작/끝 지점 확인용
+    markers: false, 
   },
 });
 

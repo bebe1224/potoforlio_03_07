@@ -1,4 +1,10 @@
 @charset "UTF-8";
+body {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
 .pink_line {
   position: relative;
   z-index: 1;
@@ -1064,8 +1070,8 @@ header .inner ul {
 .sect5 {
   background: url(../img/sect4-1img/밤도시.png);
   background-repeat: no-repeat;
-  background-position: 100% 100%;
-  background-size: 100% 100%;
+  background-position: 100% 0%;
+  background-size: cover;
   background-attachment: fixed;
 }
 .sect5 .inner {
@@ -1086,22 +1092,65 @@ header .inner ul {
   display: flex;
   gap: 100px;
 }
-.sect5 .inner .surcle_wrap .surcle {
+.sect5 .inner .surcle_wrap .wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 80px;
+}
+.sect5 .inner .surcle_wrap .wrap .surcle {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 300px;
   height: 300px;
-  background-color: rgba(255, 255, 255, 0.5);
   border-radius: 999px;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
 }
-.sect5 .inner .surcle_wrap .surcle img {
-  animation: rotateAnimation 30s infinite linear;
+.sect5 .inner .surcle_wrap .wrap .surcle .rotate {
+  animation: rotateAnimation 50s infinite linear;
   width: 360px;
   height: 360px;
 }
-.sect5 .inner .surcle_wrap .surcle img:hover {
+.sect5 .inner .surcle_wrap .wrap .surcle:hover .rotate {
   animation-play-state: paused;
+}
+.sect5 .inner .surcle_wrap .wrap .surcle .logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  filter: invert(100%) brightness(200%);
+  transition: 0.3s ease-in-out;
+  width: 65%;
+}
+.sect5 .inner .surcle_wrap .wrap .surcle .logo:hover {
+  opacity: 0.5;
+}
+.sect5 .inner .surcle_wrap .wrap .surcle p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Sunflower", sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  color: rgb(255, 255, 255);
+}
+.sect5 .inner .surcle_wrap .wrap span {
+  border-radius: 999px 999px 999px 999px;
+  width: 200px;
+  text-align: center;
+  padding: 8px 0px;
+  color: #e4e4e4;
+  font-size: 32px;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: rgba(240, 46, 170, 0.4) 0px 5px, rgba(240, 46, 170, 0.3) 0px 10px, rgba(240, 46, 170, 0.2) 0px 15px, rgba(240, 46, 170, 0.1) 0px 20px, rgba(240, 46, 170, 0.05) 0px 25px;
 }
 .sect5 .inner .surcle_wrap .position2 {
   transform: translateY(100px);
@@ -1559,16 +1608,30 @@ header .inner ul {
     flex-wrap: wrap;
     gap: 52px;
   }
-  .sect5 .inner .surcle_wrap .surcle {
+  .sect5 .inner .surcle_wrap .wrap {
+    gap: 40px;
+  }
+  .sect5 .inner .surcle_wrap .wrap .surcle {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 150px;
     height: 150px;
   }
-  .sect5 .inner .surcle_wrap .surcle img {
+  .sect5 .inner .surcle_wrap .wrap .surcle .rotate {
     width: 180px;
     height: 180px;
+  }
+  .sect5 .inner .surcle_wrap .wrap .surcle p {
+    font-size: 20px;
+  }
+  .sect5 .inner .surcle_wrap .wrap span {
+    border-radius: 999px 999px 999px 999px;
+    width: 150px;
+    text-align: center;
+    padding: 8px 0px;
+    color: #ffffff;
+    font-size: 20px;
   }
   .sect5 .inner .surcle_wrap .position2 {
     transform: translateY(50px);
