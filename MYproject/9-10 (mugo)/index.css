@@ -1,0 +1,396 @@
+@import url(./font/font.css);
+@import url(./reset.css);
+@keyframes dance {
+  0% {
+    transform: rotate(-3deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+  100% {
+    transform: rotate(-3deg);
+  }
+}
+@keyframes dance_skew {
+  0% {
+    transform: skewX(0deg);
+  }
+  50% {
+    transform: skewX(3deg);
+  }
+  100% {
+    transform: skewX(-3deg);
+  }
+  100% {
+    transform: none;
+  }
+}
+@keyframes jump {
+  0% {
+    transform: translate(0, -8%);
+  }
+  50% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(0, -8%);
+  }
+}
+@keyframes dance_jump {
+  0% {
+    transform: none;
+  }
+  15% {
+    transform: rotate(-3deg);
+  }
+  30% {
+    transform: rotate(3deg);
+  }
+  45% {
+    transform: rotate(-3deg);
+  }
+  60% {
+    transform: translate3d(0, -5%, 0);
+  }
+  75% {
+    transform: translate3d(0, 1%, 0);
+  }
+  85% {
+    transform: translate3d(0, -3%, 0);
+  }
+  100% {
+    transform: none;
+  }
+}
+@keyframes wobble {
+  0% {
+    transform: none;
+  }
+  15% {
+    transform: translate3d(-3%, 0, 0) rotate(-1deg);
+  }
+  30% {
+    transform: translate3d(3%, 0, 0) rotate(2deg);
+  }
+  45% {
+    transform: translate3d(-3%, 0, 0) rotate(-2deg);
+  }
+  60% {
+    transform: translate3d(2%, 0, 0) rotate(1deg);
+  }
+  75% {
+    transform: translate3d(-1%, 0, 0) rotate(-1deg);
+  }
+  100% {
+    transform: none;
+  }
+}
+@keyframes rotateBanner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+header {
+  font-family: Binggrae;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 95px;
+  background: #fff;
+  z-index: 99999;
+}
+header::after {
+  position: absolute;
+  content: "";
+  background: url(./images/menu-bg-pattern.png);
+  width: 100%;
+  height: 16px;
+  bottom: -10px;
+}
+header .inner {
+  position: relative;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  width: 1780px;
+  margin: auto;
+}
+header .inner h1 {
+  position: absolute;
+  left: 0;
+}
+header .inner h1 img {
+  width: 54px;
+}
+header .inner nav {
+  width: 840px;
+}
+header .inner nav > ul {
+  display: flex;
+  gap: 60px;
+}
+header .inner nav > ul li.main_menu {
+  position: relative;
+}
+header .inner nav > ul li.main_menu a {
+  display: block;
+  font-size: 13px;
+}
+header .inner nav > ul li.main_menu a span {
+  display: block;
+  padding: 10px 0;
+}
+header .inner nav > ul li.main_menu > a {
+  height: 41px;
+  text-align: center;
+  font-weight: 600;
+  overflow: hidden;
+}
+header .inner nav > ul li.main_menu > a::before {
+  position: absolute;
+  display: block;
+  font-family: "jt-font";
+  content: "\e910";
+  font-size: 9px;
+  color: rgb(237, 64, 67);
+  left: 50%;
+  transform: translateX(-50%);
+  top: -15px;
+  opacity: 0;
+}
+header .inner nav > ul li.main_menu > a .menu-inner {
+  position: relative;
+  top: -38px;
+  transition: 0.35s;
+}
+header .inner nav > ul li.main_menu > a:hover .menu-inner {
+  top: 0;
+}
+header .inner nav > ul li.main_menu > a:hover::before {
+  opacity: 1;
+}
+header .inner nav > ul li.main_menu ul.sub_menu {
+  left: 50%;
+  transform: translateX(-50%);
+  border: 1px solid #00f;
+  display: none;
+  position: absolute;
+}
+header .inner nav > ul li.main_menu ul.sub_menu li.sub_menu_item {
+  width: 223px;
+}
+header .inner nav > ul li.main_menu ul.sub_menu li.sub_menu_item a {
+  display: block;
+  width: 100%;
+}
+header .inner nav > ul li.main_menu:hover > a {
+  color: rgb(237, 64, 67);
+}
+header .inner .gnb {
+  width: 205px;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  right: 0;
+  text-transform: uppercase;
+}
+header .inner .gnb li a {
+  display: block;
+}
+header .inner .gnb li a::before {
+  font-family: "jt-font";
+}
+header .inner .gnb li a.login::before {
+  content: "\e91b";
+}
+header .inner .gnb li a.sign::before {
+  content: "\e91c";
+}
+
+section {
+  width: 1920px;
+  position: relative;
+  height: calc(100vh - 100px);
+  margin-top: 100px;
+}
+section#sect1 {
+  position: relative;
+}
+section#sect1 article {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  opacity: 0;
+  z-index: 1;
+}
+section#sect1 article.on {
+  opacity: 1;
+  z-index: 99;
+}
+section#sect1 article.on .desc .desc-inner {
+  opacity: 1;
+}
+section#sect1 article.on .chracter figcaption {
+  opacity: 0.5;
+  transform: translateY(0%);
+}
+section#sect1 article .desc {
+  width: 50%;
+  height: 100%;
+  background-color: #ed4043;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+}
+section#sect1 article .desc .desc-inner {
+  text-align: center;
+  color: #fff;
+  opacity: 0;
+  transition: 1s ease-in-out;
+}
+section#sect1 article .chracter {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+}
+section#sect1 article .chracter figure {
+  position: relative;
+  z-index: 10;
+}
+section#sect1 article .chracter figcaption {
+  font-family: "Binggrae";
+  font-weight: 600;
+  font-size: 200px;
+  letter-spacing: -0.025em;
+  color: #fff;
+  opacity: 0.8;
+  position: absolute;
+  transition: 1s ease-in-out;
+  transform: translateY(-50%);
+}
+section#sect1 article .chracter img {
+  display: block;
+}
+section#sect1 article#mugo .chracter {
+  background: #ffcc00;
+}
+section#sect1 article#mugo .chracter img {
+  animation: dance 3.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+  transform-origin: center bottom;
+}
+section#sect1 article#chichi .chracter {
+  background: #0ad17c;
+}
+section#sect1 article#chichi .chracter img {
+  animation: dance_skew 1.8s ease-out infinite;
+  transform-origin: center bottom;
+}
+section#sect1 article#windy .chracter {
+  background: #0bcacb;
+}
+section#sect1 article#windy .chracter img {
+  animation: jump 3s cubic-bezier(0.53, 0.03, 0.6, 0.99) infinite;
+}
+section#sect1 article#cago .chracter {
+  background: #ffae08;
+}
+section#sect1 article#cago .chracter img {
+  animation: dance_jump 3s ease-out infinite;
+}
+section#sect1 article#ari .chracter {
+  background: #fbd04d;
+}
+section#sect1 article#ari .chracter img {
+  animation: dance 3.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+  transform-origin: center bottom;
+}
+section#sect1 article#rok .chracter {
+  background: #404475;
+}
+section#sect1 article#rok .chracter img {
+  animation: wobble 3.5s ease-out infinite;
+}
+section#sect1 .friend {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: calc(100vh - 35%);
+  display: flex;
+  gap: 60px;
+  z-index: 9999;
+  color: #fff;
+}
+section#sect1 .friend li {
+  text-align: center;
+}
+section#sect1 .friend li a {
+  display: block;
+}
+section#sect1 .friend li a.on span::after {
+  display: block;
+}
+section#sect1 .friend li a span {
+  display: block;
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+}
+section#sect1 .friend li a span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+  border-radius: 50%;
+  border: 5px solid #fff;
+  display: none;
+}
+section#sect1 .friend li a span img {
+  width: 103px;
+  transition: 0.35s;
+}
+section#sect1 .friend li:hover img {
+  transform: scale(1.2);
+}
+.quick {
+  position: fixed;
+  width: 120px;
+  height: 120px;
+  cursor: pointer;
+  right: 50px;
+  bottom: 50px;
+  z-index: 999;
+}
+.quick .rotate {
+  animation: rotateBanner 20s linear infinite;
+  animation-play-state: paused;
+}
+.quick:hover .rotate {
+  animation: rotateBanner 20s linear infinite;
+}
+.quick .circle {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 77px;
+  height: 77px;
+  background: rgb(237, 64, 67);
+  border-radius: 50%;
+  font-size: 14px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

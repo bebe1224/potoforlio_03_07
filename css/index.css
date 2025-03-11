@@ -1068,6 +1068,7 @@ header .inner ul {
 }
 
 .sect5 {
+  position: relative;
   background: url(../img/sect4-1img/밤도시.png);
   background-repeat: no-repeat;
   background-position: 100% 0%;
@@ -1127,9 +1128,21 @@ header .inner ul {
   transform: translate(-50%, -50%);
   filter: invert(100%) brightness(200%);
   transition: 0.3s ease-in-out;
-  width: 65%;
+  width: 60%;
 }
 .sect5 .inner .surcle_wrap .wrap .surcle .logo:hover {
+  opacity: 0.5;
+}
+.sect5 .inner .surcle_wrap .wrap .surcle .Symbol {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.3s ease-in-out;
+  width: 85%;
+  cursor: pointer;
+}
+.sect5 .inner .surcle_wrap .wrap .surcle .Symbol:hover {
   opacity: 0.5;
 }
 .sect5 .inner .surcle_wrap .wrap .surcle p {
@@ -1152,11 +1165,70 @@ header .inner ul {
   background-color: rgba(255, 255, 255, 0.1);
   box-shadow: rgba(240, 46, 170, 0.4) 0px 5px, rgba(240, 46, 170, 0.3) 0px 10px, rgba(240, 46, 170, 0.2) 0px 15px, rgba(240, 46, 170, 0.1) 0px 20px, rgba(240, 46, 170, 0.05) 0px 25px;
 }
+.sect5 .inner .surcle_wrap .position1 .logo {
+  width: 100% !important;
+}
 .sect5 .inner .surcle_wrap .position2 {
   transform: translateY(100px);
 }
 .sect5 .inner .surcle_wrap .position4 {
   transform: translateY(100px);
+}
+.sect5 .position3_modal {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  overflow: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100vh;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.3s ease-in-out;
+}
+.sect5 .position3_modal.on {
+  opacity: 1;
+  z-index: 1;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+.sect5 .position3_modal img {
+  padding: 80px 0px;
+  width: 60%;
+}
+.sect5 .close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  top: 10%;
+  left: 76.5%;
+  opacity: 0;
+  z-index: -1;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+.sect5 .close.on {
+  opacity: 1;
+  z-index: 1;
+}
+.sect5 .close:hover {
+  transform: rotate(180deg);
+}
+.sect5 .close .bar {
+  position: absolute;
+  width: 100%;
+  height: 6px;
+  background-color: #fff;
+  transform: rotate(-45deg);
+}
+.sect5 .close .bar:nth-child(2) {
+  transform: rotate(45deg);
 }
 
 @media (min-width: 0px) and (max-width: 767px) {

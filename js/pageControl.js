@@ -1,5 +1,5 @@
 const sections = document.querySelectorAll("section");
-const scrollableBoxSelectors = [".sect4-1 .inner .swiper_wrap"];
+const scrollableBoxSelectors = [".sect4-1 .inner .swiper_wrap, .sect5 .position3_modal"];
 
 sections.forEach((sect, i) => {
   // 섹션 내에서 모든 스크롤 가능한 박스를 선택

@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "../../9-02/java"
+		},
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"liveServer.settings.port": 5502,
+		"liveServer.settings.multiRootWorkspaceName": "0910뮤고박스"
+	}
+}

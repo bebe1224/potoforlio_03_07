@@ -67,7 +67,7 @@ sect3_1swiper.on("slideChange", function () {
     "./MYproject/8-26_Luca831/index.html",
     "./MYproject/9-9_udaraiting/index.html",
     "./MYproject/10-07_westinJosen/index.html",
-    "#",
+    "./MYproject/9-10 (mugo)/index.html",
     "./MYproject/9-19chilseong/index.html",
     "./MYproject/10-10_Blue House/index.html",
     "./MYproject/10-21_yes24/index.html",
