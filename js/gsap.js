@@ -22,7 +22,7 @@ gsap.to(".bg1", {
     start: "top top",
     end: "bottom top",
     scrub: true,
-    markers: false, 
+    markers: false,
   },
 });
 
@@ -88,6 +88,13 @@ const sect4_1_title_once = {
   markers: false, // 디버그용 마커 (선)
   once: true, // 한 번만 실행
 }
+const sect5_title_once = {
+  trigger: ".sect5",
+  start: "0% 10%",
+  end: "100% 10%",
+  markers: false, // 디버그용 마커 (선)
+  once: true, // 한 번만 실행
+}
 //===== tl
 const sect1_once_tl = gsap.timeline({
   scrollTrigger: sect1_title_once,
@@ -109,6 +116,9 @@ const sect4_once_tl = gsap.timeline({
 });
 const sect4_1_once_tl = gsap.timeline({
   scrollTrigger: sect4_1_title_once,
+});
+const sect5_once_tl = gsap.timeline({
+  scrollTrigger: sect5_title_once,
 });
 //===== sect .title
 ScrollTrigger.matchMedia({
@@ -456,6 +466,43 @@ ScrollTrigger.matchMedia({
         y: 0,
         duration: 1.2,
         stagger: 0.4,
+      }
+    );
+  }
+});
+ScrollTrigger.matchMedia({
+  // 0px ~ 767px
+  "(max-width: 767px)": function () {
+    sect5_once_tl.fromTo(
+      '.sect5  .inner > *',
+      {
+        autoAlpha: 0, // opacity: 0 + visibility: hidden
+        y: 100,
+      },
+      {
+        autoAlpha: 1,
+        y: 0,
+        duration: 2,
+        stagger: 0.5,
+      }
+    );
+  },
+
+  // 767px 이상
+  "(min-width: 767px)": function () {
+    sect5_once_tl.fromTo(
+      '.sect5  .inner > *',
+      {
+        autoAlpha: 0,
+        y: 100,
+        backdropFilter: 'blur(0px)',
+      },
+      {
+        autoAlpha: 1,
+        y: 0,
+        duration: 1.2,
+        stagger: 0.3,
+        backdropFilter: 'blur(2px)',
       }
     );
   }

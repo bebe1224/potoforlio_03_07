@@ -25,10 +25,18 @@ const sect3_1swiper = new Swiper(".sect3-1Swiper", {
     prevEl: ".swiper-button-prev",
   },
 });
-// 슬라이드 변경 이벤트
+// 초기 로딩 시 첫 번째 슬라이드 내용 표시
+const slideIndex = sect3_1swiper.realIndex;
+updateSlideData(slideIndex);
+
+// 슬라이드 변경 시 데이터 업데이트
 sect3_1swiper.on("slideChange", function () {
   const slideIndex = sect3_1swiper.realIndex;
+  updateSlideData(slideIndex);
+});
 
+// 데이터 업데이트 함수
+function updateSlideData(slideIndex) {
   // 데이터 배열
   const titles = [
     "더롱다크(1)", "빵빵이의 일상(2)", "WW2(3)", "죠스떡뽁이(4)", "빵바오(5)",
@@ -38,9 +46,9 @@ sect3_1swiper.on("slideChange", function () {
   ];
 
   const descriptions = [
-    "작품1 설명", "작품2 설명", "작품3 설명", "작품4 설명", "작품5 설명",
-    "작품6 설명", "작품7 설명", "작품8 설명", "작품9 설명", "작품10 설명",
-    "작품11 설명", "작품12 설명", "작품13 설명", "작품14 설명", "작품15 설명",
+    "attachment: fixed,반응형 활용", "form,transform 활용", "hover활용", "gsap활용", "Animation,video활용",
+    "작품6 설명", "작품7 설명", "작품8 설명", "작품9 설명", "position: sticky활용",
+    "swiper,무한 루프 활용", "스크롤 기반 섹션 활성화", "클릭 이벤트 기반 탭 전환", "작품14 설명", "작품15 설명",
     "작품16 설명", "작품17 설명"
   ];
 
@@ -85,7 +93,8 @@ sect3_1swiper.on("slideChange", function () {
 
   // 슬라이드 카운터 업데이트
   updateSlideCounter();
-});
+}
+
 // 슬라이드 번호 업데이트
 function updateSlideCounter() {
   const currentSlide = sect3_1swiper.realIndex + 1;
@@ -95,6 +104,9 @@ function updateSlideCounter() {
 
   document.querySelector(".slide-counter").textContent = `${currentSlide}/${totalSlides}`;
 }
+
+
+
 // ==== sect4-1 swiper
 const sect4_1swiper = new Swiper(".sect4-1_swiper", {
   // effect: "coverflow",
