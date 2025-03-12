@@ -478,12 +478,14 @@ ScrollTrigger.matchMedia({
       {
         autoAlpha: 0, // opacity: 0 + visibility: hidden
         y: 100,
+        backdropFilter: 'blur(0px)',
       },
       {
         autoAlpha: 1,
         y: 0,
         duration: 2,
         stagger: 0.5,
+        backdropFilter: 'blur(2px)',
       }
     );
   },
