@@ -3,13 +3,14 @@
 // const apiKey = 'AIzaSyA2qroHoKLIGLfscKO01forKU1KOscKonY';// 생성한 API 키를 넣으세요.
 
 const videoData = {
-  video1: 'RKhBkTKEeF8', // 유튜브 영상 ID
-  video2: 'H8LIyi7NWh8',
-  video3: 'Wt4rqoiVzcU',
-  video4: 'UDGqMo5qdYo',
-  video5: 'yR_c8E5VHog',
-  video6: 'vNKIkmj78Qc',
-  video7: 'EluvPx4dRjI',
+  video1: 'zqCcIe8QM9k', // 유튜브 영상 ID
+  video2: 'RKhBkTKEeF8',
+  video3: 'H8LIyi7NWh8',
+  video4: 'Wt4rqoiVzcU',
+  video5: 'UDGqMo5qdYo',
+  video6: 'yR_c8E5VHog',
+  video7: 'vNKIkmj78Qc',
+  video8: 'EluvPx4dRjI',
 };
 let player;
 
