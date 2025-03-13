@@ -3,7 +3,7 @@
 // const apiKey = 'AIzaSyA2qroHoKLIGLfscKO01forKU1KOscKonY';// 생성한 API 키를 넣으세요.
 
 const videoData = {
-  video1: 'zqCcIe8QM9k', // 유튜브 영상 ID
+  video1: 'tuUmmLeyLmQ', // 유튜브 영상 ID
   video2: 'RKhBkTKEeF8',
   video3: 'H8LIyi7NWh8',
   video4: 'Wt4rqoiVzcU',
