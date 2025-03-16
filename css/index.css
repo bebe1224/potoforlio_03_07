@@ -1009,6 +1009,25 @@ header .inner ul {
 .sect4-1 .inner .video_wrap .video-controls .slider .level:hover {
   height: 12px;
 }
+.sect4-1 .inner .video_wrap .youtube_adress {
+  position: absolute;
+  min-width: 300px;
+  top: 73%;
+  left: 85%;
+  transform: translate(-50%, -50%);
+  color: #000000;
+  font-size: 24px;
+  font-family: "Sunflower", sans-serif;
+  transition: 0.3s ease-in-out;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  padding: 8px 32px;
+  border-radius: 9px;
+  text-align: center;
+}
+.sect4-1 .inner .video_wrap .youtube_adress:hover {
+  opacity: 0.6;
+}
 .sect4-1 .inner .swiper_wrap {
   margin-top: 80px;
 }
@@ -1621,6 +1640,18 @@ header .inner ul {
     align-items: center;
     width: 32px;
     font-size: 16px;
+  }
+  .sect4-1 .inner .video_wrap .youtube_adress {
+    position: absolute;
+    min-width: 180px;
+    top: 68%;
+    left: 77%;
+    font-size: 14px;
+    transition: 0.3s ease-in-out;
+    padding: 8px 0px;
+  }
+  .sect4-1 .inner .video_wrap .youtube_adress:hover {
+    opacity: 0.6;
   }
   .sect4-1 .inner .swiper_wrap {
     margin-top: 0px;
