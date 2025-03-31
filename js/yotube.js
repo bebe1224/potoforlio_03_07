@@ -33,7 +33,6 @@ function loadYouTubeAPI(videoId) {
     });
   }, 500);
 }
-
 function onPlayerReady() {
   document.getElementById('playBtn').addEventListener('click', () => player.playVideo());
   document.getElementById('pauseBtn').addEventListener('click', () => player.pauseVideo());
@@ -50,16 +49,15 @@ function onPlayerReady() {
     player.setVolume(e.target.value);
   });
 
-  // 광고 자동 스킵 기능
   setInterval(() => {
-    if (player.getPlayerState() === 2) { // 광고 재생 중일 때
-      const skipButton = document.querySelector('.ytp-ad-skip-button, .ytp-ad-skip-button-modern');
-      if (skipButton) {
-        skipButton.click(); // 스킵 버튼 클릭
-      }
+    let skipBtn = document.querySelector(".ytp-ad-skip-button, .ytp-ad-skip-button-modern");
+    if (skipBtn) {
+      skipBtn.click();
+      console.log("광고 스킵!");
     }
-  }, 1000); // 1초마다 체크
+  }, 1000);
 }
+
 
 document.querySelectorAll('.sect4-1_swiper .swiper-slide').forEach(slide => {
   slide.addEventListener('click', function () {
