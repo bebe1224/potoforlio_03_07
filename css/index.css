@@ -1237,7 +1237,8 @@ header .inner ul {
 .sect5 .position4_modal {
   display: flex;
   justify-content: center;
-  align-items: start;
+  align-items: center;
+  gap: 16px;
   overflow: auto;
   position: absolute;
   top: 50%;
@@ -1248,6 +1249,9 @@ header .inner ul {
   opacity: 0;
   z-index: -1;
   transition: opacity 0.3s ease-in-out;
+}
+.sect5 .position4_modal a img {
+  width: 400px;
 }
 .sect5 .position4_modal.on {
   opacity: 1;
@@ -1262,8 +1266,8 @@ header .inner ul {
   width: 48px;
   height: 48px;
   position: absolute;
-  top: 12%;
-  left: 76%;
+  top: 16px;
+  right: 16px;
   opacity: 0;
   z-index: -1;
   cursor: pointer;

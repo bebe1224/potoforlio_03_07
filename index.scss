@@ -1711,7 +1711,8 @@ header {
   }
 
   .position4_modal {
-    @include fcs;
+    @include fcc;
+    gap: 16px;
     overflow: auto;
     position: absolute;
     top: 50%;
@@ -1722,6 +1723,12 @@ header {
     opacity: 0;
     z-index: -1;
     transition: opacity 0.3s ease-in-out;
+
+    a {
+      img {
+        width: 400px;
+      }
+    }
 
     &.on {
       opacity: 1;
@@ -1735,8 +1742,8 @@ header {
     width: 48px;
     height: 48px;
     position: absolute;
-    top: 12%;
-    left: 76%;
+    top: 16px;
+    right: 16px;
     opacity: 0;
     z-index: -1;
     cursor: pointer;
