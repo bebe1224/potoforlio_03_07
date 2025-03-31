@@ -105,8 +105,6 @@ function updateSlideCounter() {
   document.querySelector(".slide-counter").textContent = `${currentSlide}/${totalSlides}`;
 }
 
-
-
 // ==== sect4-1 swiper
 const sect4_1swiper = new Swiper(".sect4-1_swiper", {
   // effect: "coverflow",
@@ -135,3 +133,4 @@ sect4Buttons.forEach((button) => {
     button.classList.add("on");
   });
 });
+

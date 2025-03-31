@@ -49,6 +49,16 @@ function onPlayerReady() {
   document.getElementById('volumeControl').addEventListener('input', (e) => {
     player.setVolume(e.target.value);
   });
+
+  // 광고 자동 스킵 기능
+  setInterval(() => {
+    if (player.getPlayerState() === 2) { // 광고 재생 중일 때
+      const skipButton = document.querySelector('.ytp-ad-skip-button, .ytp-ad-skip-button-modern');
+      if (skipButton) {
+        skipButton.click(); // 스킵 버튼 클릭
+      }
+    }
+  }, 1000); // 1초마다 체크
 }
 
 document.querySelectorAll('.sect4-1_swiper .swiper-slide').forEach(slide => {

@@ -75,6 +75,7 @@ body {
   align-items: center;
   width: 50px;
   height: 50px;
+  border-radius: 9px;
   background-color: #fff;
   box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
   position: fixed;
@@ -946,7 +947,7 @@ header .inner ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 16px;
+  gap: 20px;
   width: 1080px;
   height: 160px;
   background-color: rgba(255, 255, 255, 0.1);
@@ -962,7 +963,7 @@ header .inner ul {
   border-radius: 0.5em;
   color: #DEDEDE;
   box-shadow: 0.5em 0.5em 0.5em rgba(0, 0, 0, 0.3);
-  width: 120px;
+  width: 90px;
   transition: opacity 0.3s ease-in-out;
   cursor: pointer;
 }
@@ -1035,7 +1036,7 @@ header .inner ul {
   font-size: 24px;
   font-family: "Sunflower", sans-serif;
   transition: 0.3s ease-in-out;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.9);
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   padding: 8px 32px;
   border-radius: 9px;
@@ -1172,7 +1173,8 @@ header .inner ul {
   left: 50%;
   transform: translate(-50%, -50%);
   transition: 0.3s ease-in-out;
-  width: 85%;
+  width: 80%;
+  border-radius: 999px;
   cursor: pointer;
 }
 .sect5 .inner .surcle_wrap .wrap .surcle .Symbol:hover {
@@ -1232,6 +1234,27 @@ header .inner ul {
   padding: 80px 0px;
   width: 60%;
 }
+.sect5 .position4_modal {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  overflow: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100vh;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.3s ease-in-out;
+}
+.sect5 .position4_modal.on {
+  opacity: 1;
+  z-index: 1;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
 .sect5 .close {
   display: flex;
   justify-content: center;
@@ -1239,8 +1262,8 @@ header .inner ul {
   width: 48px;
   height: 48px;
   position: absolute;
-  top: 10%;
-  left: 76.5%;
+  top: 12%;
+  left: 76%;
   opacity: 0;
   z-index: -1;
   cursor: pointer;
@@ -1655,7 +1678,8 @@ header .inner ul {
     justify-content: center;
     align-items: center;
     width: 32px;
-    font-size: 16px;
+    padding: 8px 20px;
+    font-size: 12px;
   }
   .sect4-1 .inner .video_wrap .youtube_adress {
     position: absolute;
