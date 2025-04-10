@@ -1724,6 +1724,11 @@ header {
     z-index: -1;
     transition: opacity 0.3s ease-in-out;
 
+    .wrap {
+      @include fc;
+      gap: 32px;
+    }
+
     a {
       img {
         width: 400px;
@@ -2388,10 +2393,18 @@ header {
         }
       }
     }
+
     .position4_modal {
-      @include fccc;
+      @include fscc;
+      flex-wrap: wrap;
       gap: 16px;
-  
+      padding-top: 60px;
+
+      .wrap {
+        @include fc;
+        gap: 32px;
+      }
+
       a {
         img {
           width: 180px;

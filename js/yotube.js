@@ -1,6 +1,5 @@
 // const searchQuery = '예제';// 검색할 키워드
 // const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(searchQuery)}&key=${apiKey}`;// 유튜브 API 요청 URL
-// const apiKey = 'AIzaSyA2qroHoKLIGLfscKO01forKU1KOscKonY';// 생성한 API 키를 넣으세요.
 
 const videoData = {
   video1: 'tuUmmLeyLmQ', // 유튜브 영상 ID

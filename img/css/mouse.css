@@ -1,0 +1,11 @@
+.mouse-curcle {
+  width: 100px;
+  height: 100px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  transition: transform 0.2s ease-out;
+  mix-blend-mode: difference; 
+  z-index: 99;
+}

@@ -1,0 +1,783 @@
+* {
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+@mixin fsbc {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin fcc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin fsc {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+@mixin fcs {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+@mixin fec {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+@mixin fccc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+@mixin fcsc {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+}
+
+@mixin fecc {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  flex-direction: column;
+}
+
+// ==========
+header {
+  z-index: 9999;
+  background-color: #ffffff;
+  transition: transform 0.5s ease;
+  position: relative;
+  padding: 50px;
+  @include fsbc;
+  width: 100%;
+  height: 150px;
+  text-transform: uppercase;
+
+  .one {
+    @include fsc;
+    gap: 30px;
+    width: 500px;
+    height: 150px;
+    transition: 0.5s ease-in-out;
+
+    .main-m {
+      font-weight: bold;
+      cursor: pointer;
+
+      a {
+      }
+
+      span {
+        transition: 0.3s ease;
+        display: none;
+      }
+
+      &:hover {
+        span {
+          color: rgba(8, 144, 192, 1);
+        }
+      }
+
+      .sub-m {
+        @include fcsc;
+        gap: 10px;
+        z-index: 3;
+        display: none;
+        position: absolute;
+
+        li {
+          position: relative;
+
+          &::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background-color: rgba(8, 144, 192, 0.3);
+            transition: width 0.5s ease, opacity 0.3s ease;
+            opacity: 0;
+          }
+
+          &:hover::after {
+            width: 100%;
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    &:hover {
+      gap: 60px;
+
+      .main-m {
+        a {
+          display: none;
+        }
+
+        span {
+          display: block;
+        }
+
+        .sub-m {
+          @include fcsc;
+          gap: 20px; //.sub 위알래 갭
+          top: 100px;
+
+          li {
+            display: block;
+
+            a {
+              display: block;
+              font-size: 14px;
+              color: rgba(0, 0, 0, 0.5);
+            }
+          }
+        }
+      }
+    }
+
+    &::after {
+      pointer-events: none; //one 영역까지 확장되보이는걸 해결 할 수 있는 명령어..
+      content: "";
+      position: absolute;
+      top: 100px;
+      left: 0;
+      width: 100%;
+      height: 150px;
+      background-color: #ffffff;
+      transition: height 0.5s ease, opacity 0.3s ease;
+      opacity: 0;
+      z-index: 2;
+      box-shadow: rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    }
+
+    // 여기가 문제였어 //중요한사실 에프터영역까지가 .one 영역임
+
+    &:hover::after {
+      background-color: #ffffff;
+      width: 100%;
+      height: 200px;
+      opacity: 1;
+    }
+  }
+
+  .logo {
+    transition: opacity 0.3s ease;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    img {
+    }
+  }
+
+  .two {
+    @include fcc;
+    gap: 30px;
+
+    .two-one {
+      // border: 1px solid #000;
+      @include fec;
+      gap: 30px;
+      width: 660px;
+      height: 150px;
+      transition: 0.5s ease-in-out;
+
+      .main-m {
+        transition: 0.3s ease-in-out;
+
+        a {
+          font-weight: 700;
+        }
+
+        &:hover {
+          color: rgba(8, 144, 192, 1);
+        }
+
+        .sub-m {
+          @include fcsc;
+          gap: 10px;
+          display: none;
+          position: absolute;
+          top: 100px;
+
+          li {
+            position: relative;
+
+            a {
+              font-size: 14px;
+              color: rgba(0, 0, 0, 0.5);
+            }
+
+            &::after {
+              content: "";
+              position: absolute;
+              bottom: -5px;
+              left: 0;
+              width: 0;
+              height: 3px;
+              background-color: rgba(8, 144, 192, 0.3);
+              transition: width 0.5s ease, opacity 0.3s ease;
+              opacity: 0;
+            }
+
+            &:hover::after {
+              width: 100%;
+              opacity: 1;
+            }
+          }
+        }
+      }
+
+      &:hover {
+        gap: 50px;
+
+        .sub-m {
+          z-index: 1;
+          @include fcsc;
+          gap: 20px;
+          top: 100px;
+
+          li {
+            display: block;
+
+            a {
+              display: block;
+              font-size: 14px;
+              color: rgba(0, 0, 0, 0.5);
+            }
+          }
+        }
+
+        .main-m:nth-child(1) {
+          margin-right: 20px;
+        }
+
+        .main-m:nth-child(3) {
+          margin-right: 40px;
+        }
+      }
+
+      &::after {
+        pointer-events: none;
+
+        content: "";
+        position: absolute;
+        top: 100px;
+        left: 0;
+        width: 100%;
+        height: 150px;
+        background-color: #ffffff;
+        transition: height 0.5s ease, opacity 0.3s ease;
+        opacity: 0;
+        z-index: -1;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+      }
+
+      &:hover::after {
+        background-color: #ffffff;
+        width: 100%;
+        height: 200px;
+        opacity: 1;
+      }
+
+      // 여기가 문제였어
+    }
+
+    .sm {
+      @include fcc;
+      gap: 30px;
+
+      a {
+        img {
+        }
+      }
+    }
+  }
+}
+
+.sect {
+  // border: 1px solid #000;
+}
+
+// ===========
+.sect1 {
+  @include fcc;
+  position: relative;
+  padding: 30px 0px 100px 0px;
+  width: 100%;
+
+  .swiper {
+    width: 90%;
+
+    .swiper-wrapper {
+      .swiper-slide {
+        width: 100%;
+        @include fcc;
+
+        img {
+          width: 100%;
+          height: 75vh;
+          object-fit: cover;
+        }
+
+        a {
+          width: 100%;
+
+          video {
+            width: 100%;
+            height: 71vh;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+  }
+
+  .swiper-button-next {
+    width: 60px;
+    height: 180px;
+    position: absolute;
+    top: 40%;
+
+    &::after {
+      content: "";
+    }
+
+    svg {
+      position: absolute;
+      left: 20px;
+      top: 15px;
+
+      path {
+        stroke: #c9c9c9;
+        stroke-width: 4;
+        stroke-linecap: round;
+        transition: 0.4s;
+        fill: transparent;
+      }
+    }
+  }
+
+  .swiper-button-prev {
+    width: 60px;
+    height: 180px;
+    position: absolute;
+    top: 40%;
+
+    &::after {
+      content: "";
+    }
+
+    svg {
+      position: absolute;
+      right: 10px;
+      top: 15px;
+
+      path {
+        stroke: #c9c9c9;
+        stroke-width: 4;
+        stroke-linecap: round;
+        transition: 0.4s;
+        fill: transparent;
+      }
+    }
+  }
+}
+
+.sect2 {
+  @include fccc;
+  gap: 30px;
+  width: 100%;
+  position: relative;
+
+  .title {
+    p {
+      font-size: 50px;
+      color: #333;
+      text-transform: uppercase;
+    }
+  }
+
+  .wrap {
+    margin-bottom: 100px;
+    max-width: 1240px;
+    @include fsbc;
+
+    .btns {
+      @include fcsc;
+      gap: 20px;
+      width: 300px;
+      height: 150px;
+
+      .btn {
+        cursor: pointer;
+        border: none;
+        background: none;
+        text-transform: uppercase;
+        font-size: 16px;
+        color: #999;
+        transition: 0.3s ease-in-out;
+
+        &.active {
+          font-size: 22px;
+          color: #0890c0;
+          font-weight: bold;
+        }
+      }
+    }
+
+    .screen {
+      width: 509px;
+      height: 800px;
+
+      .swiper {
+        width: 100%;
+        height: 100%;
+
+        .swiper-wrapper {
+          .swiper-slide {
+            @include fcc;
+            overflow: hidden;
+          }
+        }
+      }
+    }
+
+    .split-texts {
+      position: relative;
+      width: 385px;
+      height: 802px;
+
+      .title {
+        @include fcsc;
+        gap: 30px;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        transition: 0.3s ease-in-out;
+        padding: 10px;
+
+        &.on {
+          z-index: 1;
+          opacity: 1;
+        }
+
+        .p1 {
+          font-size: 38px;
+          font-weight: bold;
+          color: #333;
+        }
+
+        .p2 {
+          font-size: 18px;
+          color: #666666;
+        }
+      }
+
+      .btn1-title {
+        z-index: -1;
+        opacity: 0;
+      }
+
+      .btn2-title {
+        z-index: -1;
+        opacity: 0;
+      }
+
+      .btn3-title {
+        z-index: -1;
+        opacity: 0;
+      }
+
+      .btn4-title {
+        z-index: -1;
+        opacity: 0;
+      }
+    }
+  }
+
+  .sect2-next {
+    width: 60px;
+    height: 180px;
+
+    &::after {
+      content: "";
+    }
+
+    svg {
+      position: absolute;
+      left: 30px;
+      top: -50px;
+
+      path {
+        stroke: #c9c9c9;
+        stroke-width: 4;
+        stroke-linecap: round;
+        transition: 0.4s;
+        fill: transparent;
+      }
+    }
+  }
+
+  .sect2-prev {
+    width: 60px;
+    height: 180px;
+
+    &::after {
+      content: "";
+    }
+
+    svg {
+      position: absolute;
+      right: 20px;
+      top: -50px;
+
+      path {
+        stroke: #c9c9c9;
+        stroke-width: 4;
+        stroke-linecap: round;
+        transition: 0.4s;
+        fill: transparent;
+      }
+    }
+  }
+}
+
+.sect3 {
+  position: relative;
+  background: #f4f7fa;
+  width: 100%;
+  .title {
+    text-align: center;
+    padding: 200px 0px 60px 0px;
+    text-transform: uppercase;
+    font-size: 50px;
+    font-weight: 500;
+    color: #333;
+  }
+  .tab-B {
+    @include fcc;
+    gap: 10px;
+    margin-bottom: 30px;
+    width: 100%;
+    cursor: pointer;
+
+    li {
+      font-size: 20px;
+      &.on {
+        color: #0890c0;
+        font-weight: bold;
+      }
+    }
+
+    .line {
+    }
+  }
+  .one {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    .screen {
+      position: relative;
+      width: 100%;
+      height: 764px;
+      .swiper {
+        width: 100%;
+        height: 100%;
+        .swiper-wrapper {
+          @include fsc;
+          .swiper-slide {
+            width: 1280px;
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+        }
+      }
+      .sect3-1Swiper {
+        opacity: 0;
+        z-index: -1;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        .swiper-wrapper {
+          @include fsc;
+          .swiper-slide {
+            width: 1280px;
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+        }
+      }
+    }
+    .swiper-scrollbar {
+      position: absolute;
+      top: 105%;
+      left: 50%;
+      transform: translate(-50%);
+      background: #dbdee1;
+      width: 1280px;
+      &-drag {
+        background: #0890c0;
+      }
+    }
+  }
+  .two {
+    @include fcc;
+    gap: 90px;
+    padding: 0px 0px 100px 30px;
+    .p1 {
+      font-size: 24px;
+      color: #333;
+    }
+    .screen {
+      .swiper {
+        width: 710px;
+        height: 710px;
+        .swiper-wrapper {
+          .swiper-slide {
+            img {
+            }
+          }
+        }
+      }
+    }
+    ul {
+      li {
+        cursor: pointer;
+        text-transform: uppercase;
+        line-height: 35px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        padding: 30px 40px 30px 40px;
+        color: #999;
+        font-size: 20px;
+        span {
+          font-weight: 700;
+        }
+        &.on {
+          color: #0890c0;
+        }
+      }
+    }
+  }
+  .sect3-next {
+    width: 60px;
+    height: 180px;
+    position: absolute;
+    top: 30%;
+    &::after {
+      content: "";
+    }
+
+    svg {
+      position: absolute;
+      right: -20px;
+      top: 10px;
+
+      path {
+        stroke: #a8a8a8;
+        stroke-width: 4;
+        stroke-linecap: round;
+        transition: 0.6s;
+        fill: transparent;
+      }
+    }
+  }
+
+  .sect3-prev {
+    width: 60px;
+    height: 180px;
+    position: absolute;
+    top: 30%;
+
+    &::after {
+      content: "";
+    }
+
+    svg {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+
+      path {
+        stroke: #a8a8a8;
+        stroke-width: 4;
+        stroke-linecap: round;
+        transition: 0.6s;
+        fill: transparent;
+      }
+    }
+  }
+}
+
+.sect4 {
+  @include fccc;
+  gap: 60px;
+  width: 100%;
+  height: 867px;
+  .title {
+    padding: 200px 0px 0px 0px;
+    text-transform: uppercase;
+    font-size: 50px;
+    font-weight: 500;
+    color: #333;
+  }
+  .wrap {
+    @include fcc;
+    gap: 30px;
+    width: 1440px;
+    height: auto;
+    flex-wrap: wrap;
+    .iw {
+      width: 330px;
+      height: 330px;
+      overflow: hidden;
+      a {
+        img {
+          transition: 0.5s ease-in-out;
+          width: 100%;
+          height: 100%;
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+  }
+  .sns {
+    @include fcc;
+    gap: 30px;
+  }
+}
+
+.sect5 {
+  width: 100%;
+  height: 579px;
+}

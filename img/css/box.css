@@ -1,0 +1,92 @@
+/* ==== box1~4 컨퍼넌츠 */
+.box1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Caveat-bold", sans-serif;
+  font-size: 80px;
+  width: 300px;
+  height: 300px;
+  border: 3px solid #ffffff;
+  border-radius: 999px;
+}
+
+.box1 p {
+  color: #fff;
+  transform: rotate(5deg);
+}
+
+.box2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 316px;
+  height: 99%;
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.box3 {
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  display: flex;
+  width: 823px;
+  height: 90px;
+  border-radius: 15px;
+  background-color: rgba(119, 119, 119, 0.5);
+}
+
+.box4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  width: 505px;
+  height: 90px;
+  font-size: 18px;
+  color: #fff;
+}
+
+.box4 .p1 {
+  font-weight: bold;
+}
+
+.box4 .tool {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.box4 .tool .i-w img {
+  /* 이미지 스타일 추가 필요 */
+}
+
+.box4 .date {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.box4 .site a {
+  display: flex;
+  gap: 4px;
+}
+
+.box4 .site a .p1 {
+  /* 스타일 추가 필요 */
+}
+
+.box4 .site a img {
+  /* 이미지 스타일 추가 필요 */
+}
+
+.box4 .site {
+  transition: 0.3s ease-in-out;
+}
+
+.box4 .site:hover {
+  color: gold;
+}

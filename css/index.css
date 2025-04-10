@@ -1250,6 +1250,11 @@ header .inner ul {
   z-index: -1;
   transition: opacity 0.3s ease-in-out;
 }
+.sect5 .position4_modal .wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
 .sect5 .position4_modal a img {
   width: 400px;
 }
@@ -1786,10 +1791,17 @@ header .inner ul {
   }
   .sect5 .position4_modal {
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     flex-direction: column;
+    flex-wrap: wrap;
     gap: 16px;
+    padding-top: 60px;
+  }
+  .sect5 .position4_modal .wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
   }
   .sect5 .position4_modal a img {
     width: 180px;
