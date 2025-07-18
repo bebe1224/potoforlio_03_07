@@ -123,6 +123,8 @@ header .inner ul {
 .star-field {
   display: block;
   transform: translateZ(0);
+  top: 0;
+  left: 0;
 }
 
 .sect {
