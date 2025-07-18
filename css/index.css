@@ -1119,7 +1119,7 @@ header .inner ul {
   background: url(../img/sect4-1img/밤도시.png);
   background-repeat: no-repeat;
   background-position: 100% 0%;
-  background-size: cover;
+  background-size: 100% auto;
   background-attachment: fixed;
 }
 .sect5 .inner {

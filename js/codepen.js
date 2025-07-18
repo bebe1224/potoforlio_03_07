@@ -88,25 +88,6 @@ canvases.forEach((canvas) => {
 
     stars.forEach(placeStar);
   }
-  //새로 알려준거 모바일화면에서 배경안깨질려면
-  // function resize() {
-  //   const dpr = window.devicePixelRatio || 1;
-  //   const rect = canvas.parentElement.getBoundingClientRect();
-  //   const cssW = Math.round(rect.width);
-  //   const cssH = Math.round(rect.height);
-
-  //   canvas.style.width = cssW + "px";
-  //   canvas.style.height = cssH + "px";
-  //   canvas.width = cssW * dpr;
-  //   canvas.height = cssH * dpr;
-
-  //   context.setTransform(1, 0, 0, 1, 0, 0);
-  //   context.scale(dpr, dpr);
-
-  //   width = canvas.width;
-  //   height = canvas.height;
-  //   stars.forEach(placeStar);
-  // }
 
   function step() {
     if (!isVisible) return; // 화면에 보이지 않으면 애니메이션을 멈추기
