@@ -1785,6 +1785,7 @@ header {
   }
 
 }
+
 // ==============================================
 @media (min-width: 0px) and (max-width: 767px) {
   .sect {
@@ -1958,6 +1959,7 @@ header {
           //개별(1)
           .wrap:nth-of-type(1) {
             margin-top: -1px;
+
             .white {
               color: #000;
             }
@@ -2286,9 +2288,10 @@ header {
 
         .youtube_adress {
           position: absolute;
-          min-width: 180px;
-          top: 74.5%;
-          left: 14%;
+          min-width: 160px;
+          top: 75%;
+          left: 50%;
+          transform: translate(-50%, -50%);
           font-size: 14px;
           transition: 0.3s ease-in-out;
           padding: 8px 0px;

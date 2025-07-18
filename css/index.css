@@ -1694,9 +1694,10 @@ header .inner ul {
   }
   .sect4-1 .inner .video_wrap .youtube_adress {
     position: absolute;
-    min-width: 180px;
-    top: 74.5%;
-    left: 14%;
+    min-width: 160px;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     font-size: 14px;
     transition: 0.3s ease-in-out;
     padding: 8px 0px;
