@@ -89,26 +89,24 @@ canvases.forEach((canvas) => {
   //   stars.forEach(placeStar);
   // }
   //새로 알려준거 모바일화면에서 배경안깨질려면
-function resize() {
-  const dpr = window.devicePixelRatio || 1;
+  function resize() {
+    const dpr = window.devicePixelRatio || 1;
+    const rect = canvas.parentElement.getBoundingClientRect();
+    const cssW = Math.round(rect.width);
+    const cssH = Math.round(rect.height);
 
-  const section = canvas.parentElement;
-  const rect = section.getBoundingClientRect();
+    canvas.style.width = cssW + "px";
+    canvas.style.height = cssH + "px";
+    canvas.width = cssW * dpr;
+    canvas.height = cssH * dpr;
 
-  canvas.style.width = `${rect.width}px`;
-  canvas.style.height = `${rect.height}px`;
+    context.setTransform(1, 0, 0, 1, 0, 0);
+    context.scale(dpr, dpr);
 
-  canvas.width = rect.width * dpr;
-  canvas.height = rect.height * dpr;
-
-  context.setTransform(1, 0, 0, 1, 0, 0); // 초기화
-  context.scale(dpr, dpr); // DPR에 맞게 스케일 조정
-
-  width = canvas.width;
-  height = canvas.height;
-
-  stars.forEach(placeStar);
-}
+    width = canvas.width;
+    height = canvas.height;
+    stars.forEach(placeStar);
+  }
 
   function step() {
     if (!isVisible) return; // 화면에 보이지 않으면 애니메이션을 멈추기
