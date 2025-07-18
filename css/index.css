@@ -121,6 +121,7 @@ header .inner ul {
   gap: 32px;
 }
 .sect {
+  position: relative;
   overflow: hidden;
   background-color: #fafafa;
   width: 100%;

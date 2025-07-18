@@ -45,16 +45,16 @@ canvases.forEach((canvas) => {
             ? "h"
             : "v"
           : Math.random() < vy / (vx + vy)
-          ? "v"
-          : "h";
+            ? "v"
+            : "h";
       direction =
         axis === "h"
           ? velocity.x > 0
             ? "l"
             : "r"
           : velocity.y > 0
-          ? "t"
-          : "b";
+            ? "t"
+            : "b";
     }
 
     star.z = STAR_MIN_SCALE + Math.random() * (1 - STAR_MIN_SCALE);
@@ -77,11 +77,24 @@ canvases.forEach((canvas) => {
       star.y = height + OVERFLOW_THRESHOLD;
     }
   }
+// 기존꺼
+  // function resize() {
+  //   scale = window.devicePixelRatio || 1;
+  //   width = window.innerWidth * scale;
+  //   height = window.innerHeight * scale;
 
+  //   canvas.width = width;
+  //   canvas.height = height;
+
+  //   stars.forEach(placeStar);
+  // }
+//새로 알려준거 모바일화면에서 배경안깨질려면
   function resize() {
     scale = window.devicePixelRatio || 1;
-    width = window.innerWidth * scale;
-    height = window.innerHeight * scale;
+
+    const section = canvas.parentElement;
+    width = section.offsetWidth * scale;
+    height = section.offsetHeight * scale;
 
     canvas.width = width;
     canvas.height = height;
