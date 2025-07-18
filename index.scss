@@ -785,7 +785,7 @@ header {
 
   .star-field {
     width: 100%;
-    min-width: 880px;
+    min-width: 750px;
     height: 100%;
     position: absolute;
     background-color: rgb(0, 0, 0);
@@ -1477,8 +1477,8 @@ header {
       .youtube_adress {
         position: absolute;
         min-width: 300px;
-        top: 73%;
-        left: 85%;
+        top: 74%;
+        left: 15%;
         transform: translate(-50%, -50%);
         color: #000000;
         font-size: 24px;
@@ -1785,7 +1785,7 @@ header {
   }
 
 }
-
+// ==============================================
 @media (min-width: 0px) and (max-width: 767px) {
   .sect {
     .inner {
@@ -1798,12 +1798,13 @@ header {
   .sect1 {
 
     .inner {
+      align-items: center;
       justify-content: center;
       flex-direction: column;
 
       .left {
         padding: 0;
-        width: 100%;
+        width: 290px;
 
         .b1 {
           font-size: 24px;
@@ -1811,7 +1812,7 @@ header {
 
         .b-wrap {
           .b2 {
-            font-size: 62px;
+            font-size: 50px;
           }
         }
       }
@@ -1821,7 +1822,7 @@ header {
         width: 100%;
 
         img {
-          width: 400px;
+          width: 280px;
         }
       }
     }
@@ -1844,10 +1845,10 @@ header {
         min-width: 100%;
 
         .p1 {
-          font-size: 24px;
+          font-size: 22px;
 
           span {
-            font-size: 24px;
+            font-size: 22px;
           }
         }
 
@@ -1866,10 +1867,10 @@ header {
         min-width: 100%;
 
         .one {
-          @include fcsc;
+          @include fssc;
           gap: 32px;
           width: 50%;
-          min-width: 190px;
+          min-width: 143px;
 
           .p-ws {
             @include fcsc;
@@ -1881,7 +1882,7 @@ header {
 
             .p-w {
               .p2 {
-                font-size: 16px;
+                font-size: 14px;
               }
             }
           }
@@ -1907,19 +1908,19 @@ header {
 
             .p {
               font-weight: bold;
-              font-size: 24px;
+              font-size: 20px;
             }
 
             .wrap {
               @include fsc;
-              gap: 16px;
+              gap: 12px;
 
               .p-w {
                 @include fc;
                 gap: 12px;
 
                 .p1 {
-                  font-size: 16px;
+                  font-size: 14px;
                 }
               }
 
@@ -1929,6 +1930,7 @@ header {
 
                 img {
                   width: 80px;
+                  height: 4px;
                 }
               }
             }
@@ -1940,9 +1942,7 @@ header {
           flex-direction: column;
           gap: 32px;
           width: 50%;
-          min-width: 190px;
-
-          // padding: 0px 10px;
+          min-width: 143px;
 
           //공통
           .wrap {
@@ -1958,16 +1958,14 @@ header {
           //개별(1)
           .wrap:nth-of-type(1) {
             margin-top: -1px;
-
             .white {
               color: #000;
             }
 
             .i-w {
 
-
               img {
-                height: 140px;
+                height: 120px;
               }
             }
           }
@@ -1980,10 +1978,10 @@ header {
               @include fc;
               gap: 8px;
               width: 100%;
-              min-width: 190px;
+              min-width: 100%;
 
               p {
-                font-size: 15px;
+                font-size: 12px;
 
                 span {
                   font-weight: bold;
@@ -2020,7 +2018,7 @@ header {
             gap: 4px;
 
             .p2 {
-              font-size: 16px;
+              font-size: 15px;
               letter-spacing: -1px;
             }
           }
@@ -2039,18 +2037,16 @@ header {
 
         img {
 
-
           &:nth-of-type(1) {
-            width: 300px;
-            top: 5%;
+            width: 280px;
+            top: -5%;
             left: 38%;
           }
 
           &:nth-of-type(2) {
             width: 150px;
-            top: 55%;
-            left: 60%;
-
+            top: 45%;
+            left: 65%;
           }
         }
       }
@@ -2268,7 +2264,7 @@ header {
           @include fcc;
           margin-top: 0px;
           width: 100%;
-          min-height: 280px;
+          min-height: 388px;
           height: auto
         }
 
@@ -2291,8 +2287,8 @@ header {
         .youtube_adress {
           position: absolute;
           min-width: 180px;
-          top: 68%;
-          left: 77%;
+          top: 74.5%;
+          left: 14%;
           font-size: 14px;
           transition: 0.3s ease-in-out;
           padding: 8px 0px;
@@ -2382,6 +2378,629 @@ header {
             padding: 8px 0px;
             color: #ffffff;
             font-size: 20px;
+          }
+        }
+
+        .position1 {}
+
+        .position2 {
+          transform: translateY(50px);
+        }
+
+        .position3 {}
+
+        .position4 {
+          transform: translateY(50px);
+        }
+      }
+    }
+
+    .position4_modal {
+      @include fscc;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding-top: 60px;
+
+      .wrap {
+        @include fc;
+        gap: 32px;
+      }
+
+      a {
+        img {
+          width: 180px;
+        }
+      }
+    }
+  }
+}
+
+// 모바일 425 이하일때
+@media (min-width: 0px)and (max-width:425px) {
+
+
+  //  ====
+  .sect2 {
+    .inner {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      padding-bottom: 32px;
+
+      .left {
+        align-items: start;
+        justify-content: start;
+        padding-top: 100px;
+        gap: 0;
+        width: 100%;
+        min-width: 100%;
+
+        .p1 {
+          font-size: 20px;
+
+          span {
+            font-size: 20px;
+          }
+        }
+
+        .i-w {
+          display: none;
+        }
+
+        .star-img {
+          display: none;
+        }
+      }
+
+      .right {
+        display: flex;
+        width: 100%;
+        min-width: 100%;
+
+        .one {
+          @include fssc;
+          gap: 32px;
+          width: 50%;
+          min-width: 143px;
+
+          .p-ws {
+
+            @include fcsc;
+            width: 100%;
+
+            .p1 {
+              font-size: 18px;
+            }
+
+            .p-w {
+              .p2 {
+                font-size: 12px;
+              }
+            }
+          }
+
+          .p-ws1 {
+
+
+            .p1 {
+              color: #000;
+            }
+
+            .p-w {
+              .w {
+                color: #000;
+              }
+            }
+          }
+
+          .p-ws3 {
+            @include fc;
+            gap: 16px;
+
+
+            .p {
+              font-weight: bold;
+              font-size: 18px;
+            }
+
+            .wrap {
+              @include fsc;
+              gap: 8px;
+
+              .p-w {
+                @include fc;
+                gap: 12px;
+
+                .p1 {
+                  font-size: 12px;
+                }
+              }
+
+              .i-w {
+                @include fc;
+                gap: 25px;
+
+                img {
+                  width: 48px;
+                  height: 4px;
+                }
+              }
+            }
+          }
+        }
+
+        .two {
+          display: flex;
+          flex-direction: column;
+          gap: 32px;
+          width: 50%;
+          min-width: 143px;
+
+
+
+          //공통
+          .wrap {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+
+            .p1 {
+              font-size: 18px;
+            }
+          }
+
+          //개별(1)
+          .wrap:nth-of-type(1) {
+            margin-top: -1px;
+
+            .white {
+              color: #000;
+            }
+
+            .i-w {
+
+
+              img {
+                height: 100px;
+              }
+            }
+          }
+
+          //개별(2)
+          .wrap:nth-of-type(2) {
+            .p1 {}
+
+            .p_wrap {
+              @include fc;
+              gap: 8px;
+              width: 100%;
+              min-width: 100%;
+
+              p {
+                font-size: 12px;
+
+                span {
+                  font-weight: bold;
+                  padding-right: 8px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .sect2-1 {
+    overflow: hidden;
+
+    .inner {
+      @include fccc;
+
+      .left {
+        width: 100%;
+
+        .p-ws {
+          @include fc;
+          gap: 12px;
+          margin-top: 40px;
+
+          .p1 {
+            font-size: 20px;
+          }
+
+          .p-w {
+            @include fc;
+            gap: 4px;
+
+            .p2 {
+              font-size: 13px;
+              letter-spacing: -1px;
+            }
+          }
+        }
+
+        img {
+          top: 55%;
+          left: 0%;
+          width: 180px;
+        }
+      }
+
+      .right {
+        width: 100%;
+
+
+        img {
+
+          &:nth-of-type(1) {
+            width: 280px;
+            top: -5%;
+            left: 38%;
+          }
+
+          &:nth-of-type(2) {
+            width: 150px;
+            top: 45%;
+            left: 65%;
+          }
+        }
+      }
+    }
+  }
+
+  //  ====
+  .sect3 {
+
+    .inner {
+      display: flex;
+
+
+      .left {
+        width: 100%;
+
+        .p-w0 {
+
+          .p1 {
+            font-size: 44px;
+          }
+
+          .p2 {
+            font-size: 18px;
+          }
+
+          .p3 {
+            font-size: 40px;
+          }
+        }
+      }
+
+      .right {
+        display: none;
+      }
+    }
+  }
+
+  .sect3-1 {
+    .inner {
+
+      .wrap {
+        transition: 0.3s ease-in-out;
+        width: 100%;
+        height: 100vh;
+
+        .sect3-1Swiper {
+          padding: 0px;
+          width: 284px;
+          height: 422px;
+          top: 38%;
+          transform: translate(-50%, -50%) !important;
+
+          .swiper-wrapper {
+            .swiper-slide {
+              @include fcc;
+              position: relative;
+              background-repeat: no-repeat;
+              background-size: cover;
+              background-position: center;
+            }
+
+            .slide14 {
+              .img1 {
+                width: 300px;
+              }
+
+              .img2 {
+                width: 400px;
+              }
+            }
+          }
+        }
+
+        .Description {
+          position: absolute;
+          top: 80%;
+          left: 50%;
+          transform: translate(-50%, -50%) !important;
+          width: 284px;
+          height: 154px;
+
+          .p-w {
+            gap: 8px;
+
+            h2 {
+              font-size: 18px;
+            }
+
+            p {
+              font-size: 14px;
+            }
+
+            a {
+              font-size: 16px;
+
+              span {
+
+                img {
+                  width: 28px;
+                  height: 28px;
+                }
+              }
+            }
+          }
+        }
+
+        .swiper-button-prev {
+          margin-left: 0px;
+          top: 38%;
+
+          img {
+            width: 60px;
+            height: 60px;
+          }
+        }
+
+        .swiper-button-next {
+          margin-right: 0px;
+          top: 38%;
+
+          img {
+            width: 60px;
+            height: 60px;
+          }
+        }
+
+        .slide-counter {
+          font-size: 20px;
+          position: absolute;
+          top: 5%;
+          left: 5%;
+          transform: translate(-19%, -5%);
+        }
+      }
+
+      .w {
+        @include fc;
+        gap: 8px;
+        position: absolute;
+        top: 90%;
+        left: 81%;
+        transform: translate(-50%, -50%);
+
+        .list-p {
+          color: #000;
+          font-size: 14px;
+        }
+
+        .view-more {}
+      }
+
+      .hidden-list {
+
+        // z-index: 999;
+        .title {
+          padding-left: 0px;
+          font-size: 40px;
+        }
+
+        .list-wrap {
+          @include fcs;
+          gap: 6px;
+          width: 100%;
+          height: auto;
+
+          ul {
+            @include fcsc;
+            gap: 16px;
+
+
+            li {
+              font-size: 10px;
+
+              a {
+                @include fcsc;
+
+                b {
+                  font-size: 13px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // =====
+  .sect4 {
+    .inner {
+      .plane {
+        display: none;
+      }
+
+      .cloud {
+        display: none;
+      }
+
+      .left {
+        @include fcsc;
+        gap: 48px;
+        width: auto;
+        position: relative;
+
+        .p-w0 {
+          @include fc;
+          gap: 48px;
+
+          .p1 {
+            font-size: 44px;
+          }
+
+          .p2 {
+            font-size: 18px;
+          }
+
+          .p3 {
+            font-size: 40px;
+          }
+        }
+      }
+    }
+  }
+
+  .sect4-1 {
+    position: relative;
+
+    .inner {
+      @include fccc;
+      gap: 32px;
+
+      .video_wrap {
+        @include fccc;
+        gap: 8px;
+        width: 100%;
+
+        .video_frame {
+          @include fcc;
+          margin-top: 0px;
+          width: 100%;
+          min-height: 162px;
+          height: auto;
+        }
+
+        .video-controls {
+          @include fcc;
+          gap: 4px;
+          width: 100%;
+          height: 80px;
+          padding: 12px;
+
+          //공통
+          button {
+            @include fcc;
+            width: 32px;
+            padding: 4px 8px;
+            font-size: 12px;
+          }
+        }
+
+        .youtube_adress {
+          position: absolute;
+          min-width: 132px;
+          top: 68%;
+          left: 77%;
+          font-size: 12px;
+
+          &:hover {
+            opacity: 0.6;
+          }
+        }
+      }
+
+
+      .swiper_wrap {
+        margin-top: 0px;
+        width: 100%;
+
+        .swiper {
+          @include fcc;
+          padding: 0;
+          width: 100%;
+          height: 180px;
+
+          .swiper-wrapper {
+            @include fsc;
+
+            .swiper-slide {
+              @include fcc;
+              gap: 16px;
+              height: 140px;
+
+              .i_w {
+                width: 112px;
+
+              }
+
+              .p-w {
+
+                @include fcsc;
+                gap: 8x;
+
+                p {
+                  font-size: 14px !important;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // =====
+  .sect5 {
+    background-position: 100% 100%;
+    background-size: cover;
+
+    .inner {
+      @include fscc;
+      gap: 80px;
+
+      .p1 {
+        margin-top: 100px;
+        font-size: 44px;
+      }
+
+      .surcle_wrap {
+        @include fcc;
+        flex-wrap: wrap;
+        gap: 24px;
+
+        .wrap {
+          gap: 40px;
+
+          .surcle {
+            @include fcc;
+            width: 98px;
+            height: 98px;
+
+            .rotate {
+              width: 120px;
+              height: 120px;
+            }
+
+            p {
+              font-size: 20px;
+            }
+          }
+
+          span {
+            border-radius: 999px 999px 999px 999px;
+            width: 120px;
+            text-align: center;
+            padding: 8px 0px;
+            color: #ffffff;
+            font-size: 14px;
           }
         }
 
