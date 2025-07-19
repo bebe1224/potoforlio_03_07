@@ -189,7 +189,7 @@ canvases.forEach((canvas) => {
         }
       });
     },
-    { threshold: 0.01 } // 1% 이상 보일 때 활성화
+    { threshold: 0.05 } // 5% 이상 보일 때 활성화
   );
 
   observer.observe(canvas); // canvas 요소를 관찰
