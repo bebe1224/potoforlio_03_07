@@ -77,7 +77,6 @@ canvases.forEach((canvas) => {
       star.y = height + OVERFLOW_THRESHOLD;
     }
   }
-  // 기존꺼
   function resize() {
     scale = window.devicePixelRatio || 1;
     width = window.innerWidth * scale;
@@ -194,7 +193,6 @@ canvases.forEach((canvas) => {
   );
 
   observer.observe(canvas); // canvas 요소를 관찰
-
   window.addEventListener("resize", resize);
   canvas.addEventListener("mousemove", onMouseMove);
   canvas.addEventListener("touchmove", onTouchMove);

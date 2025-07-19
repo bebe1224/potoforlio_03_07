@@ -136,6 +136,9 @@ header .inner ul {
   width: 100%;
   height: 100vh;
   margin-top: -10px;
+  background: transparent; /* 혹은 black */
+  border: none;
+  outline: none;
 }
 .sect .inner {
   margin: 0 auto;
@@ -191,8 +194,6 @@ header .inner ul {
 
 .sect2 {
   position: relative;
-  transform: translateZ(0);
-  will-change: transform;
 }
 .sect2 .star-field {
   width: 100%;
@@ -519,7 +520,6 @@ header .inner ul {
 
 .sect3-1 {
   transform: scaleY(-1);
-  will-change: transform;
 }
 .sect3-1 .star-field {
   width: 100%;
